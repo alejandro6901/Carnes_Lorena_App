@@ -1,0 +1,5 @@
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\DAO\bin\Debug\DAO.dll
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\DAO\bin\Debug\DAO.pdb
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\DAO\obj\Debug\DAO.dll
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\DAO\obj\Debug\DAO.pdb

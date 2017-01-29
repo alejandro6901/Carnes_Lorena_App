@@ -1,0 +1,18 @@
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\bin\Debug\GUI.exe.config
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\bin\Debug\GUI.exe
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\bin\Debug\GUI.pdb
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\obj\Debug\GUI.Properties.Resources.resources
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\obj\Debug\GUI.exe
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\obj\Debug\GUI.pdb
+C:\Users\Andrés\documents\visual studio 2015\Projects\Carnes_Lorena\GUI\obj\Debug\GUI.App.resources
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\GUI.exe.config
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.exe
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.pdb
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\GUI.exe
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\GUI.pdb
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.App.resources
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache

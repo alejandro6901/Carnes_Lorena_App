@@ -1,0 +1,5 @@
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\BO\bin\Debug\BO.dll
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\BO\bin\Debug\BO.pdb
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\BO\obj\Debug\BO.csprojResolveAssemblyReference.cache
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\BO\obj\Debug\BO.dll
+c:\users\andrés\documents\visual studio 2015\Projects\Carnes_Lorena\BO\obj\Debug\BO.pdb
