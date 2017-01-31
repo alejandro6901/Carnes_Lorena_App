@@ -19,7 +19,7 @@ namespace Entities
         public string Notes { get; set; }
         public int Id_Route { get; set; }
         public int Id_Global { get; set; }
-        public int Id_falo { get; set; }
+        public int Id_falosssssssssss { get; set; }
 
 
     }
