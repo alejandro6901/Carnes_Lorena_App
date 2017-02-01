@@ -2,15 +2,21 @@
 using System.Windows.Forms;
 using Entities;
 using BO;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace GUI
 {
     public partial class Start : Form
     {
+     
+
         public Start()
         {
+
             InitializeComponent();
-           
+
+
         }
 
 
@@ -37,9 +43,9 @@ namespace GUI
 
         }
 
- 
 
-  
+
+
         private void btn_several(object sender, EventArgs e)
         {
             pnl_main.Visible = false;
@@ -87,8 +93,8 @@ namespace GUI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-           // Login.Visible = true;
-            this.Close(); 
+            // Login.Visible = true;
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -151,14 +157,60 @@ namespace GUI
             {
                 MessageBox.Show("hola");
             }
-            
+
         }
 
         private void testgrid_Click(object sender, EventArgs e)
         {
             SchoolsBO sbo = new SchoolsBO();
-            dataGridView2.DataSource = sbo.GetAllSchools();
-            dataGridView2.DataMember = "schools";
+            tbData.DataSource = sbo.GetAllSchools();
+            tbData.DataMember = "schools";
+        }
+
+        private void tel1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contact1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void named_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void moveFrame_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void moveFrame_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+
+            }
+        }
+
+        private void moveFrame_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void Start_Load(object sender, EventArgs e)
+        {
+           
+
+
+
+
         }
     }
 }
