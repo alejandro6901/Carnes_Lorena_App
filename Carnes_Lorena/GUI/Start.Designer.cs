@@ -50,16 +50,30 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.moverFrame = new System.Windows.Forms.PictureBox();
+            this.named = new System.Windows.Forms.TextBox();
+            this.contact1 = new System.Windows.Forms.TextBox();
+            this.tel1 = new System.Windows.Forms.TextBox();
+            this.notes = new System.Windows.Forms.TextBox();
+            this.idroute = new System.Windows.Forms.TextBox();
+            this.mail = new System.Windows.Forms.TextBox();
+            this.tel2 = new System.Windows.Forms.TextBox();
+            this.contact2 = new System.Windows.Forms.TextBox();
+            this.ubication = new System.Windows.Forms.TextBox();
+            this.test = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.testgrid = new System.Windows.Forms.Button();
             office_tab = new System.Windows.Forms.TabPage();
             office_tab.SuspendLayout();
             this.pnl_header.SuspendLayout();
             this.pnl_schools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moverFrame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // office_tab
@@ -83,7 +97,7 @@
             // 
             // pnl_header
             // 
-            this.pnl_header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pnl_header.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnl_header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.pnl_header.Controls.Add(this.button1);
@@ -150,8 +164,8 @@
             // 
             // pnl_schools
             // 
-            this.pnl_schools.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnl_schools.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_schools.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pnl_schools.Controls.Add(this.splitContainer1);
@@ -164,8 +178,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(10, 9);
             this.splitContainer1.Name = "splitContainer1";
@@ -184,6 +198,18 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer1.Panel2.Controls.Add(this.testgrid);
+            this.splitContainer1.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Panel2.Controls.Add(this.test);
+            this.splitContainer1.Panel2.Controls.Add(this.ubication);
+            this.splitContainer1.Panel2.Controls.Add(this.contact2);
+            this.splitContainer1.Panel2.Controls.Add(this.tel2);
+            this.splitContainer1.Panel2.Controls.Add(this.mail);
+            this.splitContainer1.Panel2.Controls.Add(this.idroute);
+            this.splitContainer1.Panel2.Controls.Add(this.notes);
+            this.splitContainer1.Panel2.Controls.Add(this.tel1);
+            this.splitContainer1.Panel2.Controls.Add(this.contact1);
+            this.splitContainer1.Panel2.Controls.Add(this.named);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(804, 478);
@@ -224,7 +250,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(9, 37);
@@ -238,8 +264,8 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Coral;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -283,8 +309,8 @@
             // 
             // pnl_super
             // 
-            this.pnl_super.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnl_super.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_super.BackColor = System.Drawing.Color.BurlyWood;
             this.pnl_super.Location = new System.Drawing.Point(197, -6);
@@ -296,8 +322,8 @@
             // 
             // pnl_several
             // 
-            this.pnl_several.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnl_several.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_several.BackColor = System.Drawing.Color.LightSeaGreen;
             this.pnl_several.Location = new System.Drawing.Point(197, -9);
@@ -307,8 +333,8 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(office_tab);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -329,15 +355,15 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 49);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1007, 474);
+            this.tabPage2.Size = new System.Drawing.Size(1007, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Procesos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // pnl_main
             // 
-            this.pnl_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnl_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_main.Location = new System.Drawing.Point(-3, 21);
@@ -388,7 +414,7 @@
             // 
             // moverFrame
             // 
-            this.moverFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.moverFrame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.moverFrame.BackColor = System.Drawing.Color.Black;
             this.moverFrame.Location = new System.Drawing.Point(-1, 0);
@@ -397,7 +423,100 @@
             this.moverFrame.TabIndex = 17;
             this.moverFrame.TabStop = false;
             // 
-            // App
+            // named
+            // 
+            this.named.Location = new System.Drawing.Point(102, 67);
+            this.named.Name = "named";
+            this.named.Size = new System.Drawing.Size(100, 34);
+            this.named.TabIndex = 0;
+            // 
+            // contact1
+            // 
+            this.contact1.Location = new System.Drawing.Point(102, 119);
+            this.contact1.Name = "contact1";
+            this.contact1.Size = new System.Drawing.Size(100, 34);
+            this.contact1.TabIndex = 1;
+            // 
+            // tel1
+            // 
+            this.tel1.Location = new System.Drawing.Point(102, 170);
+            this.tel1.Name = "tel1";
+            this.tel1.Size = new System.Drawing.Size(100, 34);
+            this.tel1.TabIndex = 2;
+            // 
+            // notes
+            // 
+            this.notes.Location = new System.Drawing.Point(292, 221);
+            this.notes.Name = "notes";
+            this.notes.Size = new System.Drawing.Size(100, 34);
+            this.notes.TabIndex = 3;
+            // 
+            // idroute
+            // 
+            this.idroute.Location = new System.Drawing.Point(102, 272);
+            this.idroute.Name = "idroute";
+            this.idroute.Size = new System.Drawing.Size(100, 34);
+            this.idroute.TabIndex = 5;
+            // 
+            // mail
+            // 
+            this.mail.Location = new System.Drawing.Point(102, 221);
+            this.mail.Name = "mail";
+            this.mail.Size = new System.Drawing.Size(100, 34);
+            this.mail.TabIndex = 6;
+            // 
+            // tel2
+            // 
+            this.tel2.Location = new System.Drawing.Point(292, 159);
+            this.tel2.Name = "tel2";
+            this.tel2.Size = new System.Drawing.Size(100, 34);
+            this.tel2.TabIndex = 7;
+            // 
+            // contact2
+            // 
+            this.contact2.Location = new System.Drawing.Point(292, 119);
+            this.contact2.Name = "contact2";
+            this.contact2.Size = new System.Drawing.Size(100, 34);
+            this.contact2.TabIndex = 8;
+            // 
+            // ubication
+            // 
+            this.ubication.Location = new System.Drawing.Point(292, 67);
+            this.ubication.Name = "ubication";
+            this.ubication.Size = new System.Drawing.Size(100, 34);
+            this.ubication.TabIndex = 9;
+            // 
+            // test
+            // 
+            this.test.Location = new System.Drawing.Point(298, 283);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(94, 36);
+            this.test.TabIndex = 10;
+            this.test.Text = "test";
+            this.test.UseVisualStyleBackColor = true;
+            this.test.Click += new System.EventHandler(this.test_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 356);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(503, 150);
+            this.dataGridView2.TabIndex = 11;
+            // 
+            // testgrid
+            // 
+            this.testgrid.Location = new System.Drawing.Point(416, 283);
+            this.testgrid.Name = "testgrid";
+            this.testgrid.Size = new System.Drawing.Size(94, 55);
+            this.testgrid.TabIndex = 12;
+            this.testgrid.Text = "all";
+            this.testgrid.UseVisualStyleBackColor = true;
+            this.testgrid.Click += new System.EventHandler(this.testgrid_Click);
+            // 
+            // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -409,18 +528,21 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pnl_main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "App";
+            this.Name = "Start";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             office_tab.ResumeLayout(false);
             this.pnl_header.ResumeLayout(false);
             this.pnl_schools.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.moverFrame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -448,6 +570,18 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button test;
+        private System.Windows.Forms.TextBox ubication;
+        private System.Windows.Forms.TextBox contact2;
+        private System.Windows.Forms.TextBox tel2;
+        private System.Windows.Forms.TextBox mail;
+        private System.Windows.Forms.TextBox idroute;
+        private System.Windows.Forms.TextBox notes;
+        private System.Windows.Forms.TextBox tel1;
+        private System.Windows.Forms.TextBox contact1;
+        private System.Windows.Forms.TextBox named;
+        private System.Windows.Forms.Button testgrid;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 

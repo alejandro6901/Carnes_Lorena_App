@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Severals
+    public class Severals
     {
         public int Id { get; set; }
         public string Named { get; set; }

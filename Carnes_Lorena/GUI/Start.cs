@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entities;
+using BO;
 
 namespace GUI
 {
@@ -92,7 +87,7 @@ namespace GUI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Login.Visible = true;
+           // Login.Visible = true;
             this.Close(); 
         }
 
@@ -137,6 +132,33 @@ namespace GUI
                 this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
 
             }
+        }
+
+        private void test_Click(object sender, EventArgs e)
+        {
+            Schools s = new Schools();
+            s.Named = named.Text;
+            s.Ubication = ubication.Text;
+            s.Manager1 = contact1.Text;
+            s.Manager2 = contact2.Text;
+            s.Phone1 = Int32.Parse(tel1.Text);
+            s.Phone2 = Int32.Parse(tel2.Text);
+            s.Mail = mail.Text;
+            s.Notes = notes.Text;
+            s.Id_Route = Int32.Parse(idroute.Text);
+            SchoolsBO sbo = new SchoolsBO();
+            if (sbo.RegisterSchool(s))
+            {
+                MessageBox.Show("hola");
+            }
+            
+        }
+
+        private void testgrid_Click(object sender, EventArgs e)
+        {
+            SchoolsBO sbo = new SchoolsBO();
+            dataGridView2.DataSource = sbo.GetAllSchools();
+            dataGridView2.DataMember = "schools";
         }
     }
 }

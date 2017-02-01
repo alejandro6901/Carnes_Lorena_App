@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Schools
+    public class Schools
     {
         public int Id { get; set; }
         public string Named { get; set; }
@@ -19,8 +19,6 @@ namespace Entities
         public string Notes { get; set; }
         public int Id_Route { get; set; }
         public int Id_Global { get; set; }
-        public int Id_falosssssssssss { get; set; }
-
 
     }
 }

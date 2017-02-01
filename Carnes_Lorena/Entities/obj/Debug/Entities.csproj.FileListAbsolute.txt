@@ -3,3 +3,8 @@ C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\Entities\bin\Debug\Entities
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\Entities\obj\Debug\Entities.dll
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\Entities\obj\Debug\Entities.pdb
+C:\Users\Andrés\Documents\Visual Studio 2015\Projects\Carnes_Lorena_App\Carnes_Lorena\Entities\bin\Debug\Entities.dll
+C:\Users\Andrés\Documents\Visual Studio 2015\Projects\Carnes_Lorena_App\Carnes_Lorena\Entities\bin\Debug\Entities.pdb
+C:\Users\Andrés\Documents\Visual Studio 2015\Projects\Carnes_Lorena_App\Carnes_Lorena\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+C:\Users\Andrés\Documents\Visual Studio 2015\Projects\Carnes_Lorena_App\Carnes_Lorena\Entities\obj\Debug\Entities.dll
+C:\Users\Andrés\Documents\Visual Studio 2015\Projects\Carnes_Lorena_App\Carnes_Lorena\Entities\obj\Debug\Entities.pdb
