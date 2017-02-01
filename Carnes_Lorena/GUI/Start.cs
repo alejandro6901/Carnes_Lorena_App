@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class App : Form
+    public partial class Start : Form
     {
-        public App()
+        public Start()
         {
             InitializeComponent();
            
@@ -22,6 +22,7 @@ namespace GUI
         private int TogMove;
         private int MValX;
         private int MValY;
+        public Form Login { get; set; }
 
 
 
@@ -91,13 +92,51 @@ namespace GUI
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-        
+            Login.Visible = true;
             this.Close(); 
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void moverFrame_MouseUp(object sender, MouseEventArgs e)
+        {
+            TogMove = 0;
+        }
+
+        private void moverFrame_MouseDown(object sender, MouseEventArgs e)
+        {
+            TogMove = 1;
+            MValX = e.X;
+            MValY = e.Y;
+        }
+
+        private void moverFrame_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (TogMove == 1)
+            {
+
+                this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
+
+            }
         }
     }
 }

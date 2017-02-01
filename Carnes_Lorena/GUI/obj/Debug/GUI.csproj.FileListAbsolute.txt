@@ -13,6 +13,11 @@ C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.pdb
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\GUI.exe
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\GUI.pdb
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
-C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.App.resources
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.Login.resources
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\BO.dll
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\Entities.dll
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\BO.pdb
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\bin\Debug\Entities.pdb
+C:\Users\aleja\Downloads\Carnes_Lorena\Carnes_Lorena\GUI\obj\Debug\GUI.Start.resources
