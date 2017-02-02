@@ -191,9 +191,7 @@ namespace GUI
         {
             if (TogMove == 1)
             {
-
                 this.SetDesktopLocation(MousePosition.X - MValX, MousePosition.Y - MValY);
-
             }
         }
 
@@ -206,11 +204,34 @@ namespace GUI
 
         private void Start_Load(object sender, EventArgs e)
         {
-           
+        }
 
+        private void order_Click(object sender, EventArgs e)
+        {
+            Orders o = new Orders();
+            o.Id_Client = Int32.Parse(id_client.Text);
+            o.Id_Product = id_product.Text;
+            o.Quantity = Double.Parse(quantity.Text);
+            o.Notes = order_notes.Text;
+            OrdersBO obo = new OrdersBO();
+            if (obo.RegisterOrder(o))
+            {
+                MessageBox.Show("hola");
+            }
+        }
 
+        private void see_orders_Click(object sender, EventArgs e)
+        {
+            OrdersBO sbo = new OrdersBO();
+            dataGridView2.DataSource = sbo.GetAllOrders();
+            dataGridView2.DataMember = "orders";
+        }
 
-
+        private void show_Click(object sender, EventArgs e)
+        {
+            OrdersBO sbo = new OrdersBO();
+            Orders o = new Orders();
+            o = sbo.ShowOrder(Int32.Parse(search.Text));
         }
     }
 }
