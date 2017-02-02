@@ -213,6 +213,8 @@ namespace GUI
             o.Id_Product = id_product.Text;
             o.Quantity = Double.Parse(quantity.Text);
             o.Notes = order_notes.Text;
+            o.Client = client.Text;
+            o.Product = product.Text;
             OrdersBO obo = new OrdersBO();
             if (obo.RegisterOrder(o))
             {
