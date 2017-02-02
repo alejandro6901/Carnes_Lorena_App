@@ -10,7 +10,9 @@ namespace Entities
     {
         public int Id { get; set; }
         public int Id_Client { get; set; }
+        public string Client { get; set; }
         public string Id_Product { get; set; }
+        public string Product { get; set; }
         public double Quantity { get; set; }
         public string Notes { get; set; }
         public bool State { get; set; }

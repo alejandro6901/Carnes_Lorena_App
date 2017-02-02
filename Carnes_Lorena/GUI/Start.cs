@@ -9,7 +9,7 @@ namespace GUI
 {
     public partial class Start : Form
     {
-     
+
 
         public Start()
         {
@@ -231,7 +231,7 @@ namespace GUI
         {
             OrdersBO sbo = new OrdersBO();
             Orders o = new Orders();
-            o = sbo.ShowOrder(Int32.Parse(search.Text));
+            o = sbo.ShowOrderById(Int32.Parse(search.Text));
         }
     }
 }

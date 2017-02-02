@@ -17,8 +17,8 @@ namespace DAO
                     con.Open();
                     tran = con.BeginTransaction();
                     string sql = @"INSERT INTO public.orders(
-                                      id_client, id_product, quantity, notes)
-                                VALUES(:ic, :ip, :q, :n) returning id";
+                                      id_client, id_product, quantity, notes, client, product)
+                                VALUES(:ic, :ip, :q, :n, :cl, :pr) returning id";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
@@ -26,6 +26,8 @@ namespace DAO
                     cmd.Parameters.AddWithValue("ip", o.Id_Product);
                     cmd.Parameters.AddWithValue("q", o.Quantity);
                     cmd.Parameters.AddWithValue("n", o.Notes);
+                    cmd.Parameters.AddWithValue("cl", o.Client);
+                    cmd.Parameters.AddWithValue("pr", o.Product);
 
                     o.Id = Convert.ToInt32(cmd.ExecuteScalar());
                     tran.Commit();
@@ -59,7 +61,8 @@ namespace DAO
             }
         }
 
-        public Orders ShowOrder(int id)
+        //not usable still
+        public Orders ShowOrderById(int id)
         {
             Orders result = new Orders();
             try
@@ -93,6 +96,7 @@ namespace DAO
             }
         }
 
+        //not usable still
         public bool UpdateOrder(Orders o)
         {
             NpgsqlTransaction tran = null;
@@ -124,5 +128,6 @@ namespace DAO
                 throw new Exception(e.Message);
             }
         }
+
     }
 }

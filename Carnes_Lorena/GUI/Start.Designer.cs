@@ -70,20 +70,21 @@
             this.pnl_several = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.search = new System.Windows.Forms.TextBox();
+            this.show = new System.Windows.Forms.Button();
+            this.see_orders = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.order_notes = new System.Windows.Forms.TextBox();
+            this.quantity = new System.Windows.Forms.TextBox();
+            this.id_product = new System.Windows.Forms.TextBox();
+            this.id_client = new System.Windows.Forms.TextBox();
+            this.order = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.moveFrame = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.order = new System.Windows.Forms.Button();
-            this.id_client = new System.Windows.Forms.TextBox();
-            this.id_product = new System.Windows.Forms.TextBox();
-            this.quantity = new System.Windows.Forms.TextBox();
-            this.order_notes = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.see_orders = new System.Windows.Forms.Button();
-            this.show = new System.Windows.Forms.Button();
-            this.search = new System.Windows.Forms.TextBox();
+            this.show_order = new System.Windows.Forms.TextBox();
             office_tab = new System.Windows.Forms.TabPage();
             office_tab.SuspendLayout();
             this.pnl_header.SuspendLayout();
@@ -96,8 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbData)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).BeginInit();
             this.SuspendLayout();
             // 
             // office_tab
@@ -610,6 +611,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.show_order);
             this.tabPage2.Controls.Add(this.search);
             this.tabPage2.Controls.Add(this.show);
             this.tabPage2.Controls.Add(this.see_orders);
@@ -628,6 +630,88 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Procesos";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(503, 152);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(100, 34);
+            this.search.TabIndex = 9;
+            // 
+            // show
+            // 
+            this.show.Location = new System.Drawing.Point(481, 218);
+            this.show.Name = "show";
+            this.show.Size = new System.Drawing.Size(142, 52);
+            this.show.TabIndex = 8;
+            this.show.Text = "show";
+            this.show.UseVisualStyleBackColor = true;
+            this.show.Click += new System.EventHandler(this.show_Click);
+            // 
+            // see_orders
+            // 
+            this.see_orders.Location = new System.Drawing.Point(594, 497);
+            this.see_orders.Name = "see_orders";
+            this.see_orders.Size = new System.Drawing.Size(116, 44);
+            this.see_orders.TabIndex = 7;
+            this.see_orders.Text = "ver";
+            this.see_orders.UseVisualStyleBackColor = true;
+            this.see_orders.Click += new System.EventHandler(this.see_orders_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(100, 455);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(406, 150);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(82, 394);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 28);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "ver pedidos ";
+            // 
+            // order_notes
+            // 
+            this.order_notes.Location = new System.Drawing.Point(108, 236);
+            this.order_notes.Name = "order_notes";
+            this.order_notes.Size = new System.Drawing.Size(100, 34);
+            this.order_notes.TabIndex = 4;
+            // 
+            // quantity
+            // 
+            this.quantity.Location = new System.Drawing.Point(108, 185);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(100, 34);
+            this.quantity.TabIndex = 3;
+            // 
+            // id_product
+            // 
+            this.id_product.Location = new System.Drawing.Point(108, 125);
+            this.id_product.Name = "id_product";
+            this.id_product.Size = new System.Drawing.Size(100, 34);
+            this.id_product.TabIndex = 2;
+            // 
+            // id_client
+            // 
+            this.id_client.Location = new System.Drawing.Point(108, 73);
+            this.id_client.Name = "id_client";
+            this.id_client.Size = new System.Drawing.Size(100, 34);
+            this.id_client.TabIndex = 1;
+            // 
+            // order
+            // 
+            this.order.Location = new System.Drawing.Point(306, 232);
+            this.order.Name = "order";
+            this.order.Size = new System.Drawing.Size(102, 42);
+            this.order.TabIndex = 0;
+            this.order.Text = "test order";
+            this.order.UseVisualStyleBackColor = true;
+            this.order.Click += new System.EventHandler(this.order_Click);
             // 
             // btnMinimize
             // 
@@ -695,87 +779,12 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Carnes Lorena";
             // 
-            // order
+            // show_order
             // 
-            this.order.Location = new System.Drawing.Point(306, 232);
-            this.order.Name = "order";
-            this.order.Size = new System.Drawing.Size(102, 42);
-            this.order.TabIndex = 0;
-            this.order.Text = "test order";
-            this.order.UseVisualStyleBackColor = true;
-            this.order.Click += new System.EventHandler(this.order_Click);
-            // 
-            // id_client
-            // 
-            this.id_client.Location = new System.Drawing.Point(108, 73);
-            this.id_client.Name = "id_client";
-            this.id_client.Size = new System.Drawing.Size(100, 34);
-            this.id_client.TabIndex = 1;
-            // 
-            // id_product
-            // 
-            this.id_product.Location = new System.Drawing.Point(108, 125);
-            this.id_product.Name = "id_product";
-            this.id_product.Size = new System.Drawing.Size(100, 34);
-            this.id_product.TabIndex = 2;
-            // 
-            // quantity
-            // 
-            this.quantity.Location = new System.Drawing.Point(108, 185);
-            this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(100, 34);
-            this.quantity.TabIndex = 3;
-            // 
-            // order_notes
-            // 
-            this.order_notes.Location = new System.Drawing.Point(108, 236);
-            this.order_notes.Name = "order_notes";
-            this.order_notes.Size = new System.Drawing.Size(100, 34);
-            this.order_notes.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(82, 394);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(114, 28);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "ver pedidos ";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(100, 455);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(406, 150);
-            this.dataGridView2.TabIndex = 6;
-            // 
-            // see_orders
-            // 
-            this.see_orders.Location = new System.Drawing.Point(594, 497);
-            this.see_orders.Name = "see_orders";
-            this.see_orders.Size = new System.Drawing.Size(116, 44);
-            this.see_orders.TabIndex = 7;
-            this.see_orders.Text = "ver";
-            this.see_orders.UseVisualStyleBackColor = true;
-            this.see_orders.Click += new System.EventHandler(this.see_orders_Click);
-            // 
-            // show
-            // 
-            this.show.Location = new System.Drawing.Point(481, 218);
-            this.show.Name = "show";
-            this.show.Size = new System.Drawing.Size(142, 52);
-            this.show.TabIndex = 8;
-            this.show.Text = "search";
-            this.show.UseVisualStyleBackColor = true;
-            this.show.Click += new System.EventHandler(this.show_Click);
-            // 
-            // search
-            // 
-            this.search.Location = new System.Drawing.Point(503, 152);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(100, 34);
-            this.search.TabIndex = 9;
+            this.show_order.Location = new System.Drawing.Point(544, 316);
+            this.show_order.Name = "show_order";
+            this.show_order.Size = new System.Drawing.Size(100, 34);
+            this.show_order.TabIndex = 10;
             // 
             // Start
             // 
@@ -807,8 +816,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -870,6 +879,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Button show;
+        private System.Windows.Forms.TextBox show_order;
     }
 }
 

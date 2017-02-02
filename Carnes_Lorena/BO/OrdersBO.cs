@@ -23,9 +23,9 @@ namespace BO
             return odao.GetAllOrders();
         }
 
-        public Orders ShowOrder(int id)
+        public Orders ShowOrderById(int id)
         {
-            return odao.ShowOrder(id);
+            return odao.ShowOrderById(id);
         }
 
     }
