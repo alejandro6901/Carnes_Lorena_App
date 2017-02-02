@@ -27,5 +27,15 @@ namespace BO
         {
             return odao.ShowOrderById(id);
         }
+
+        public Orders ShowOrderByClient(string client)
+        {
+            return odao.ShowOrderByClient(client);
+        }
+
+        public int UpdateOrder(Orders o)
+        {
+            return odao.UpdateOrder(o);
+        }
     }
 }

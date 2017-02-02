@@ -15,6 +15,7 @@ namespace Entities
         public string Product { get; set; }
         public double Quantity { get; set; }
         public string Notes { get; set; }
-        public bool State { get; set; }
+        public int State { get; set; }
+        public string Created { get; set; }
     }
 }

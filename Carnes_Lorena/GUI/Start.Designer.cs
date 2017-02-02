@@ -70,6 +70,17 @@
             this.pnl_several = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_by_client = new System.Windows.Forms.Button();
+            this.search_by_client = new System.Windows.Forms.TextBox();
+            this.checkstate = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.product = new System.Windows.Forms.TextBox();
+            this.client = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.TextBox();
             this.show = new System.Windows.Forms.Button();
             this.see_orders = new System.Windows.Forms.Button();
@@ -84,15 +95,13 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.moveFrame = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.show_order = new System.Windows.Forms.TextBox();
-            this.client = new System.Windows.Forms.TextBox();
-            this.product = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.editar = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txt_id_order = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.created = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             office_tab = new System.Windows.Forms.TabPage();
             office_tab.SuspendLayout();
             this.pnl_header.SuspendLayout();
@@ -619,6 +628,16 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.created);
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
+            this.tabPage2.Controls.Add(this.txt_id_order);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.editar);
+            this.tabPage2.Controls.Add(this.btn_by_client);
+            this.tabPage2.Controls.Add(this.search_by_client);
+            this.tabPage2.Controls.Add(this.checkstate);
             this.tabPage2.Controls.Add(this.label19);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label17);
@@ -627,7 +646,6 @@
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.product);
             this.tabPage2.Controls.Add(this.client);
-            this.tabPage2.Controls.Add(this.show_order);
             this.tabPage2.Controls.Add(this.search);
             this.tabPage2.Controls.Add(this.show);
             this.tabPage2.Controls.Add(this.see_orders);
@@ -647,37 +665,132 @@
             this.tabPage2.Text = "Procesos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btn_by_client
+            // 
+            this.btn_by_client.Location = new System.Drawing.Point(626, 179);
+            this.btn_by_client.Name = "btn_by_client";
+            this.btn_by_client.Size = new System.Drawing.Size(142, 51);
+            this.btn_by_client.TabIndex = 21;
+            this.btn_by_client.Text = "show by client";
+            this.btn_by_client.UseVisualStyleBackColor = true;
+            this.btn_by_client.Click += new System.EventHandler(this.btn_by_client_Click);
+            // 
+            // search_by_client
+            // 
+            this.search_by_client.Location = new System.Drawing.Point(501, 179);
+            this.search_by_client.Name = "search_by_client";
+            this.search_by_client.Size = new System.Drawing.Size(100, 34);
+            this.search_by_client.TabIndex = 20;
+            // 
+            // checkstate
+            // 
+            this.checkstate.AutoSize = true;
+            this.checkstate.Location = new System.Drawing.Point(310, 85);
+            this.checkstate.Name = "checkstate";
+            this.checkstate.Size = new System.Drawing.Size(73, 32);
+            this.checkstate.TabIndex = 19;
+            this.checkstate.Text = "State";
+            this.checkstate.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(33, 332);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(78, 28);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "product";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(33, 279);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 28);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "client";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(33, 236);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 28);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "Notes";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(33, 185);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 28);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Quantity";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(33, 125);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 28);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "id_product";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(33, 73);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 28);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "id_client";
+            // 
+            // product
+            // 
+            this.product.Location = new System.Drawing.Point(141, 329);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(100, 34);
+            this.product.TabIndex = 12;
+            // 
+            // client
+            // 
+            this.client.Location = new System.Drawing.Point(140, 276);
+            this.client.Name = "client";
+            this.client.Size = new System.Drawing.Size(100, 34);
+            this.client.TabIndex = 11;
+            // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(503, 152);
+            this.search.Location = new System.Drawing.Point(501, 85);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(100, 34);
             this.search.TabIndex = 9;
             // 
             // show
             // 
-            this.show.Location = new System.Drawing.Point(481, 218);
+            this.show.Location = new System.Drawing.Point(626, 76);
             this.show.Name = "show";
             this.show.Size = new System.Drawing.Size(142, 52);
             this.show.TabIndex = 8;
-            this.show.Text = "show";
+            this.show.Text = "show by id";
             this.show.UseVisualStyleBackColor = true;
             this.show.Click += new System.EventHandler(this.show_Click);
             // 
             // see_orders
             // 
-            this.see_orders.Location = new System.Drawing.Point(594, 497);
+            this.see_orders.Location = new System.Drawing.Point(319, 434);
             this.see_orders.Name = "see_orders";
             this.see_orders.Size = new System.Drawing.Size(116, 44);
             this.see_orders.TabIndex = 7;
-            this.see_orders.Text = "ver";
+            this.see_orders.Text = "ver todos";
             this.see_orders.UseVisualStyleBackColor = true;
             this.see_orders.Click += new System.EventHandler(this.see_orders_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(100, 455);
+            this.dataGridView2.Location = new System.Drawing.Point(86, 495);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(406, 150);
             this.dataGridView2.TabIndex = 6;
@@ -685,7 +798,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(82, 394);
+            this.label9.Location = new System.Drawing.Point(68, 434);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(114, 28);
             this.label9.TabIndex = 5;
@@ -795,80 +908,63 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Carnes Lorena";
             // 
-            // show_order
+            // editar
             // 
-            this.show_order.Location = new System.Drawing.Point(544, 316);
-            this.show_order.Name = "show_order";
-            this.show_order.Size = new System.Drawing.Size(100, 34);
-            this.show_order.TabIndex = 10;
+            this.editar.Location = new System.Drawing.Point(596, 307);
+            this.editar.Name = "editar";
+            this.editar.Size = new System.Drawing.Size(113, 53);
+            this.editar.TabIndex = 22;
+            this.editar.Text = "editar";
+            this.editar.UseVisualStyleBackColor = true;
+            this.editar.Click += new System.EventHandler(this.editar_Click);
             // 
-            // client
+            // label20
             // 
-            this.client.Location = new System.Drawing.Point(140, 276);
-            this.client.Name = "client";
-            this.client.Size = new System.Drawing.Size(100, 34);
-            this.client.TabIndex = 11;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(247, 191);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 28);
+            this.label20.TabIndex = 23;
+            this.label20.Text = "KG";
             // 
-            // product
+            // label21
             // 
-            this.product.Location = new System.Drawing.Point(141, 329);
-            this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(100, 34);
-            this.product.TabIndex = 12;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(40, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(81, 28);
+            this.label21.TabIndex = 24;
+            this.label21.Text = "id_order";
             // 
-            // label14
+            // txt_id_order
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(33, 73);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 28);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "id_client";
+            this.txt_id_order.Location = new System.Drawing.Point(141, 30);
+            this.txt_id_order.Name = "txt_id_order";
+            this.txt_id_order.Size = new System.Drawing.Size(100, 34);
+            this.txt_id_order.TabIndex = 25;
             // 
-            // label15
+            // dateTimePicker1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(33, 125);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(101, 28);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "id_product";
+            this.dateTimePicker1.Location = new System.Drawing.Point(773, 28);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 34);
+            this.dateTimePicker1.TabIndex = 26;
             // 
-            // label16
+            // created
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(33, 185);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 28);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Quantity";
+            this.created.Location = new System.Drawing.Point(141, 378);
+            this.created.Name = "created";
+            this.created.Size = new System.Drawing.Size(141, 34);
+            this.created.TabIndex = 27;
             // 
-            // label17
+            // label22
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(33, 236);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 28);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Notes";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(33, 279);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 28);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "cliente";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(33, 332);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(89, 28);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "producto";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(33, 381);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 28);
+            this.label22.TabIndex = 28;
+            this.label22.Text = "created";
             // 
             // Start
             // 
@@ -963,7 +1059,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Button show;
-        private System.Windows.Forms.TextBox show_order;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
@@ -972,6 +1067,16 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox product;
         private System.Windows.Forms.TextBox client;
+        private System.Windows.Forms.CheckBox checkstate;
+        private System.Windows.Forms.Button btn_by_client;
+        private System.Windows.Forms.TextBox search_by_client;
+        private System.Windows.Forms.Button editar;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txt_id_order;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox created;
     }
 }
 

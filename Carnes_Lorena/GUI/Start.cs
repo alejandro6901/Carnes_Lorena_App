@@ -204,6 +204,8 @@ namespace GUI
 
         private void Start_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Value = DateTime.Today;
         }
 
         private void order_Click(object sender, EventArgs e)
@@ -215,6 +217,7 @@ namespace GUI
             o.Notes = order_notes.Text;
             o.Client = client.Text;
             o.Product = product.Text;
+            o.Created = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
             OrdersBO obo = new OrdersBO();
             if (obo.RegisterOrder(o))
             {
@@ -231,9 +234,96 @@ namespace GUI
 
         private void show_Click(object sender, EventArgs e)
         {
+            OrdersBO obo = new OrdersBO();
+            Orders o = new Orders();
+            o = obo.ShowOrderById(Int32.Parse(search.Text));
+            if (o.Id > 0)
+            {
+                txt_id_order.Text = o.Id.ToString();
+                id_client.Text = o.Id_Client.ToString();
+                id_product.Text = o.Id_Product.ToString();
+                quantity.Text = o.Quantity.ToString();
+                order_notes.Text = o.Notes;
+                client.Text = o.Client;
+                product.Text = o.Product;
+                created.Text = o.Created;
+                if (o.State == 1)
+                {
+                    checkstate.Checked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentran órdenes de cliente");
+            }
+        }
+
+        private void btn_by_client_Click(object sender, EventArgs e)
+        {
             OrdersBO sbo = new OrdersBO();
             Orders o = new Orders();
-            o = sbo.ShowOrderById(Int32.Parse(search.Text));
+            o = sbo.ShowOrderByClient(search_by_client.Text);
+            if (o.Id > 0)
+            {
+                id_client.Text = o.Id_Client.ToString();
+                id_product.Text = o.Id_Product.ToString();
+                quantity.Text = o.Quantity.ToString() + " KG";
+                order_notes.Text = o.Notes;
+                client.Text = o.Client;
+                product.Text = o.Product;
+                if (o.State == 1)
+                {
+                    checkstate.Checked = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se encuentran órdenes de cliente");
+            }
+        }
+
+        private void editar_Click(object sender, EventArgs e)
+        {
+            DateTime iDate;
+            iDate = dateTimePicker1.Value.Date;
+            Orders o = new Orders();
+            o.Id = Int32.Parse(txt_id_order.Text);
+            o.Id_Client = Int32.Parse(id_client.Text);
+            o.Id_Product = id_product.Text;
+            o.Quantity = Double.Parse(quantity.Text);
+            o.Notes = order_notes.Text;
+            o.Client = client.Text;
+            o.Product = product.Text;
+            o.Created = iDate.ToString();
+            if (checkstate.Checked)
+            {
+                o.State = 1;
+            }
+            OrdersBO obo = new OrdersBO();
+            int id_order = obo.UpdateOrder(o);
+            if (id_order > 0)
+            {
+                o = obo.ShowOrderById(id_order);
+                if (o.Id > 0)
+                {
+                    txt_id_order.Text = o.Id.ToString();
+                    id_client.Text = o.Id_Client.ToString();
+                    id_product.Text = o.Id_Product.ToString();
+                    quantity.Text = o.Quantity.ToString();
+                    order_notes.Text = o.Notes;
+                    client.Text = o.Client;
+                    product.Text = o.Product;
+                    created.Text = o.Created;
+                    if (o.State == 1)
+                    {
+                        checkstate.Checked = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encuentran órdenes de cliente");
+                }
+            }
         }
     }
 }
