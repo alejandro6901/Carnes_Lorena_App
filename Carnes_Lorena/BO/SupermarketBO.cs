@@ -22,5 +22,10 @@ namespace BO
         {
             return spdao.GetAllSupermarkets();
         }
+
+        public DataTable GetByName(string name)
+        {
+            return spdao.GetByName(name);
+        }
     }
 }

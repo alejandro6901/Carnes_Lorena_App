@@ -30,12 +30,22 @@ namespace BO
 
         public Orders ShowOrderByClient(string client)
         {
-            return odao.ShowOrderByClient(client);
+            return odao.ShowOrdersByClient(client);
         }
 
         public int UpdateOrder(Orders o)
         {
             return odao.UpdateOrder(o);
+        }
+
+        public DataSet GetAllOrdersOfDispatch()
+        {
+            return odao.GetAllOrdersOfDispatch();
+        }
+
+        public DataSet GetAllOrdersOfProcess()
+        {
+            return odao.GetAllOrdersOfProcess();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Entities
         public int Phone2 { get; set; }
         public string Mail { get; set; }
         public string Notes { get; set; }
-        public int Id_Route { get; set; }
+        public string Route { get; set; }
         public int Id_Global { get; set; }
 
     }

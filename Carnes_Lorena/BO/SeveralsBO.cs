@@ -22,5 +22,10 @@ namespace BO
         {
             return svdao.GetAllSeverals();
         }
+
+        public DataTable GetByName(string name)
+        {
+            return svdao.GetByName(name);
+        }
     }
 }

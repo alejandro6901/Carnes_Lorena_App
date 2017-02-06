@@ -22,5 +22,10 @@ namespace BO
         {
             return sdao.GetAllSchools();
         }
+
+        public DataTable GetByName(string name)
+        {
+            return sdao.GetByName(name);
+        }
     }
 }

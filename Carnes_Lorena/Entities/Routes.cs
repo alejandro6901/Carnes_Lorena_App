@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class Routes
+    public class Routes
     {
         public int Id { get; set; }
         public string Named { get; set; }
+         
     }
 }

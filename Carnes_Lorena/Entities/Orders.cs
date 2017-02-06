@@ -16,6 +16,8 @@ namespace Entities
         public double Quantity { get; set; }
         public string Notes { get; set; }
         public int State { get; set; }
+        public int Department { get; set; }
         public string Created { get; set; }
+        public string Delivery { get; set; }
     }
 }

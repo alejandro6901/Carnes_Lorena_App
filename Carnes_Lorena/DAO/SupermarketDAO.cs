@@ -62,12 +62,13 @@ namespace DAO
                     con.Open();
                     tran = con.BeginTransaction();
                     string sql = @"INSERT INTO public.customers(
-                                    named)
-                                 VALUES (:n) returning id";
+                                    named, type)
+                                 VALUES (:n, :t) returning id";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
                     cmd.Parameters.AddWithValue("n", c.Named);
+                    cmd.Parameters.AddWithValue("t", 2);
                     c.Id = Convert.ToInt32(cmd.ExecuteScalar());
 
                     tran.Commit();
@@ -100,6 +101,32 @@ namespace DAO
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public DataTable GetByName(string name)
+        {
+            var ds = new DataSet();
+            var dt = new DataTable();
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                {
+                    con.Open();
+                    string sql = @"SELECT * FROM public.supermarkets
+                                    WHERE named = '" + name + "'";
+
+                    var da = new NpgsqlDataAdapter(sql, con);
+                    ds.Reset();
+
+                    da.Fill(ds);
+                    dt = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return dt;
         }
     }
 }

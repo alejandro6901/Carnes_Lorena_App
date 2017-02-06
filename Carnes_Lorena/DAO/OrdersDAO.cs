@@ -17,8 +17,9 @@ namespace DAO
                     con.Open();
                     tran = con.BeginTransaction();
                     string sql = @"INSERT INTO public.orders(
-                                      id_client, id_product, quantity, notes, client, product, state, created)
-                                VALUES(:ic, :ip, :q, :n, :cl, :pr, :st, :cr) returning id";
+                                      id_client, id_product, quantity, notes, client, product, state, created, 
+                                      delivery, department)
+                                VALUES(:ic, :ip, :q, :n, :cl, :pr, :st, :cr, :dl, :dp) returning id";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
@@ -30,6 +31,8 @@ namespace DAO
                     cmd.Parameters.AddWithValue("pr", o.Product);
                     cmd.Parameters.AddWithValue("st", o.State);
                     cmd.Parameters.AddWithValue("cr", o.Created);
+                    cmd.Parameters.AddWithValue("dl", o.Delivery);
+                    cmd.Parameters.AddWithValue("dp", o.Department);
 
                     o.Id = Convert.ToInt32(cmd.ExecuteScalar());
                     tran.Commit();
@@ -89,6 +92,8 @@ namespace DAO
                         result.Product = reader.GetString(6);
                         result.State = reader.GetInt16(7);
                         result.Created = reader.GetString(8);
+                        result.Delivery = reader.GetString(9);
+                        result.Department = reader.GetInt16(10);
                     }
                     con.Close();
                     return result;
@@ -100,7 +105,8 @@ namespace DAO
             }
         }
 
-        public Orders ShowOrderByClient(string client)
+        //Here should be similar to GetAllOrders(), I'm getting just one ***************************fix
+        public Orders ShowOrdersByClient(string client)
         {
             Orders result = new Orders();
             try
@@ -124,6 +130,9 @@ namespace DAO
                         result.Client = reader.GetString(5);
                         result.Product = reader.GetString(6);
                         result.State = reader.GetInt16(7);
+                        result.Created = reader.GetString(8);
+                        result.Delivery = reader.GetString(9);
+                        result.Department = reader.GetInt16(10);
                     }
                     con.Close();
                     return result;
@@ -147,7 +156,7 @@ namespace DAO
                     tran = con.BeginTransaction();
                     string sql = @"UPDATE public.orders SET
                                       id_client = :ic, id_product = :ip, quantity = :q, notes = :n, 
-                                      client = :cl, product = :pr, state = :st
+                                      client = :cl, product = :pr, state = :st, delivery = :dl, department = :dp
                                    WHERE id = :id returning id;";
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
@@ -159,6 +168,8 @@ namespace DAO
                     cmd.Parameters.AddWithValue("cl", o.Client);
                     cmd.Parameters.AddWithValue("pr", o.Product);
                     cmd.Parameters.AddWithValue("st", o.State);
+                    cmd.Parameters.AddWithValue("dl", o.Delivery);
+                    cmd.Parameters.AddWithValue("dp", o.Department);
 
                     o.Id = Convert.ToInt32(cmd.ExecuteScalar());
                     tran.Commit();
@@ -172,5 +183,46 @@ namespace DAO
             }
         }
 
+        public DataSet GetAllOrdersOfDispatch()
+        {
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                {
+                    con.Open();
+                    NpgsqlDataAdapter daOrders = new NpgsqlDataAdapter("SELECT * FROM public.orders" 
+                         + " WHERE department = 0;", con);
+                    DataSet ds = new DataSet();
+                    daOrders.Fill(ds, "orders");
+                    con.Close();
+                    return ds;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public DataSet GetAllOrdersOfProcess()
+        {
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                {
+                    con.Open();
+                    NpgsqlDataAdapter daOrders = new NpgsqlDataAdapter("SELECT * FROM public.orders"
+                         + " WHERE department = 1;", con);
+                    DataSet ds = new DataSet();
+                    daOrders.Fill(ds, "orders");
+                    con.Close();
+                    return ds;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

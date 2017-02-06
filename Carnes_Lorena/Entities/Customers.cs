@@ -10,5 +10,6 @@ namespace Entities
     {
         public int Id { get; set; }
         public string Named { get; set; }
+        public int Type { get; set; }
     }
 }

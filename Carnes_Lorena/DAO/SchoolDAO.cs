@@ -23,7 +23,7 @@ namespace DAO
                         tran = con.BeginTransaction();
                         string sql = @"INSERT INTO public.schools(
                                       named, ubication, contact1, contact2, tel1, tel2, mail, notes, 
-                                      id_route, id_global)
+                                      route, id_global)
                                 VALUES(:n, :u, :c1, :c2, :t1, :t2, :m, :ns, :ir, :ig) returning id";
 
                         NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
@@ -36,7 +36,7 @@ namespace DAO
                         cmd.Parameters.AddWithValue("t2", s.Phone2);
                         cmd.Parameters.AddWithValue("m", s.Mail);
                         cmd.Parameters.AddWithValue("ns", s.Notes);
-                        cmd.Parameters.AddWithValue("ir", s.Id_Route);
+                        cmd.Parameters.AddWithValue("ir", s.Route);
                         cmd.Parameters.AddWithValue("ig", s.Id_Global);
 
                         s.Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -63,12 +63,13 @@ namespace DAO
                     con.Open();
                     tran = con.BeginTransaction();
                     string sql = @"INSERT INTO public.customers(
-                                    named)
-                                 VALUES (:n) returning id";
+                                    named, type)
+                                 VALUES (:n, :t) returning id";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
                     cmd.Parameters.AddWithValue("n", c.Named);
+                    cmd.Parameters.AddWithValue("t", 1);
                     c.Id = Convert.ToInt32(cmd.ExecuteScalar());
 
                     tran.Commit();
@@ -101,6 +102,32 @@ namespace DAO
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public DataTable GetByName(string name)
+        {
+            var ds = new DataSet();
+            var dt = new DataTable();
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                {
+                    con.Open();
+                    string sql = @"SELECT * FROM public.schools
+                                    WHERE named = '" + name + "'";
+
+                    var da = new NpgsqlDataAdapter(sql, con);
+                    ds.Reset();
+
+                    da.Fill(ds);
+                    dt = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return dt;
         }
     }
 }
