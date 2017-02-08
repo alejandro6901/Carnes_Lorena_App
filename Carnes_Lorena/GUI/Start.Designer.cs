@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage office_tab;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_header = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -160,7 +160,26 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tbcl_pedidos = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tbcl_pedidos_clientes = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dtgw_orders_sch = new System.Windows.Forms.DataGridView();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dtgw_orders_supers = new System.Windows.Forms.DataGridView();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.dtgw_orders_sev = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.dtgw_orders_products = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.rch_notes_ord = new System.Windows.Forms.RichTextBox();
+            this.lblIdProduct = new System.Windows.Forms.Label();
+            this.lblIdOrder = new System.Windows.Forms.Label();
+            this.lblIdClient = new System.Windows.Forms.Label();
+            this.rbn_procesos = new System.Windows.Forms.RadioButton();
+            this.rbn_despacho = new System.Windows.Forms.RadioButton();
+            this.label47 = new System.Windows.Forms.Label();
             this.dtp_delivery_ord = new System.Windows.Forms.DateTimePicker();
             this.dtp_reminder_ord = new System.Windows.Forms.DateTimePicker();
             this.txt_prod_ord = new System.Windows.Forms.TextBox();
@@ -179,25 +198,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.moveFrame = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.rbn_despacho = new System.Windows.Forms.RadioButton();
-            this.rbn_procesos = new System.Windows.Forms.RadioButton();
-            this.lblIdClient = new System.Windows.Forms.Label();
-            this.lblIdOrder = new System.Windows.Forms.Label();
-            this.lblIdProduct = new System.Windows.Forms.Label();
-            this.rch_notes_ord = new System.Windows.Forms.RichTextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.tbcl_pedidos = new System.Windows.Forms.TabControl();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tbcl_pedidos_clientes = new System.Windows.Forms.TabControl();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.dtgw_orders_sch = new System.Windows.Forms.DataGridView();
-            this.dtgw_orders_supers = new System.Windows.Forms.DataGridView();
-            this.dtgw_orders_sev = new System.Windows.Forms.DataGridView();
-            this.dtgw_orders_products = new System.Windows.Forms.DataGridView();
             office_tab = new System.Windows.Forms.TabPage();
             office_tab.SuspendLayout();
             this.pnl_header.SuspendLayout();
@@ -222,19 +222,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_products)).BeginInit();
             this.panel2.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).BeginInit();
             this.tbcl_pedidos.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.tbcl_pedidos_clientes.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sch)).BeginInit();
+            this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_supers)).BeginInit();
+            this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sev)).BeginInit();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_products)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).BeginInit();
             this.SuspendLayout();
             // 
             // office_tab
@@ -466,14 +466,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 15F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1633,6 +1633,131 @@
             this.tabPage4.Text = "Pedidos";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // tbcl_pedidos
+            // 
+            this.tbcl_pedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcl_pedidos.Controls.Add(this.tabPage5);
+            this.tbcl_pedidos.Controls.Add(this.tabPage6);
+            this.tbcl_pedidos.Location = new System.Drawing.Point(566, 3);
+            this.tbcl_pedidos.Name = "tbcl_pedidos";
+            this.tbcl_pedidos.SelectedIndex = 0;
+            this.tbcl_pedidos.Size = new System.Drawing.Size(655, 644);
+            this.tbcl_pedidos.TabIndex = 6;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.tbcl_pedidos_clientes);
+            this.tabPage5.Location = new System.Drawing.Point(4, 37);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(647, 603);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "CLIENTES";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tbcl_pedidos_clientes
+            // 
+            this.tbcl_pedidos_clientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage7);
+            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage8);
+            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage9);
+            this.tbcl_pedidos_clientes.Location = new System.Drawing.Point(6, 6);
+            this.tbcl_pedidos_clientes.Name = "tbcl_pedidos_clientes";
+            this.tbcl_pedidos_clientes.SelectedIndex = 0;
+            this.tbcl_pedidos_clientes.Size = new System.Drawing.Size(635, 591);
+            this.tbcl_pedidos_clientes.TabIndex = 0;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dtgw_orders_sch);
+            this.tabPage7.Location = new System.Drawing.Point(4, 37);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(627, 550);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "ESCUELAS";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // dtgw_orders_sch
+            // 
+            this.dtgw_orders_sch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_sch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_sch.Location = new System.Drawing.Point(3, 53);
+            this.dtgw_orders_sch.Name = "dtgw_orders_sch";
+            this.dtgw_orders_sch.Size = new System.Drawing.Size(618, 248);
+            this.dtgw_orders_sch.TabIndex = 0;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.dtgw_orders_supers);
+            this.tabPage8.Location = new System.Drawing.Point(4, 37);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(627, 550);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "SUPERMERCADOS";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dtgw_orders_supers
+            // 
+            this.dtgw_orders_supers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_supers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_supers.Location = new System.Drawing.Point(6, 53);
+            this.dtgw_orders_supers.Name = "dtgw_orders_supers";
+            this.dtgw_orders_supers.Size = new System.Drawing.Size(615, 229);
+            this.dtgw_orders_supers.TabIndex = 0;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.dtgw_orders_sev);
+            this.tabPage9.Location = new System.Drawing.Point(4, 37);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(627, 550);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "VARIOS";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // dtgw_orders_sev
+            // 
+            this.dtgw_orders_sev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_sev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_sev.Location = new System.Drawing.Point(3, 63);
+            this.dtgw_orders_sev.Name = "dtgw_orders_sev";
+            this.dtgw_orders_sev.Size = new System.Drawing.Size(621, 219);
+            this.dtgw_orders_sev.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.dtgw_orders_products);
+            this.tabPage6.Location = new System.Drawing.Point(4, 37);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(647, 603);
+            this.tabPage6.TabIndex = 1;
+            this.tabPage6.Text = "PRODUCTOS";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // dtgw_orders_products
+            // 
+            this.dtgw_orders_products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_products.Location = new System.Drawing.Point(3, 72);
+            this.dtgw_orders_products.Name = "dtgw_orders_products";
+            this.dtgw_orders_products.Size = new System.Drawing.Size(638, 253);
+            this.dtgw_orders_products.TabIndex = 0;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label48);
@@ -1661,6 +1786,81 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(523, 644);
             this.panel4.TabIndex = 0;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(3, 469);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(61, 28);
+            this.label48.TabIndex = 23;
+            this.label48.Text = "Notas";
+            // 
+            // rch_notes_ord
+            // 
+            this.rch_notes_ord.Location = new System.Drawing.Point(55, 500);
+            this.rch_notes_ord.Name = "rch_notes_ord";
+            this.rch_notes_ord.Size = new System.Drawing.Size(380, 96);
+            this.rch_notes_ord.TabIndex = 22;
+            this.rch_notes_ord.Text = "";
+            // 
+            // lblIdProduct
+            // 
+            this.lblIdProduct.AutoSize = true;
+            this.lblIdProduct.Location = new System.Drawing.Point(202, 130);
+            this.lblIdProduct.Name = "lblIdProduct";
+            this.lblIdProduct.Size = new System.Drawing.Size(123, 28);
+            this.lblIdProduct.TabIndex = 21;
+            this.lblIdProduct.Text = "ID_PRODUCT";
+            // 
+            // lblIdOrder
+            // 
+            this.lblIdOrder.AutoSize = true;
+            this.lblIdOrder.Location = new System.Drawing.Point(337, 10);
+            this.lblIdOrder.Name = "lblIdOrder";
+            this.lblIdOrder.Size = new System.Drawing.Size(98, 28);
+            this.lblIdOrder.TabIndex = 20;
+            this.lblIdOrder.Text = "ID_ORDER";
+            // 
+            // lblIdClient
+            // 
+            this.lblIdClient.AutoSize = true;
+            this.lblIdClient.Location = new System.Drawing.Point(367, 59);
+            this.lblIdClient.Name = "lblIdClient";
+            this.lblIdClient.Size = new System.Drawing.Size(108, 28);
+            this.lblIdClient.TabIndex = 19;
+            this.lblIdClient.Text = "ID_CLIENTE";
+            // 
+            // rbn_procesos
+            // 
+            this.rbn_procesos.AutoSize = true;
+            this.rbn_procesos.Location = new System.Drawing.Point(207, 315);
+            this.rbn_procesos.Name = "rbn_procesos";
+            this.rbn_procesos.Size = new System.Drawing.Size(124, 32);
+            this.rbn_procesos.TabIndex = 18;
+            this.rbn_procesos.Text = "PROCESOS";
+            this.rbn_procesos.UseVisualStyleBackColor = true;
+            // 
+            // rbn_despacho
+            // 
+            this.rbn_despacho.AutoSize = true;
+            this.rbn_despacho.Checked = true;
+            this.rbn_despacho.Location = new System.Drawing.Point(20, 315);
+            this.rbn_despacho.Name = "rbn_despacho";
+            this.rbn_despacho.Size = new System.Drawing.Size(126, 32);
+            this.rbn_despacho.TabIndex = 17;
+            this.rbn_despacho.TabStop = true;
+            this.rbn_despacho.Text = "DESPACHO";
+            this.rbn_despacho.UseVisualStyleBackColor = true;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(220, 263);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(35, 28);
+            this.label47.TabIndex = 16;
+            this.label47.Text = "KG";
             // 
             // dtp_delivery_ord
             // 
@@ -1847,206 +2047,6 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Carnes Lorena";
             // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(220, 263);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(35, 28);
-            this.label47.TabIndex = 16;
-            this.label47.Text = "KG";
-            // 
-            // rbn_despacho
-            // 
-            this.rbn_despacho.AutoSize = true;
-            this.rbn_despacho.Location = new System.Drawing.Point(20, 315);
-            this.rbn_despacho.Name = "rbn_despacho";
-            this.rbn_despacho.Size = new System.Drawing.Size(126, 32);
-            this.rbn_despacho.TabIndex = 17;
-            this.rbn_despacho.TabStop = true;
-            this.rbn_despacho.Text = "DESPACHO";
-            this.rbn_despacho.UseVisualStyleBackColor = true;
-            // 
-            // rbn_procesos
-            // 
-            this.rbn_procesos.AutoSize = true;
-            this.rbn_procesos.Location = new System.Drawing.Point(207, 315);
-            this.rbn_procesos.Name = "rbn_procesos";
-            this.rbn_procesos.Size = new System.Drawing.Size(124, 32);
-            this.rbn_procesos.TabIndex = 18;
-            this.rbn_procesos.TabStop = true;
-            this.rbn_procesos.Text = "PROCESOS";
-            this.rbn_procesos.UseVisualStyleBackColor = true;
-            // 
-            // lblIdClient
-            // 
-            this.lblIdClient.AutoSize = true;
-            this.lblIdClient.Location = new System.Drawing.Point(367, 59);
-            this.lblIdClient.Name = "lblIdClient";
-            this.lblIdClient.Size = new System.Drawing.Size(108, 28);
-            this.lblIdClient.TabIndex = 19;
-            this.lblIdClient.Text = "ID_CLIENTE";
-            // 
-            // lblIdOrder
-            // 
-            this.lblIdOrder.AutoSize = true;
-            this.lblIdOrder.Location = new System.Drawing.Point(337, 10);
-            this.lblIdOrder.Name = "lblIdOrder";
-            this.lblIdOrder.Size = new System.Drawing.Size(98, 28);
-            this.lblIdOrder.TabIndex = 20;
-            this.lblIdOrder.Text = "ID_ORDER";
-            // 
-            // lblIdProduct
-            // 
-            this.lblIdProduct.AutoSize = true;
-            this.lblIdProduct.Location = new System.Drawing.Point(202, 130);
-            this.lblIdProduct.Name = "lblIdProduct";
-            this.lblIdProduct.Size = new System.Drawing.Size(123, 28);
-            this.lblIdProduct.TabIndex = 21;
-            this.lblIdProduct.Text = "ID_PRODUCT";
-            // 
-            // rch_notes_ord
-            // 
-            this.rch_notes_ord.Location = new System.Drawing.Point(55, 500);
-            this.rch_notes_ord.Name = "rch_notes_ord";
-            this.rch_notes_ord.Size = new System.Drawing.Size(380, 96);
-            this.rch_notes_ord.TabIndex = 22;
-            this.rch_notes_ord.Text = "";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(3, 469);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(61, 28);
-            this.label48.TabIndex = 23;
-            this.label48.Text = "Notas";
-            // 
-            // tbcl_pedidos
-            // 
-            this.tbcl_pedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbcl_pedidos.Controls.Add(this.tabPage5);
-            this.tbcl_pedidos.Controls.Add(this.tabPage6);
-            this.tbcl_pedidos.Location = new System.Drawing.Point(566, 3);
-            this.tbcl_pedidos.Name = "tbcl_pedidos";
-            this.tbcl_pedidos.SelectedIndex = 0;
-            this.tbcl_pedidos.Size = new System.Drawing.Size(655, 644);
-            this.tbcl_pedidos.TabIndex = 6;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.tbcl_pedidos_clientes);
-            this.tabPage5.Location = new System.Drawing.Point(4, 37);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(647, 603);
-            this.tabPage5.TabIndex = 0;
-            this.tabPage5.Text = "CLIENTES";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.dtgw_orders_products);
-            this.tabPage6.Location = new System.Drawing.Point(4, 37);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(647, 603);
-            this.tabPage6.TabIndex = 1;
-            this.tabPage6.Text = "PRODUCTOS";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tbcl_pedidos_clientes
-            // 
-            this.tbcl_pedidos_clientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage7);
-            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage8);
-            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage9);
-            this.tbcl_pedidos_clientes.Location = new System.Drawing.Point(6, 6);
-            this.tbcl_pedidos_clientes.Name = "tbcl_pedidos_clientes";
-            this.tbcl_pedidos_clientes.SelectedIndex = 0;
-            this.tbcl_pedidos_clientes.Size = new System.Drawing.Size(635, 591);
-            this.tbcl_pedidos_clientes.TabIndex = 0;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.dtgw_orders_sch);
-            this.tabPage7.Location = new System.Drawing.Point(4, 37);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(627, 550);
-            this.tabPage7.TabIndex = 0;
-            this.tabPage7.Text = "ESCUELAS";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.dtgw_orders_supers);
-            this.tabPage8.Location = new System.Drawing.Point(4, 37);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(627, 550);
-            this.tabPage8.TabIndex = 1;
-            this.tabPage8.Text = "SUPERMERCADOS";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.dtgw_orders_sev);
-            this.tabPage9.Location = new System.Drawing.Point(4, 37);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(627, 550);
-            this.tabPage9.TabIndex = 2;
-            this.tabPage9.Text = "VARIOS";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // dtgw_orders_sch
-            // 
-            this.dtgw_orders_sch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgw_orders_sch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgw_orders_sch.Location = new System.Drawing.Point(3, 53);
-            this.dtgw_orders_sch.Name = "dtgw_orders_sch";
-            this.dtgw_orders_sch.Size = new System.Drawing.Size(618, 248);
-            this.dtgw_orders_sch.TabIndex = 0;
-            // 
-            // dtgw_orders_supers
-            // 
-            this.dtgw_orders_supers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgw_orders_supers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgw_orders_supers.Location = new System.Drawing.Point(6, 53);
-            this.dtgw_orders_supers.Name = "dtgw_orders_supers";
-            this.dtgw_orders_supers.Size = new System.Drawing.Size(615, 214);
-            this.dtgw_orders_supers.TabIndex = 0;
-            // 
-            // dtgw_orders_sev
-            // 
-            this.dtgw_orders_sev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgw_orders_sev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgw_orders_sev.Location = new System.Drawing.Point(3, 63);
-            this.dtgw_orders_sev.Name = "dtgw_orders_sev";
-            this.dtgw_orders_sev.Size = new System.Drawing.Size(621, 204);
-            this.dtgw_orders_sev.TabIndex = 0;
-            // 
-            // dtgw_orders_products
-            // 
-            this.dtgw_orders_products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgw_orders_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgw_orders_products.Location = new System.Drawing.Point(3, 72);
-            this.dtgw_orders_products.Name = "dtgw_orders_products";
-            this.dtgw_orders_products.Size = new System.Drawing.Size(638, 238);
-            this.dtgw_orders_products.TabIndex = 0;
-            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2094,20 +2094,20 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tbcl_pedidos.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tbcl_pedidos_clientes.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sch)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_supers)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sev)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_products)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).EndInit();
-            this.tbcl_pedidos.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tbcl_pedidos_clientes.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_supers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sev)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_products)).EndInit();
             this.ResumeLayout(false);
 
         }

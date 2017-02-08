@@ -283,6 +283,8 @@ namespace GUI
 
         private void Start_Load(object sender, EventArgs e)
         {
+            lblIdClient.Visible = false;
+            lblIdProduct.Visible = false;
             Load_Routes();
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Value = DateTime.Today;
@@ -300,19 +302,41 @@ namespace GUI
             AutocompleteProductsCode();
             AutocompleteProductsName();
             GetLastId();
+            Refresh_Orders_Info();
+            
+        }
 
+        public void Refresh_Orders_Info()
+        {
+            Refresh_Orders_Schools();
+            Refresh_Orders_Supermarkets();
+            Refresh_Orders_Severals();
+            Refresh_Orders_Products();
+        }
+
+        public void Refresh_Orders_Schools()
+        {
             scbo = new SchoolsBO();
             dtgw_orders_sch.DataSource = scbo.GetAllSchools();
             dtgw_orders_sch.DataMember = "schools";
+        }
 
+        public void Refresh_Orders_Supermarkets()
+        {
             spbo = new SupermarketBO();
             dtgw_orders_supers.DataSource = spbo.GetAllSupermarkets();
             dtgw_orders_supers.DataMember = "supermarkets";
+        }
 
+        public void Refresh_Orders_Severals()
+        {
             svbo = new SeveralsBO();
             dtgw_orders_sev.DataSource = svbo.GetAllSeverals();
             dtgw_orders_sev.DataMember = "severals";
+        }
 
+        public void Refresh_Orders_Products()
+        {
             pbo = new ProductBO();
             dtgw_orders_products.DataSource = pbo.GetAllProducts();
             dtgw_orders_products.DataMember = "products";
@@ -540,13 +564,12 @@ namespace GUI
 
         private void btn_save_client_Click(object sender, EventArgs e)
         {
-            //verificar tipo de usuario
-            //llamar método encargado del tipo
             if (rbn_school.Checked)
             {
                 if (Save_School())
                 {
                     MessageBox.Show("Cliente guardado con éxito");
+                    Refresh_Orders_Schools();
                 }
                 else
                 {
@@ -558,6 +581,7 @@ namespace GUI
                 if (Save_Super())
                 {
                     MessageBox.Show("Cliente guardado con éxito");
+                    Refresh_Orders_Supermarkets();
                 }
                 else
                 {
@@ -569,6 +593,7 @@ namespace GUI
                 if (Save_Several())
                 {
                     MessageBox.Show("Cliente guardado con éxito");
+                    Refresh_Orders_Severals();
                 }
                 else
                 {
@@ -674,6 +699,7 @@ namespace GUI
             if (pbo.RegisterProduct(p))
             {
                 MessageBox.Show("Producto registrado con éxito");
+                Refresh_Orders_Products();
             }
             else
             {
