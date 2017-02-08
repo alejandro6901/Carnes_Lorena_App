@@ -19,5 +19,6 @@ namespace Entities
         public int Department { get; set; }
         public string Created { get; set; }
         public string Delivery { get; set; }
+        public string Reminder { get; set; }
     }
 }

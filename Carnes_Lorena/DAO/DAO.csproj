@@ -70,6 +70,7 @@
     <Compile Include="Configuracion.cs" />
     <Compile Include="CustomerDAO.cs" />
     <Compile Include="OrdersDAO.cs" />
+    <Compile Include="ProductDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteDAO.cs" />
     <Compile Include="SchoolDAO.cs" />

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage office_tab;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_header = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -107,10 +107,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.order = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_search_severals = new System.Windows.Forms.Button();
+            this.btn_search_supers = new System.Windows.Forms.Button();
             this.btn_search_schools = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_client_by_clic = new System.Windows.Forms.Button();
             this.txt_client_name = new System.Windows.Forms.TextBox();
-            this.btn_search_name = new System.Windows.Forms.Button();
+            this.btn_search_client = new System.Windows.Forms.Button();
             this.btn_all_clients = new System.Windows.Forms.Button();
             this.dtgw_clients = new System.Windows.Forms.DataGridView();
             this.pnl_add_client = new System.Windows.Forms.Panel();
@@ -124,7 +127,7 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.rch_notes = new System.Windows.Forms.RichTextBox();
+            this.rch_client_notes = new System.Windows.Forms.RichTextBox();
             this.txt_mail = new System.Windows.Forms.TextBox();
             this.txt_tel2 = new System.Windows.Forms.TextBox();
             this.txt_tel1 = new System.Windows.Forms.TextBox();
@@ -140,13 +143,61 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_search_code = new System.Windows.Forms.Button();
+            this.txt_search_code = new System.Windows.Forms.TextBox();
+            this.txt_search_prod = new System.Windows.Forms.TextBox();
+            this.btn_search_product = new System.Windows.Forms.Button();
+            this.btn_all_products = new System.Windows.Forms.Button();
+            this.dtgw_products = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_save_product = new System.Windows.Forms.Button();
+            this.rch_product_notes = new System.Windows.Forms.RichTextBox();
+            this.txt_prod_name = new System.Windows.Forms.TextBox();
+            this.txt_prod_code = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dtp_delivery_ord = new System.Windows.Forms.DateTimePicker();
+            this.dtp_reminder_ord = new System.Windows.Forms.DateTimePicker();
+            this.txt_prod_ord = new System.Windows.Forms.TextBox();
+            this.txt_quantity_ord = new System.Windows.Forms.TextBox();
+            this.txt_code_ord = new System.Windows.Forms.TextBox();
+            this.btn_confirm_ord = new System.Windows.Forms.Button();
+            this.txt_client_ord = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.moveFrame = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_search_supers = new System.Windows.Forms.Button();
-            this.btn_search_severals = new System.Windows.Forms.Button();
+            this.label47 = new System.Windows.Forms.Label();
+            this.rbn_despacho = new System.Windows.Forms.RadioButton();
+            this.rbn_procesos = new System.Windows.Forms.RadioButton();
+            this.lblIdClient = new System.Windows.Forms.Label();
+            this.lblIdOrder = new System.Windows.Forms.Label();
+            this.lblIdProduct = new System.Windows.Forms.Label();
+            this.rch_notes_ord = new System.Windows.Forms.RichTextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.tbcl_pedidos = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tbcl_pedidos_clientes = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.dtgw_orders_sch = new System.Windows.Forms.DataGridView();
+            this.dtgw_orders_supers = new System.Windows.Forms.DataGridView();
+            this.dtgw_orders_sev = new System.Windows.Forms.DataGridView();
+            this.dtgw_orders_products = new System.Windows.Forms.DataGridView();
             office_tab = new System.Windows.Forms.TabPage();
             office_tab.SuspendLayout();
             this.pnl_header.SuspendLayout();
@@ -166,7 +217,24 @@
             this.pnl_add_client.SuspendLayout();
             this.pnl_features.SuspendLayout();
             this.pnl_routes.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_products)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).BeginInit();
+            this.tbcl_pedidos.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tbcl_pedidos_clientes.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_supers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_products)).BeginInit();
             this.SuspendLayout();
             // 
             // office_tab
@@ -184,7 +252,7 @@
             office_tab.Location = new System.Drawing.Point(4, 49);
             office_tab.Name = "office_tab";
             office_tab.Padding = new System.Windows.Forms.Padding(3);
-            office_tab.Size = new System.Drawing.Size(1236, 696);
+            office_tab.Size = new System.Drawing.Size(1236, 688);
             office_tab.TabIndex = 0;
             office_tab.Text = "Despacho";
             // 
@@ -201,7 +269,7 @@
             this.pnl_header.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnl_header.Location = new System.Drawing.Point(0, -6);
             this.pnl_header.Name = "pnl_header";
-            this.pnl_header.Size = new System.Drawing.Size(203, 606);
+            this.pnl_header.Size = new System.Drawing.Size(203, 598);
             this.pnl_header.TabIndex = 0;
             this.pnl_header.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_header_Paint);
             // 
@@ -216,7 +284,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Light", 15F);
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(3, 561);
+            this.button4.Location = new System.Drawing.Point(3, 553);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 45);
             this.button4.TabIndex = 9;
@@ -301,7 +369,7 @@
             this.pnl_schools.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnl_schools.Location = new System.Drawing.Point(197, -3);
             this.pnl_schools.Name = "pnl_schools";
-            this.pnl_schools.Size = new System.Drawing.Size(936, 603);
+            this.pnl_schools.Size = new System.Drawing.Size(936, 595);
             this.pnl_schools.TabIndex = 0;
             this.pnl_schools.Visible = false;
             this.pnl_schools.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_schools_Paint);
@@ -351,8 +419,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.pnl_main);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(936, 603);
-            this.splitContainer1.SplitterDistance = 288;
+            this.splitContainer1.Size = new System.Drawing.Size(936, 595);
+            this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 3;
             // 
             // button3
@@ -398,14 +466,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Gray;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Light", 15F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -414,7 +482,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(127, 51);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 178);
+            this.dataGridView1.Size = new System.Drawing.Size(642, 174);
             this.dataGridView1.TabIndex = 46;
             this.dataGridView1.TabStop = false;
             // 
@@ -532,7 +600,7 @@
             this.tbData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbData.Location = new System.Drawing.Point(549, 64);
+            this.tbData.Location = new System.Drawing.Point(549, 60);
             this.tbData.Name = "tbData";
             this.tbData.Size = new System.Drawing.Size(345, 200);
             this.tbData.TabIndex = 11;
@@ -631,7 +699,7 @@
             this.pnl_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_main.Location = new System.Drawing.Point(808, 208);
             this.pnl_main.Name = "pnl_main";
-            this.pnl_main.Size = new System.Drawing.Size(160, 48);
+            this.pnl_main.Size = new System.Drawing.Size(160, 44);
             this.pnl_main.TabIndex = 1;
             this.pnl_main.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_main_Paint);
             // 
@@ -643,7 +711,7 @@
             this.pnl_super.BackColor = System.Drawing.Color.BurlyWood;
             this.pnl_super.Location = new System.Drawing.Point(197, -6);
             this.pnl_super.Name = "pnl_super";
-            this.pnl_super.Size = new System.Drawing.Size(944, 626);
+            this.pnl_super.Size = new System.Drawing.Size(944, 618);
             this.pnl_super.TabIndex = 3;
             this.pnl_super.Visible = false;
             this.pnl_super.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
@@ -656,7 +724,7 @@
             this.pnl_several.BackColor = System.Drawing.Color.LightSeaGreen;
             this.pnl_several.Location = new System.Drawing.Point(197, -9);
             this.pnl_several.Name = "pnl_several";
-            this.pnl_several.Size = new System.Drawing.Size(940, 615);
+            this.pnl_several.Size = new System.Drawing.Size(940, 607);
             this.pnl_several.TabIndex = 7;
             // 
             // tabControl1
@@ -676,7 +744,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1244, 749);
+            this.tabControl1.Size = new System.Drawing.Size(1244, 741);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
@@ -722,7 +790,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 49);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1236, 696);
+            this.tabPage2.Size = new System.Drawing.Size(1236, 688);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Procesos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1057,10 +1125,30 @@
             this.tabPage1.Controls.Add(this.pnl_add_client);
             this.tabPage1.Location = new System.Drawing.Point(4, 49);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1236, 696);
+            this.tabPage1.Size = new System.Drawing.Size(1236, 688);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_search_severals
+            // 
+            this.btn_search_severals.Location = new System.Drawing.Point(1020, 595);
+            this.btn_search_severals.Name = "btn_search_severals";
+            this.btn_search_severals.Size = new System.Drawing.Size(189, 67);
+            this.btn_search_severals.TabIndex = 8;
+            this.btn_search_severals.Text = "VARIOS";
+            this.btn_search_severals.UseVisualStyleBackColor = true;
+            this.btn_search_severals.Click += new System.EventHandler(this.btn_search_severals_Click);
+            // 
+            // btn_search_supers
+            // 
+            this.btn_search_supers.Location = new System.Drawing.Point(1020, 516);
+            this.btn_search_supers.Name = "btn_search_supers";
+            this.btn_search_supers.Size = new System.Drawing.Size(189, 67);
+            this.btn_search_supers.TabIndex = 7;
+            this.btn_search_supers.Text = "SUPERMERCADOS";
+            this.btn_search_supers.UseVisualStyleBackColor = true;
+            this.btn_search_supers.Click += new System.EventHandler(this.btn_search_supers_Click);
             // 
             // btn_search_schools
             // 
@@ -1074,14 +1162,25 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_client_by_clic);
             this.panel1.Controls.Add(this.txt_client_name);
-            this.panel1.Controls.Add(this.btn_search_name);
+            this.panel1.Controls.Add(this.btn_search_client);
             this.panel1.Controls.Add(this.btn_all_clients);
             this.panel1.Controls.Add(this.dtgw_clients);
             this.panel1.Location = new System.Drawing.Point(48, 434);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(948, 249);
             this.panel1.TabIndex = 5;
+            // 
+            // btn_client_by_clic
+            // 
+            this.btn_client_by_clic.Location = new System.Drawing.Point(793, 102);
+            this.btn_client_by_clic.Name = "btn_client_by_clic";
+            this.btn_client_by_clic.Size = new System.Drawing.Size(133, 109);
+            this.btn_client_by_clic.TabIndex = 8;
+            this.btn_client_by_clic.Text = "Ver por clic";
+            this.btn_client_by_clic.UseVisualStyleBackColor = true;
+            this.btn_client_by_clic.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // txt_client_name
             // 
@@ -1090,15 +1189,15 @@
             this.txt_client_name.Size = new System.Drawing.Size(192, 34);
             this.txt_client_name.TabIndex = 7;
             // 
-            // btn_search_name
+            // btn_search_client
             // 
-            this.btn_search_name.Location = new System.Drawing.Point(597, 8);
-            this.btn_search_name.Name = "btn_search_name";
-            this.btn_search_name.Size = new System.Drawing.Size(192, 40);
-            this.btn_search_name.TabIndex = 6;
-            this.btn_search_name.Text = "Buscar por Nombre";
-            this.btn_search_name.UseVisualStyleBackColor = true;
-            this.btn_search_name.Click += new System.EventHandler(this.btn_search_name_Click);
+            this.btn_search_client.Location = new System.Drawing.Point(597, 8);
+            this.btn_search_client.Name = "btn_search_client";
+            this.btn_search_client.Size = new System.Drawing.Size(192, 40);
+            this.btn_search_client.TabIndex = 6;
+            this.btn_search_client.Text = "Buscar por Nombre";
+            this.btn_search_client.UseVisualStyleBackColor = true;
+            this.btn_search_client.Click += new System.EventHandler(this.btn_search_name_Click);
             // 
             // btn_all_clients
             // 
@@ -1117,12 +1216,13 @@
             this.dtgw_clients.Name = "dtgw_clients";
             this.dtgw_clients.Size = new System.Drawing.Size(693, 150);
             this.dtgw_clients.TabIndex = 4;
+            this.dtgw_clients.SelectionChanged += new System.EventHandler(this.dtgw_clients_SelectionChanged);
             // 
             // pnl_add_client
             // 
             this.pnl_add_client.Controls.Add(this.btn_save_client);
             this.pnl_add_client.Controls.Add(this.pnl_features);
-            this.pnl_add_client.Controls.Add(this.rch_notes);
+            this.pnl_add_client.Controls.Add(this.rch_client_notes);
             this.pnl_add_client.Controls.Add(this.txt_mail);
             this.pnl_add_client.Controls.Add(this.txt_tel2);
             this.pnl_add_client.Controls.Add(this.txt_tel1);
@@ -1231,13 +1331,13 @@
             this.label33.TabIndex = 0;
             this.label33.Text = "Ubicación";
             // 
-            // rch_notes
+            // rch_client_notes
             // 
-            this.rch_notes.Location = new System.Drawing.Point(102, 225);
-            this.rch_notes.Name = "rch_notes";
-            this.rch_notes.Size = new System.Drawing.Size(295, 68);
-            this.rch_notes.TabIndex = 48;
-            this.rch_notes.Text = "";
+            this.rch_client_notes.Location = new System.Drawing.Point(102, 225);
+            this.rch_client_notes.Name = "rch_client_notes";
+            this.rch_client_notes.Size = new System.Drawing.Size(295, 68);
+            this.rch_client_notes.TabIndex = 48;
+            this.rch_client_notes.Text = "";
             // 
             // txt_mail
             // 
@@ -1365,21 +1465,321 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Location = new System.Drawing.Point(4, 49);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1236, 696);
+            this.tabPage3.Size = new System.Drawing.Size(1236, 688);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Productos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_search_code);
+            this.panel3.Controls.Add(this.txt_search_code);
+            this.panel3.Controls.Add(this.txt_search_prod);
+            this.panel3.Controls.Add(this.btn_search_product);
+            this.panel3.Controls.Add(this.btn_all_products);
+            this.panel3.Controls.Add(this.dtgw_products);
+            this.panel3.Location = new System.Drawing.Point(16, 294);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1105, 249);
+            this.panel3.TabIndex = 6;
+            // 
+            // btn_search_code
+            // 
+            this.btn_search_code.Location = new System.Drawing.Point(877, 14);
+            this.btn_search_code.Name = "btn_search_code";
+            this.btn_search_code.Size = new System.Drawing.Size(192, 40);
+            this.btn_search_code.TabIndex = 9;
+            this.btn_search_code.Text = "Buscar por Código";
+            this.btn_search_code.UseVisualStyleBackColor = true;
+            this.btn_search_code.Click += new System.EventHandler(this.btn_search_code_Click);
+            // 
+            // txt_search_code
+            // 
+            this.txt_search_code.Location = new System.Drawing.Point(679, 17);
+            this.txt_search_code.Name = "txt_search_code";
+            this.txt_search_code.Size = new System.Drawing.Size(192, 34);
+            this.txt_search_code.TabIndex = 8;
+            // 
+            // txt_search_prod
+            // 
+            this.txt_search_prod.Location = new System.Drawing.Point(218, 17);
+            this.txt_search_prod.Name = "txt_search_prod";
+            this.txt_search_prod.Size = new System.Drawing.Size(192, 34);
+            this.txt_search_prod.TabIndex = 7;
+            // 
+            // btn_search_product
+            // 
+            this.btn_search_product.Location = new System.Drawing.Point(416, 14);
+            this.btn_search_product.Name = "btn_search_product";
+            this.btn_search_product.Size = new System.Drawing.Size(192, 40);
+            this.btn_search_product.TabIndex = 6;
+            this.btn_search_product.Text = "Buscar por Nombre";
+            this.btn_search_product.UseVisualStyleBackColor = true;
+            this.btn_search_product.Click += new System.EventHandler(this.btn_search_product_Click);
+            // 
+            // btn_all_products
+            // 
+            this.btn_all_products.Location = new System.Drawing.Point(33, 11);
+            this.btn_all_products.Name = "btn_all_products";
+            this.btn_all_products.Size = new System.Drawing.Size(128, 40);
+            this.btn_all_products.TabIndex = 5;
+            this.btn_all_products.Text = "Todos";
+            this.btn_all_products.UseVisualStyleBackColor = true;
+            this.btn_all_products.Click += new System.EventHandler(this.btn_all_products_Click);
+            // 
+            // dtgw_products
+            // 
+            this.dtgw_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_products.Location = new System.Drawing.Point(83, 82);
+            this.dtgw_products.Name = "dtgw_products";
+            this.dtgw_products.Size = new System.Drawing.Size(693, 150);
+            this.dtgw_products.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btn_save_product);
+            this.panel2.Controls.Add(this.rch_product_notes);
+            this.panel2.Controls.Add(this.txt_prod_name);
+            this.panel2.Controls.Add(this.txt_prod_code);
+            this.panel2.Controls.Add(this.label40);
+            this.panel2.Controls.Add(this.label41);
+            this.panel2.Controls.Add(this.label44);
+            this.panel2.Controls.Add(this.label45);
+            this.panel2.Location = new System.Drawing.Point(16, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1161, 235);
+            this.panel2.TabIndex = 5;
+            // 
+            // btn_save_product
+            // 
+            this.btn_save_product.Location = new System.Drawing.Point(453, 147);
+            this.btn_save_product.Name = "btn_save_product";
+            this.btn_save_product.Size = new System.Drawing.Size(219, 63);
+            this.btn_save_product.TabIndex = 50;
+            this.btn_save_product.Text = "Guardar Producto";
+            this.btn_save_product.UseVisualStyleBackColor = true;
+            this.btn_save_product.Click += new System.EventHandler(this.btn_save_product_Click);
+            // 
+            // rch_product_notes
+            // 
+            this.rch_product_notes.Location = new System.Drawing.Point(115, 147);
+            this.rch_product_notes.Name = "rch_product_notes";
+            this.rch_product_notes.Size = new System.Drawing.Size(295, 68);
+            this.rch_product_notes.TabIndex = 48;
+            this.rch_product_notes.Text = "";
+            // 
+            // txt_prod_name
+            // 
+            this.txt_prod_name.Location = new System.Drawing.Point(443, 69);
+            this.txt_prod_name.Name = "txt_prod_name";
+            this.txt_prod_name.Size = new System.Drawing.Size(334, 34);
+            this.txt_prod_name.TabIndex = 47;
+            // 
+            // txt_prod_code
+            // 
+            this.txt_prod_code.Location = new System.Drawing.Point(115, 69);
+            this.txt_prod_code.Name = "txt_prod_code";
+            this.txt_prod_code.Size = new System.Drawing.Size(214, 34);
+            this.txt_prod_code.TabIndex = 44;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(28, 138);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(61, 28);
+            this.label40.TabIndex = 39;
+            this.label40.Text = "Notas";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(367, 72);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(81, 28);
+            this.label41.TabIndex = 38;
+            this.label41.Text = "Nombre";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(28, 69);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(72, 28);
+            this.label44.TabIndex = 35;
+            this.label44.Text = "Código";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(27, 17);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(163, 28);
+            this.label45.TabIndex = 34;
+            this.label45.Text = "Agregar Producto";
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.tbcl_pedidos);
+            this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Location = new System.Drawing.Point(4, 49);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1236, 696);
+            this.tabPage4.Size = new System.Drawing.Size(1236, 688);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Pedidos";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label48);
+            this.panel4.Controls.Add(this.rch_notes_ord);
+            this.panel4.Controls.Add(this.lblIdProduct);
+            this.panel4.Controls.Add(this.lblIdOrder);
+            this.panel4.Controls.Add(this.lblIdClient);
+            this.panel4.Controls.Add(this.rbn_procesos);
+            this.panel4.Controls.Add(this.rbn_despacho);
+            this.panel4.Controls.Add(this.label47);
+            this.panel4.Controls.Add(this.dtp_delivery_ord);
+            this.panel4.Controls.Add(this.dtp_reminder_ord);
+            this.panel4.Controls.Add(this.txt_prod_ord);
+            this.panel4.Controls.Add(this.txt_quantity_ord);
+            this.panel4.Controls.Add(this.txt_code_ord);
+            this.panel4.Controls.Add(this.btn_confirm_ord);
+            this.panel4.Controls.Add(this.txt_client_ord);
+            this.panel4.Controls.Add(this.label46);
+            this.panel4.Controls.Add(this.label43);
+            this.panel4.Controls.Add(this.label42);
+            this.panel4.Controls.Add(this.label39);
+            this.panel4.Controls.Add(this.label38);
+            this.panel4.Controls.Add(this.label37);
+            this.panel4.Controls.Add(this.label36);
+            this.panel4.Location = new System.Drawing.Point(27, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(523, 644);
+            this.panel4.TabIndex = 0;
+            // 
+            // dtp_delivery_ord
+            // 
+            this.dtp_delivery_ord.Location = new System.Drawing.Point(235, 419);
+            this.dtp_delivery_ord.Name = "dtp_delivery_ord";
+            this.dtp_delivery_ord.Size = new System.Drawing.Size(200, 34);
+            this.dtp_delivery_ord.TabIndex = 15;
+            // 
+            // dtp_reminder_ord
+            // 
+            this.dtp_reminder_ord.Location = new System.Drawing.Point(8, 419);
+            this.dtp_reminder_ord.Name = "dtp_reminder_ord";
+            this.dtp_reminder_ord.Size = new System.Drawing.Size(200, 34);
+            this.dtp_reminder_ord.TabIndex = 14;
+            // 
+            // txt_prod_ord
+            // 
+            this.txt_prod_ord.Location = new System.Drawing.Point(108, 186);
+            this.txt_prod_ord.Name = "txt_prod_ord";
+            this.txt_prod_ord.Size = new System.Drawing.Size(385, 34);
+            this.txt_prod_ord.TabIndex = 13;
+            this.txt_prod_ord.Leave += new System.EventHandler(this.txt_prod_ord_Leave);
+            // 
+            // txt_quantity_ord
+            // 
+            this.txt_quantity_ord.Location = new System.Drawing.Point(114, 257);
+            this.txt_quantity_ord.Name = "txt_quantity_ord";
+            this.txt_quantity_ord.Size = new System.Drawing.Size(93, 34);
+            this.txt_quantity_ord.TabIndex = 12;
+            // 
+            // txt_code_ord
+            // 
+            this.txt_code_ord.Location = new System.Drawing.Point(108, 130);
+            this.txt_code_ord.Name = "txt_code_ord";
+            this.txt_code_ord.Size = new System.Drawing.Size(93, 34);
+            this.txt_code_ord.TabIndex = 9;
+            this.txt_code_ord.Leave += new System.EventHandler(this.txt_code_ord_Leave);
+            // 
+            // btn_confirm_ord
+            // 
+            this.btn_confirm_ord.Location = new System.Drawing.Point(4, 602);
+            this.btn_confirm_ord.Name = "btn_confirm_ord";
+            this.btn_confirm_ord.Size = new System.Drawing.Size(251, 39);
+            this.btn_confirm_ord.TabIndex = 8;
+            this.btn_confirm_ord.Text = "CONFIRMAR PEDIDO";
+            this.btn_confirm_ord.UseVisualStyleBackColor = true;
+            this.btn_confirm_ord.Click += new System.EventHandler(this.button5_Click_2);
+            // 
+            // txt_client_ord
+            // 
+            this.txt_client_ord.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_client_ord.Location = new System.Drawing.Point(108, 59);
+            this.txt_client_ord.Name = "txt_client_ord";
+            this.txt_client_ord.Size = new System.Drawing.Size(259, 34);
+            this.txt_client_ord.TabIndex = 7;
+            this.txt_client_ord.Leave += new System.EventHandler(this.txt_client_ord_Leave);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(240, 388);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(131, 28);
+            this.label46.TabIndex = 6;
+            this.label46.Text = "Fecha Entrega";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(3, 388);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(174, 28);
+            this.label43.TabIndex = 5;
+            this.label43.Text = "Fecha Recordatorio";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(15, 257);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(87, 28);
+            this.label42.TabIndex = 4;
+            this.label42.Text = "Cantidad";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(13, 186);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(89, 28);
+            this.label39.TabIndex = 3;
+            this.label39.Text = "Producto";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(13, 133);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(72, 28);
+            this.label38.TabIndex = 2;
+            this.label38.Text = "Código";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(13, 65);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(69, 28);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Cliente";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(13, 10);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(120, 28);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "Crear Pedido";
             // 
             // btnMinimize
             // 
@@ -1447,32 +1847,212 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Carnes Lorena";
             // 
-            // btn_search_supers
+            // label47
             // 
-            this.btn_search_supers.Location = new System.Drawing.Point(1020, 516);
-            this.btn_search_supers.Name = "btn_search_supers";
-            this.btn_search_supers.Size = new System.Drawing.Size(189, 67);
-            this.btn_search_supers.TabIndex = 7;
-            this.btn_search_supers.Text = "SUPERMERCADOS";
-            this.btn_search_supers.UseVisualStyleBackColor = true;
-            this.btn_search_supers.Click += new System.EventHandler(this.btn_search_supers_Click);
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(220, 263);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(35, 28);
+            this.label47.TabIndex = 16;
+            this.label47.Text = "KG";
             // 
-            // btn_search_severals
+            // rbn_despacho
             // 
-            this.btn_search_severals.Location = new System.Drawing.Point(1020, 595);
-            this.btn_search_severals.Name = "btn_search_severals";
-            this.btn_search_severals.Size = new System.Drawing.Size(189, 67);
-            this.btn_search_severals.TabIndex = 8;
-            this.btn_search_severals.Text = "VARIOS";
-            this.btn_search_severals.UseVisualStyleBackColor = true;
-            this.btn_search_severals.Click += new System.EventHandler(this.btn_search_severals_Click);
+            this.rbn_despacho.AutoSize = true;
+            this.rbn_despacho.Location = new System.Drawing.Point(20, 315);
+            this.rbn_despacho.Name = "rbn_despacho";
+            this.rbn_despacho.Size = new System.Drawing.Size(126, 32);
+            this.rbn_despacho.TabIndex = 17;
+            this.rbn_despacho.TabStop = true;
+            this.rbn_despacho.Text = "DESPACHO";
+            this.rbn_despacho.UseVisualStyleBackColor = true;
+            // 
+            // rbn_procesos
+            // 
+            this.rbn_procesos.AutoSize = true;
+            this.rbn_procesos.Location = new System.Drawing.Point(207, 315);
+            this.rbn_procesos.Name = "rbn_procesos";
+            this.rbn_procesos.Size = new System.Drawing.Size(124, 32);
+            this.rbn_procesos.TabIndex = 18;
+            this.rbn_procesos.TabStop = true;
+            this.rbn_procesos.Text = "PROCESOS";
+            this.rbn_procesos.UseVisualStyleBackColor = true;
+            // 
+            // lblIdClient
+            // 
+            this.lblIdClient.AutoSize = true;
+            this.lblIdClient.Location = new System.Drawing.Point(367, 59);
+            this.lblIdClient.Name = "lblIdClient";
+            this.lblIdClient.Size = new System.Drawing.Size(108, 28);
+            this.lblIdClient.TabIndex = 19;
+            this.lblIdClient.Text = "ID_CLIENTE";
+            // 
+            // lblIdOrder
+            // 
+            this.lblIdOrder.AutoSize = true;
+            this.lblIdOrder.Location = new System.Drawing.Point(337, 10);
+            this.lblIdOrder.Name = "lblIdOrder";
+            this.lblIdOrder.Size = new System.Drawing.Size(98, 28);
+            this.lblIdOrder.TabIndex = 20;
+            this.lblIdOrder.Text = "ID_ORDER";
+            // 
+            // lblIdProduct
+            // 
+            this.lblIdProduct.AutoSize = true;
+            this.lblIdProduct.Location = new System.Drawing.Point(202, 130);
+            this.lblIdProduct.Name = "lblIdProduct";
+            this.lblIdProduct.Size = new System.Drawing.Size(123, 28);
+            this.lblIdProduct.TabIndex = 21;
+            this.lblIdProduct.Text = "ID_PRODUCT";
+            // 
+            // rch_notes_ord
+            // 
+            this.rch_notes_ord.Location = new System.Drawing.Point(55, 500);
+            this.rch_notes_ord.Name = "rch_notes_ord";
+            this.rch_notes_ord.Size = new System.Drawing.Size(380, 96);
+            this.rch_notes_ord.TabIndex = 22;
+            this.rch_notes_ord.Text = "";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(3, 469);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(61, 28);
+            this.label48.TabIndex = 23;
+            this.label48.Text = "Notas";
+            // 
+            // tbcl_pedidos
+            // 
+            this.tbcl_pedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcl_pedidos.Controls.Add(this.tabPage5);
+            this.tbcl_pedidos.Controls.Add(this.tabPage6);
+            this.tbcl_pedidos.Location = new System.Drawing.Point(566, 3);
+            this.tbcl_pedidos.Name = "tbcl_pedidos";
+            this.tbcl_pedidos.SelectedIndex = 0;
+            this.tbcl_pedidos.Size = new System.Drawing.Size(655, 644);
+            this.tbcl_pedidos.TabIndex = 6;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.tbcl_pedidos_clientes);
+            this.tabPage5.Location = new System.Drawing.Point(4, 37);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(647, 603);
+            this.tabPage5.TabIndex = 0;
+            this.tabPage5.Text = "CLIENTES";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.dtgw_orders_products);
+            this.tabPage6.Location = new System.Drawing.Point(4, 37);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(647, 603);
+            this.tabPage6.TabIndex = 1;
+            this.tabPage6.Text = "PRODUCTOS";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tbcl_pedidos_clientes
+            // 
+            this.tbcl_pedidos_clientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage7);
+            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage8);
+            this.tbcl_pedidos_clientes.Controls.Add(this.tabPage9);
+            this.tbcl_pedidos_clientes.Location = new System.Drawing.Point(6, 6);
+            this.tbcl_pedidos_clientes.Name = "tbcl_pedidos_clientes";
+            this.tbcl_pedidos_clientes.SelectedIndex = 0;
+            this.tbcl_pedidos_clientes.Size = new System.Drawing.Size(635, 591);
+            this.tbcl_pedidos_clientes.TabIndex = 0;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dtgw_orders_sch);
+            this.tabPage7.Location = new System.Drawing.Point(4, 37);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(627, 550);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "ESCUELAS";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.dtgw_orders_supers);
+            this.tabPage8.Location = new System.Drawing.Point(4, 37);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(627, 550);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "SUPERMERCADOS";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.dtgw_orders_sev);
+            this.tabPage9.Location = new System.Drawing.Point(4, 37);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(627, 550);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "VARIOS";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // dtgw_orders_sch
+            // 
+            this.dtgw_orders_sch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_sch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_sch.Location = new System.Drawing.Point(3, 53);
+            this.dtgw_orders_sch.Name = "dtgw_orders_sch";
+            this.dtgw_orders_sch.Size = new System.Drawing.Size(618, 248);
+            this.dtgw_orders_sch.TabIndex = 0;
+            // 
+            // dtgw_orders_supers
+            // 
+            this.dtgw_orders_supers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_supers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_supers.Location = new System.Drawing.Point(6, 53);
+            this.dtgw_orders_supers.Name = "dtgw_orders_supers";
+            this.dtgw_orders_supers.Size = new System.Drawing.Size(615, 214);
+            this.dtgw_orders_supers.TabIndex = 0;
+            // 
+            // dtgw_orders_sev
+            // 
+            this.dtgw_orders_sev.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_sev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_sev.Location = new System.Drawing.Point(3, 63);
+            this.dtgw_orders_sev.Name = "dtgw_orders_sev";
+            this.dtgw_orders_sev.Size = new System.Drawing.Size(621, 204);
+            this.dtgw_orders_sev.TabIndex = 0;
+            // 
+            // dtgw_orders_products
+            // 
+            this.dtgw_orders_products.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgw_orders_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_orders_products.Location = new System.Drawing.Point(3, 72);
+            this.dtgw_orders_products.Name = "dtgw_orders_products";
+            this.dtgw_orders_products.Size = new System.Drawing.Size(638, 238);
+            this.dtgw_orders_products.TabIndex = 0;
             // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1217, 780);
+            this.ClientSize = new System.Drawing.Size(1217, 772);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.btnExit);
@@ -1507,7 +2087,27 @@
             this.pnl_features.ResumeLayout(false);
             this.pnl_features.PerformLayout();
             this.pnl_routes.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_products)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.moveFrame)).EndInit();
+            this.tbcl_pedidos.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tbcl_pedidos_clientes.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_supers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_sev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_products)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1600,14 +2200,14 @@
         private System.Windows.Forms.Button order;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_client_name;
-        private System.Windows.Forms.Button btn_search_name;
+        private System.Windows.Forms.Button btn_search_client;
         private System.Windows.Forms.Button btn_all_clients;
         private System.Windows.Forms.DataGridView dtgw_clients;
         private System.Windows.Forms.Panel pnl_add_client;
         private System.Windows.Forms.Panel pnl_features;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.RichTextBox rch_notes;
+        private System.Windows.Forms.RichTextBox rch_client_notes;
         private System.Windows.Forms.TextBox txt_mail;
         private System.Windows.Forms.TextBox txt_tel2;
         private System.Windows.Forms.TextBox txt_tel1;
@@ -1632,6 +2232,57 @@
         private System.Windows.Forms.Button btn_search_schools;
         private System.Windows.Forms.Button btn_search_severals;
         private System.Windows.Forms.Button btn_search_supers;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_save_product;
+        private System.Windows.Forms.RichTextBox rch_product_notes;
+        private System.Windows.Forms.TextBox txt_prod_name;
+        private System.Windows.Forms.TextBox txt_prod_code;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txt_search_prod;
+        private System.Windows.Forms.Button btn_search_product;
+        private System.Windows.Forms.Button btn_all_products;
+        private System.Windows.Forms.DataGridView dtgw_products;
+        private System.Windows.Forms.Button btn_search_code;
+        private System.Windows.Forms.TextBox txt_search_code;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txt_client_ord;
+        private System.Windows.Forms.Button btn_client_by_clic;
+        private System.Windows.Forms.TextBox txt_prod_ord;
+        private System.Windows.Forms.TextBox txt_quantity_ord;
+        private System.Windows.Forms.TextBox txt_code_ord;
+        private System.Windows.Forms.Button btn_confirm_ord;
+        private System.Windows.Forms.DateTimePicker dtp_delivery_ord;
+        private System.Windows.Forms.DateTimePicker dtp_reminder_ord;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.RadioButton rbn_procesos;
+        private System.Windows.Forms.RadioButton rbn_despacho;
+        private System.Windows.Forms.Label lblIdProduct;
+        private System.Windows.Forms.Label lblIdOrder;
+        private System.Windows.Forms.Label lblIdClient;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.RichTextBox rch_notes_ord;
+        private System.Windows.Forms.TabControl tbcl_pedidos;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabControl tbcl_pedidos_clientes;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dtgw_orders_sch;
+        private System.Windows.Forms.DataGridView dtgw_orders_supers;
+        private System.Windows.Forms.DataGridView dtgw_orders_sev;
+        private System.Windows.Forms.DataGridView dtgw_orders_products;
     }
 }
 

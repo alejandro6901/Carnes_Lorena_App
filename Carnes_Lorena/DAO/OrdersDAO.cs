@@ -18,8 +18,8 @@ namespace DAO
                     tran = con.BeginTransaction();
                     string sql = @"INSERT INTO public.orders(
                                       id_client, id_product, quantity, notes, client, product, state, created, 
-                                      delivery, department)
-                                VALUES(:ic, :ip, :q, :n, :cl, :pr, :st, :cr, :dl, :dp) returning id";
+                                      delivery, reminder, department)
+                                VALUES(:ic, :ip, :q, :n, :cl, :pr, :st, :cr, :dl, :rm, :dp) returning id";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
@@ -32,6 +32,7 @@ namespace DAO
                     cmd.Parameters.AddWithValue("st", o.State);
                     cmd.Parameters.AddWithValue("cr", o.Created);
                     cmd.Parameters.AddWithValue("dl", o.Delivery);
+                    cmd.Parameters.AddWithValue("rm", o.Reminder);
                     cmd.Parameters.AddWithValue("dp", o.Department);
 
                     o.Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -222,6 +223,29 @@ namespace DAO
             catch (Exception e)
             {
                 throw new Exception(e.Message);
+            }
+        }
+
+        public int GetLastId()
+        {
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                {
+                    con.Open();
+                    string sql = "select id from public.orders order by id desc limit 1";
+                    NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        return reader.GetInt32(0);
+                    }
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

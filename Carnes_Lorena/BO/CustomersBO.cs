@@ -27,5 +27,15 @@ namespace BO
         {
             return cdao.GetByName(name);
         }
+
+        public DataTable Get_Clients_Name()
+        {
+            return cdao.Get_Clients_Name();
+        }
+
+        public int GetIdByName(string name)
+        {
+            return cdao.GetIdByName(name);
+        }
     }
 }

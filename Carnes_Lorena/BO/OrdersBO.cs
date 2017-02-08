@@ -47,5 +47,10 @@ namespace BO
         {
             return odao.GetAllOrdersOfProcess();
         }
+
+        public int GetLastId()
+        {
+            return odao.GetLastId();
+        }
     }
 }

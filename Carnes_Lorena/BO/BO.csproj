@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CustomersBO.cs" />
     <Compile Include="OrdersBO.cs" />
+    <Compile Include="ProductBO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteBO.cs" />
     <Compile Include="SchoolsBO.cs" />
