@@ -12,6 +12,5 @@ namespace Entities
         public string Code { get; set; }
         public string Named { get; set; }
         public string Notes { get; set; }
-
     }
 }

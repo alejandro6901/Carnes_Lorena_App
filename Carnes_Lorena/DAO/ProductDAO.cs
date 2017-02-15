@@ -1,22 +1,23 @@
-﻿using System;
+﻿using Entities;
+using Npgsql;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Npgsql;
-using Entities;
-using System.Data;
 
 namespace DAO
 {
     public class ProductDAO
     {
+
         public bool RegisterProduct(Product p)
         {
             NpgsqlTransaction tran = null;
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     tran = con.BeginTransaction();
@@ -46,7 +47,7 @@ namespace DAO
         {
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     NpgsqlDataAdapter daProducts = new NpgsqlDataAdapter("SELECT * FROM public.product;", con);
@@ -62,17 +63,17 @@ namespace DAO
             }
         }
 
-        public DataTable GetByCode(string code)
+        public DataTable GetByName(string name)
         {
             var ds = new DataSet();
             var dt = new DataTable();
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT * FROM public.product
-                                    WHERE code = '" + code + "'";
+                                    WHERE named = '" + name + "'";
 
                     var da = new NpgsqlDataAdapter(sql, con);
                     ds.Reset();
@@ -88,17 +89,17 @@ namespace DAO
             return dt;
         }
 
-        public DataTable GetByName(string name)
+        public DataTable GetByCode(string code)
         {
             var ds = new DataSet();
             var dt = new DataTable();
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT * FROM public.product
-                                    WHERE named = '" + name + "'";
+                                    WHERE code = '" + code + "'";
 
                     var da = new NpgsqlDataAdapter(sql, con);
                     ds.Reset();
@@ -120,7 +121,7 @@ namespace DAO
             var dt = new DataTable();
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT code FROM public.product";
@@ -144,7 +145,7 @@ namespace DAO
             var dt = new DataTable();
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT named FROM public.product";
@@ -166,7 +167,7 @@ namespace DAO
         {
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT named,id
@@ -192,7 +193,7 @@ namespace DAO
         {
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT code, id
@@ -214,5 +215,4 @@ namespace DAO
             }
         }
     }
-
 }

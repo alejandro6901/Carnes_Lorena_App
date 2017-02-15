@@ -18,9 +18,19 @@ namespace BO
             rdao = new RouteDAO();
         }
 
-        public List<Routes> Load_Routes()
+        public List<Route> Load_Routes()
         {
             return rdao.Load_Routes();
+        }
+
+        public DataSet GetAllRoutes()
+        {
+            return rdao.GetAllRoutes();
+        }
+
+        public bool RegisterRoute(Route r)
+        {
+            return rdao.RegisterRoute(r);
         }
     }
 }

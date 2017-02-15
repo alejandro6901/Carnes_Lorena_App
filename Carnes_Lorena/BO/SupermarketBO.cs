@@ -1,6 +1,11 @@
 ﻿using DAO;
 using Entities;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BO
 {
@@ -13,7 +18,12 @@ namespace BO
             spdao = new SupermarketDAO();
         }
 
-        public bool RegisterSupermarket(Supermarkets sp)
+        public DataTable GetByName(string name)
+        {
+            return spdao.GetByName(name);
+        }
+
+        public bool RegisterSupermarket(Supermarket sp)
         {
             return spdao.RegisterSupermarket(sp);
         }
@@ -21,11 +31,6 @@ namespace BO
         public DataSet GetAllSupermarkets()
         {
             return spdao.GetAllSupermarkets();
-        }
-
-        public DataTable GetByName(string name)
-        {
-            return spdao.GetByName(name);
         }
     }
 }

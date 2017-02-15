@@ -1,15 +1,45 @@
-﻿using System;
+﻿using Entities;
 using Npgsql;
-using Entities;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DAO
 {
     public class SchoolDAO
     {
-        public bool RegisterSchool(Schools s)
+        public DataTable GetByName(string name)
         {
-            Customers c = new Customers();
+            var ds = new DataSet();
+            var dt = new DataTable();
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
+                {
+                    con.Open();
+                    string sql = @"SELECT * FROM public.schools
+                                    WHERE named = '" + name + "'";
+
+                    var da = new NpgsqlDataAdapter(sql, con);
+                    ds.Reset();
+
+                    da.Fill(ds);
+                    dt = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return dt;
+        }
+
+        public bool RegisterSchool(School s)
+        {
+            Customer c = new Customer();
             c.Named = s.Named;
             s.Id_Global = Register(c);
             if (s.Id_Global > 0)
@@ -17,7 +47,7 @@ namespace DAO
                 NpgsqlTransaction tran = null;
                 try
                 {
-                    using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                    using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                     {
                         con.Open();
                         tran = con.BeginTransaction();
@@ -53,12 +83,12 @@ namespace DAO
             return false;
         }
 
-        public int Register(Customers c)
+        public int Register(Customer c)
         {
             NpgsqlTransaction tran = null;
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     tran = con.BeginTransaction();
@@ -88,7 +118,7 @@ namespace DAO
         {
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     NpgsqlDataAdapter daSchools = new NpgsqlDataAdapter("SELECT * FROM public.schools;", con);
@@ -102,32 +132,6 @@ namespace DAO
             {
                 throw new Exception(e.Message);
             }
-        }
-
-        public DataTable GetByName(string name)
-        {
-            var ds = new DataSet();
-            var dt = new DataTable();
-            try
-            {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
-                {
-                    con.Open();
-                    string sql = @"SELECT * FROM public.schools
-                                    WHERE named = '" + name + "'";
-
-                    var da = new NpgsqlDataAdapter(sql, con);
-                    ds.Reset();
-
-                    da.Fill(ds);
-                    dt = ds.Tables[0];
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            return dt;
         }
     }
 }

@@ -1,7 +1,11 @@
-﻿using System;
-using Npgsql;
-using Entities;
+﻿using Npgsql;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entities;
 
 namespace DAO
 {
@@ -11,7 +15,7 @@ namespace DAO
         {
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     NpgsqlDataAdapter daCustomers = new NpgsqlDataAdapter("SELECT * FROM public.customers;", con);
@@ -25,7 +29,6 @@ namespace DAO
             {
                 throw new Exception(e.Message);
             }
-
         }
 
         public int GetByName(string name)
@@ -33,7 +36,7 @@ namespace DAO
             int result = 0;
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT type FROM public.customers WHERE named = :n";
@@ -65,7 +68,7 @@ namespace DAO
             var dt = new DataTable();
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
                     string sql = @"SELECT named FROM public.customers";
@@ -83,15 +86,15 @@ namespace DAO
             return dt;
         }
 
-        public int GetIdByName(string name)
+        public string GetIdByName(string name)
         {
-            int result = 0;
+            string result = "";
             try
             {
-                using (NpgsqlConnection con = new NpgsqlConnection(Configuracion.CadenaConexion))
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
                 {
                     con.Open();
-                    string sql = @"SELECT id FROM public.customers WHERE named = :n";
+                    string sql = @"SELECT id, type FROM public.customers WHERE named = :n";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
@@ -100,9 +103,7 @@ namespace DAO
 
                     if (reader.Read())
                     {
-                        result = reader.GetInt16(0);
-                        con.Close();
-                        return result;
+                        result = reader.GetInt16(0) + "%" + reader.GetInt16(1);
                     }
                     con.Close();
                     return result;

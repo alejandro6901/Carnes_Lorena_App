@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8362250B-EC0D-4C48-9F47-6B6900CA4C0F}</ProjectGuid>
+    <ProjectGuid>{CFCDAB30-301E-4B9D-BA8C-80216C7E79BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAO</RootNamespace>
@@ -67,24 +67,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuracion.cs" />
+    <Compile Include="Configuration.cs" />
     <Compile Include="CustomerDAO.cs" />
-    <Compile Include="OrdersDAO.cs" />
+    <Compile Include="OrderDAO.cs" />
     <Compile Include="ProductDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteDAO.cs" />
     <Compile Include="SchoolDAO.cs" />
-    <Compile Include="SeveralsDAO.cs" />
+    <Compile Include="SeveralDAO.cs" />
     <Compile Include="SupermarketDAO.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{19d3a76e-6211-4aff-ba91-2d930c5d8bd4}</Project>
-      <Name>Entities</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{3B3F64E1-FADE-49B2-A41E-3BFB8E729614}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

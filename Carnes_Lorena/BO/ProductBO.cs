@@ -1,11 +1,11 @@
-﻿using System;
+﻿using DAO;
+using Entities;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities;
-using DAO;
-using System.Data;
 
 namespace BO
 {
@@ -18,14 +18,14 @@ namespace BO
             pdao = new ProductDAO();
         }
 
-        public bool RegisterProduct(Product p)
-        {
-            return pdao.RegisterProduct(p);
-        }
-
         public DataSet GetAllProducts()
         {
             return pdao.GetAllProducts();
+        }
+
+        public DataTable GetByName(string name)
+        {
+            return pdao.GetByName(name);
         }
 
         public DataTable GetByCode(string code)
@@ -33,9 +33,9 @@ namespace BO
             return pdao.GetByCode(code);
         }
 
-        public DataTable GetByName(string name)
+        public bool RegisterProduct(Product p)
         {
-            return pdao.GetByName(name);
+            return pdao.RegisterProduct(p);
         }
 
         public DataTable Get_Products_Code()
