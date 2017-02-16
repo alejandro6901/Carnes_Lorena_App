@@ -51,7 +51,7 @@ namespace DAO
                     {
                         con.Open();
                         tran = con.BeginTransaction();
-                        string sql = @"INSERT INTO public.schools(
+                        string sql = @"INSERT INTO public.supermarkets(
                                       named, ubication, contact1, contact2, tel1, tel2, mail, notes, 
                                       id_global)
                                 VALUES(:n, :u, :c1, :c2, :t1, :t2, :m, :ns, :ig) returning id";

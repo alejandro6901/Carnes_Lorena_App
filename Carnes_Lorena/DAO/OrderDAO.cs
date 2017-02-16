@@ -132,9 +132,9 @@ namespace DAO
                     con.Open();
                     tran = con.BeginTransaction();
                     string sql = @"INSERT INTO public.items(
-                                      id_client, id_product, quantity, notes, client, product, state, created, 
+                                      id_client, id_product, quantity, notes, client, product, product_code, state, created, 
                                       delivery, reminder, department, client_type, num_order, oem)
-                                VALUES(:ic, :ip, :q, :n, :cl, :pr, :st, :cr, :dl, :rm, :dp, :ct, :no, :oe) returning id";
+                                VALUES(:ic, :ip, :q, :n, :cl, :pr, :prc, :st, :cr, :dl, :rm, :dp, :ct, :no, :oe) returning id";
 
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
 
@@ -145,6 +145,7 @@ namespace DAO
                     cmd.Parameters.AddWithValue("cl", i.Client);
                     cmd.Parameters.AddWithValue("ct", i.Client_Type);
                     cmd.Parameters.AddWithValue("pr", i.Product);
+                    cmd.Parameters.AddWithValue("prc", i.Product_Code);
                     cmd.Parameters.AddWithValue("st", i.State);
                     cmd.Parameters.AddWithValue("cr", i.Created);
                     cmd.Parameters.AddWithValue("dl", i.Delivery);
@@ -238,6 +239,83 @@ namespace DAO
             catch (Exception e)
             {
                 throw new Exception(e.Message);
+            }
+        }
+
+        public DataSet GetItemsByOrder(int num_order)
+        {
+            try
+            {
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
+                {
+                    con.Open();
+                    NpgsqlDataAdapter daOrders = new NpgsqlDataAdapter("SELECT * FROM public.items"
+                         + " WHERE num_order = '" + num_order + "';", con);
+                    DataSet ds = new DataSet();
+                    daOrders.Fill(ds, "items");
+                    con.Close();
+                    return ds;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public LinkedList<int> GetTodayReminders(string date)
+        {
+            try
+            {
+                LinkedList<int> orders = new LinkedList<int>();
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
+                {
+                    con.Open();
+                    string sql = "select num_order from orders where reminder = '" + date + "';";
+                    NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        orders.AddLast(reader.GetInt32(0));
+
+                    }
+                }
+                return orders;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public LinkedList<Item> GetTodayRemItems(string date)
+        {
+            try
+            {
+                LinkedList<Item> items = new LinkedList<Item>();
+                using (NpgsqlConnection con = new NpgsqlConnection(Configuration.CadenaConexion))
+                {
+                    con.Open();
+                    string sql = @"select num_order, client, quantity, notes, oem, state, department, delivery, 
+                                    product, product_code from items where reminder = '" + date + "';";
+                    NpgsqlCommand cmd = new NpgsqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("rm", date);
+                    NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        items.AddLast(new Item { Num_Order = reader.GetInt32(0), Client = reader.GetString(1), Quantity = double.Parse(reader.GetString(2)),
+                            Notes = reader.GetString(3), Oem = reader.GetInt32(4), State = reader.GetInt16(5), Department = reader.GetInt16(6),
+                            Delivery = reader.GetString(7), Product = reader.GetString(8), Product_Code = reader.GetString(9)});
+                    }
+                }
+                return items;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

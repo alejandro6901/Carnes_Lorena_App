@@ -27,6 +27,7 @@ namespace GUI
         SeveralBO svbo;
         string gb_client_name;
         DataTable dtadd;
+        DataTable dtItem;
         LinkedList<Item> ordersList;
         List<string> list_clients;
         List<string> list_product_codes;
@@ -63,6 +64,7 @@ namespace GUI
 
         private void Main_Load(object sender, EventArgs e)
         {
+            tabControl4.TabPages.Remove(tabPage21);
             ordersList = new LinkedList<Item>();
             dtadd = new DataTable();
             dtadd.Columns.Add("N° ORDEN");
@@ -94,6 +96,24 @@ namespace GUI
             dtp_delivery_ord.Value = DateTime.Today;
             dtp_delivery_ord.MinDate = DateTime.Now; //disable past days
         }
+
+        private void CreateDtItemCol()
+        {
+            dtItem = new DataTable();
+            dtItem.Columns.Add("N° ORDEN");
+            dtItem.Columns.Add("CÓDIGO");
+            dtItem.Columns.Add("PRODUCTO");
+            dtItem.Columns.Add("KG");
+        }
+
+        private void CreateDtProdCol()
+        {
+            dtItem = new DataTable();
+            dtItem.Columns.Add("CÓDIGO");
+            dtItem.Columns.Add("NOMBRE");
+            dtItem.Columns.Add("NOTA");
+        }
+
 
         private void AutocompleteClientText()
         {
@@ -281,8 +301,17 @@ namespace GUI
 
         public bool Save_School()
         {
+            string route = "";
             if (!(txt_name.Text.Trim().Equals("")))
             {
+                if (cbx_routes.SelectedItem == null)
+                {
+                    route = "SIN ASIGNAR";
+                }
+                else
+                {
+                    route = cbx_routes.SelectedItem.ToString();
+                }
                 school = new School();
                 school.Named = txt_name.Text.Trim().ToUpper();
                 school.Ubication = txt_ubication.Text.Trim().ToUpper();
@@ -292,9 +321,10 @@ namespace GUI
                 school.Phone2 = Int32.Parse(txt_tel2.Text);
                 school.Mail = txt_mail.Text.Trim();
                 school.Notes = rch_client_notes.Text.Trim().ToUpper();
-                school.Route = cbx_routes.SelectedItem.ToString();
+                school.Route = route;
                 scbo = new SchoolBO();
                 return scbo.RegisterSchool(school);
+
             }
             return false;
         }
@@ -337,6 +367,7 @@ namespace GUI
         {
             RouteBO rbo = new RouteBO();
             List<Route> rs = rbo.Load_Routes();
+            cbx_routes.Items.Clear();
             foreach (Route r in rs)
             {
                 cbx_routes.Items.Add(r.Named);
@@ -418,6 +449,8 @@ namespace GUI
             pbo = new ProductBO();
             dtgw_products.DataSource = pbo.GetAllProducts();
             dtgw_products.DataMember = "products";
+
+
         }
 
         private void btn_search_product_Click(object sender, EventArgs e)
@@ -690,7 +723,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("CLIENTE INCORRECTO, DIRÍJASE A LA PESTAÑA CLIENTES PARA MODIFICAR SI LO DESEA");
+                    MessageBox.Show("CLIENTE INCORRECTO, DIRÍJASE A LA PESTAÑA CLIENTES PARA MODIFICAR O AGREGAR SI LO DESEA");
                     txt_client_ord.Text = "";
                 }
             }
@@ -753,6 +786,10 @@ namespace GUI
                     MessageBox.Show("OCURRIÓ ERROR AL GUARDAR RUTA");
                 }
             }
+            else
+            {
+                MessageBox.Show("DEBE INGRESAR VALORES");
+            }
         }
 
         private void GetAllRoutes()
@@ -770,34 +807,35 @@ namespace GUI
             {
                 if (!((txt_client_name.Text.Trim().Equals("")) && (txt_prod_ord.Text.Trim().Equals("")) && (txt_quantity_ord.Text.Trim().Equals(""))))
                 {
-                    Item o = new Item();
-                    o.Id_Client = Int32.Parse(lblIdClient.Text);
-                    o.Num_Order = Int32.Parse(lblIdOrder.Text);
-                    o.Id_Product = lblIdProduct.Text;
-                    o.Quantity = Double.Parse(txt_quantity_ord.Text);
-                    o.Notes = rch_notes_ord.Text.Trim().ToUpper();
-                    o.Client = txt_client_ord.Text;
-                    o.Client_Type = Int32.Parse(lblClientType.Text);
-                    o.Product = txt_prod_ord.Text;
+                    Item i = new Item();
+                    i.Id_Client = Int32.Parse(lblIdClient.Text);
+                    i.Num_Order = Int32.Parse(lblIdOrder.Text);
+                    i.Id_Product = lblIdProduct.Text;
+                    i.Quantity = Double.Parse(txt_quantity_ord.Text);
+                    i.Notes = rch_notes_ord.Text.Trim().ToUpper();
+                    i.Client = txt_client_ord.Text;
+                    i.Client_Type = Int32.Parse(lblClientType.Text);
+                    i.Product = txt_prod_ord.Text;
+                    i.Product_Code = txt_code_ord.Text.Trim().ToUpper();
 
                     if (txt_order_oem.Text.Trim().Equals(""))
                     {
-                        o.Oem = 0;
+                        i.Oem = 0;
                     }
                     else
                     {
-                        o.Oem = Int32.Parse(txt_order_oem.Text.Trim());
+                        i.Oem = Int32.Parse(txt_order_oem.Text.Trim());
                     }
 
                     DataRow dr = dtadd.NewRow();
-                    dr["N° ORDEN"] = o.Num_Order;
-                    dr["CÓDIGO"] = txt_code_ord.Text;
-                    dr["PRODUCTO"] = o.Product;
-                    dr["CANTIDAD"] = o.Quantity;
-                    dr["NOTAS"] = o.Notes;
+                    dr["N° ORDEN"] = i.Num_Order;
+                    dr["CÓDIGO"] = txt_code_ord.Text.Trim().ToUpper();
+                    dr["PRODUCTO"] = i.Product.Trim().ToUpper();
+                    dr["CANTIDAD"] = i.Quantity;
+                    dr["NOTAS"] = i.Notes.Trim().ToUpper();
                     dtadd.Rows.Add(dr);
                     dtgw_items_list.DataSource = dtadd;
-                    ordersList.AddLast(o);
+                    ordersList.AddLast(i);
                 }
                 else
                 {
@@ -864,7 +902,7 @@ namespace GUI
         {
             //Traer aquellos pedidos con fecha de hoy pero sin repetir numeros de orden
             //string date = DateTime.Now.ToShortDateString();
-            string date = "14/2/2017";
+            string date = "14/2/2017";  //*****************************************************************************CHANGE
             List<Item> orders = obo.GetTodayOrders(date);
             //List<Order> ordersTemp = orders;
 
@@ -879,6 +917,122 @@ namespace GUI
                 }
                 //MessageBox.Show(o.Client);
             }
+        }
+
+        private void ShowOrderDetails(DataGridView dtgw)
+        {
+            dtgw_items.Columns.Clear();
+            CreateDtItemCol();
+
+            int row = dtgw.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dtgw.Rows[row];
+            int num_order = Int32.Parse(Convert.ToString(selectedRow.Cells["num_order"].Value));
+            DataSet ds = obo.GetItemsByOrder(num_order);
+            DataTable dt = ds.Tables["items"];
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                DataRow dtr = dtItem.NewRow();
+                dtr["N° ORDEN"] = dr["num_order"].ToString();
+                dtr["CÓDIGO"] = dr["product_code"].ToString();
+                dtr["PRODUCTO"] = dr["product"].ToString();
+                dtr["KG"] = dr["quantity"].ToString();
+                dtItem.Rows.Add(dtr);
+                dtgw_items.DataSource = dtItem;
+            }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            tabControl4.TabPages.Insert(2, tabPage21);
+        }
+
+        private void dtgw_orders_all_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowOrderDetails(dtgw_orders_all);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("NO HA SELECCIONADO ORDEN");
+            }
+        }
+
+        private void dtgw_orders_sch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowOrderDetails(dtgw_orders_sch);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("NO HA SELECCIONADO ORDEN");
+            }
+        }
+
+        private void dtgw_orders_supers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowOrderDetails(dtgw_orders_supers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("NO HA SELECCIONADO ORDEN");
+            }
+        }
+
+        private void dtgw_orders_sev_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ShowOrderDetails(dtgw_orders_sev);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("NO HA SELECCIONADO ORDEN");
+            }
+        }
+
+        private void GetTodayReminders()
+        {
+            //Obtener las ordenes con fecha de hoy en reminder 
+            //Obtener los items de dichas ordenes
+            //Los guardo en linkedlist y muestro uno por uno
+            string date = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
+            LinkedList<int> orders = obo.GetTodayReminders(date);
+            MessageBox.Show(orders.Count.ToString());
+            LinkedList<Item> items = obo.GetTodayRemItems(date);
+            MessageBox.Show(items.Count.ToString());
+
+            for (int i = 0; i > orders.Count; i++)
+            {
+                for (int j = 0; j>items.Count)
+                {
+                    if()
+                }
+            }
+
+
+
+        }
+
+        private void GetTodayOrders()
+        {
+
+        }
+
+
+
+        private void dtgw_RemItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            GetTodayReminders();
         }
     }
 }

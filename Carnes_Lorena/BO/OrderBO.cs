@@ -58,5 +58,20 @@ namespace BO
         {
             return odao.GetTodayOrders(date);
         }
+
+        public DataSet GetItemsByOrder(int num_order)
+        {
+            return odao.GetItemsByOrder(num_order);
+        }
+
+        public LinkedList<int> GetTodayReminders(string date)
+        {
+            return odao.GetTodayReminders(date);
+        }
+
+        public LinkedList<Item> GetTodayRemItems(string date)
+        {
+            return odao.GetTodayRemItems(date);
+        }
     }
 }

@@ -81,6 +81,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl3 = new System.Windows.Forms.TabControl();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_search_code = new System.Windows.Forms.Button();
             this.txt_search_code = new System.Windows.Forms.TextBox();
@@ -106,31 +108,32 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.pnl_items = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAcciones = new System.Windows.Forms.Button();
+            this.dtgw_items = new System.Windows.Forms.DataGridView();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.button9 = new System.Windows.Forms.Button();
-            this.label57 = new System.Windows.Forms.Label();
             this.btn_search_ordersAll = new System.Windows.Forms.Button();
             this.txt_search_ordersAll = new System.Windows.Forms.TextBox();
-            this.btnEditarOrderAll = new System.Windows.Forms.Button();
             this.dtgw_orders_all = new System.Windows.Forms.DataGridView();
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.button10 = new System.Windows.Forms.Button();
             this.btn_search_ordersSch = new System.Windows.Forms.Button();
             this.txt_search_ordersSch = new System.Windows.Forms.TextBox();
-            this.btnEditarOrderSch = new System.Windows.Forms.Button();
             this.dtgw_orders_sch = new System.Windows.Forms.DataGridView();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
             this.btn_search_ordersSupers = new System.Windows.Forms.Button();
             this.txt_search_ordersSupers = new System.Windows.Forms.TextBox();
-            this.btnEditarOrderSuper = new System.Windows.Forms.Button();
             this.dtgw_orders_supers = new System.Windows.Forms.DataGridView();
             this.tabPage15 = new System.Windows.Forms.TabPage();
             this.button12 = new System.Windows.Forms.Button();
             this.btn_search_ordersSev = new System.Windows.Forms.Button();
             this.txt_orders_searchSev = new System.Windows.Forms.TextBox();
-            this.btnEditarOrderSev = new System.Windows.Forms.Button();
             this.dtgw_orders_sev = new System.Windows.Forms.DataGridView();
             this.tabPage11 = new System.Windows.Forms.TabPage();
             this.btn_removeItem = new System.Windows.Forms.Button();
@@ -166,12 +169,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl6 = new System.Windows.Forms.TabControl();
             this.tabPage19 = new System.Windows.Forms.TabPage();
-            this.tabPage20 = new System.Windows.Forms.TabPage();
             this.dtgw_list = new System.Windows.Forms.DataGridView();
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
@@ -179,6 +178,26 @@
             this.label53 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
+            this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
+            this.tabPage22 = new System.Windows.Forms.TabPage();
+            this.tabPage23 = new System.Windows.Forms.TabPage();
+            this.pnlDelivery = new System.Windows.Forms.Panel();
+            this.lblNumOrder = new System.Windows.Forms.Label();
+            this.lblClient = new System.Windows.Forms.Label();
+            this.pnlRemind = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.lblRemNumOrder = new System.Windows.Forms.Label();
+            this.lblRemClient = new System.Windows.Forms.Label();
+            this.dtgw_RemItems = new System.Windows.Forms.DataGridView();
+            this.lblRemDeliv = new System.Windows.Forms.Label();
+            this.dtgw_Deliv = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -206,6 +225,8 @@
             this.tabPage4.SuspendLayout();
             this.tabControl4.SuspendLayout();
             this.tabPage10.SuspendLayout();
+            this.pnl_items.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_items)).BeginInit();
             this.tabControl5.SuspendLayout();
             this.tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_orders_all)).BeginInit();
@@ -223,19 +244,29 @@
             this.tabControl6.SuspendLayout();
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_list)).BeginInit();
+            this.tabPage22.SuspendLayout();
+            this.pnlDelivery.SuspendLayout();
+            this.pnlRemind.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_RemItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_Deliv)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage22);
+            this.tabControl1.Controls.Add(this.tabPage23);
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1223, 562);
+            this.tabControl1.Size = new System.Drawing.Size(1249, 562);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -244,7 +275,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1215, 536);
+            this.tabPage1.Size = new System.Drawing.Size(1241, 536);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CLIENTES";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -550,7 +581,7 @@
             this.cbx_routes.Name = "cbx_routes";
             this.cbx_routes.Size = new System.Drawing.Size(194, 21);
             this.cbx_routes.TabIndex = 3;
-            this.cbx_routes.Text = "Elija Ruta";
+            this.cbx_routes.Text = "SELECCIONE UNA RUTA";
             // 
             // label35
             // 
@@ -600,6 +631,7 @@
             this.txt_tel2.Name = "txt_tel2";
             this.txt_tel2.Size = new System.Drawing.Size(165, 20);
             this.txt_tel2.TabIndex = 46;
+            this.txt_tel2.Text = "0";
             // 
             // txt_tel1
             // 
@@ -607,6 +639,7 @@
             this.txt_tel1.Name = "txt_tel1";
             this.txt_tel1.Size = new System.Drawing.Size(165, 20);
             this.txt_tel1.TabIndex = 45;
+            this.txt_tel1.Text = "0";
             // 
             // txt_name
             // 
@@ -719,7 +752,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1215, 536);
+            this.tabPage2.Size = new System.Drawing.Size(1241, 536);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "PRODUCTOS";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -746,6 +779,24 @@
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "VER PRODUCTOS";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(255, 324);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(321, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "SI MODIFICO DEBO COMTEMPLAR LOS DATOS EN ÓRDENES";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(276, 275);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(288, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "HACER EL EDITAR, MOVER A PESTAÑA DE AGREGAR ";
             // 
             // panel3
             // 
@@ -915,7 +966,7 @@
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1215, 536);
+            this.tabPage3.Size = new System.Drawing.Size(1241, 536);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "RUTAS";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -959,31 +1010,93 @@
             this.tabPage4.Controls.Add(this.tabControl4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1215, 536);
+            this.tabPage4.Size = new System.Drawing.Size(1241, 536);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "PEDIDOS";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabControl4
             // 
+            this.tabControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl4.Controls.Add(this.tabPage10);
             this.tabControl4.Controls.Add(this.tabPage11);
+            this.tabControl4.Controls.Add(this.tabPage21);
             this.tabControl4.Location = new System.Drawing.Point(7, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(1190, 478);
+            this.tabControl4.Size = new System.Drawing.Size(1216, 478);
             this.tabControl4.TabIndex = 0;
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.pnl_items);
             this.tabPage10.Controls.Add(this.tabControl5);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(1182, 452);
+            this.tabPage10.Size = new System.Drawing.Size(1208, 452);
             this.tabPage10.TabIndex = 0;
             this.tabPage10.Text = "VER PEDIDOS";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // pnl_items
+            // 
+            this.pnl_items.Controls.Add(this.label9);
+            this.pnl_items.Controls.Add(this.label8);
+            this.pnl_items.Controls.Add(this.label7);
+            this.pnl_items.Controls.Add(this.btnAcciones);
+            this.pnl_items.Controls.Add(this.dtgw_items);
+            this.pnl_items.Location = new System.Drawing.Point(856, 27);
+            this.pnl_items.Name = "pnl_items";
+            this.pnl_items.Size = new System.Drawing.Size(317, 422);
+            this.pnl_items.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(12, 386);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "O MAYOR A HOY";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 364);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(292, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Lo muestro, se actualiza si es el caso SI LA FECHA ES HOY";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 351);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(284, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "el botón me envía al tab de crear con nombre de acciones";
+            // 
+            // btnAcciones
+            // 
+            this.btnAcciones.Location = new System.Drawing.Point(3, 290);
+            this.btnAcciones.Name = "btnAcciones";
+            this.btnAcciones.Size = new System.Drawing.Size(166, 46);
+            this.btnAcciones.TabIndex = 1;
+            this.btnAcciones.Text = "ACCIONES";
+            this.btnAcciones.UseVisualStyleBackColor = true;
+            this.btnAcciones.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // dtgw_items
+            // 
+            this.dtgw_items.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_items.Location = new System.Drawing.Point(3, 52);
+            this.dtgw_items.Name = "dtgw_items";
+            this.dtgw_items.Size = new System.Drawing.Size(311, 232);
+            this.dtgw_items.TabIndex = 0;
             // 
             // tabControl5
             // 
@@ -999,12 +1112,9 @@
             // 
             // tabPage12
             // 
-            this.tabPage12.Controls.Add(this.label5);
             this.tabPage12.Controls.Add(this.button9);
-            this.tabPage12.Controls.Add(this.label57);
             this.tabPage12.Controls.Add(this.btn_search_ordersAll);
             this.tabPage12.Controls.Add(this.txt_search_ordersAll);
-            this.tabPage12.Controls.Add(this.btnEditarOrderAll);
             this.tabPage12.Controls.Add(this.dtgw_orders_all);
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
@@ -1024,15 +1134,6 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(200, 288);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(131, 13);
-            this.label57.TabIndex = 4;
-            this.label57.Text = "éste editar debería ser ver";
-            // 
             // btn_search_ordersAll
             // 
             this.btn_search_ordersAll.Location = new System.Drawing.Point(247, 30);
@@ -1049,15 +1150,6 @@
             this.txt_search_ordersAll.Size = new System.Drawing.Size(154, 20);
             this.txt_search_ordersAll.TabIndex = 2;
             // 
-            // btnEditarOrderAll
-            // 
-            this.btnEditarOrderAll.Location = new System.Drawing.Point(41, 274);
-            this.btnEditarOrderAll.Name = "btnEditarOrderAll";
-            this.btnEditarOrderAll.Size = new System.Drawing.Size(140, 43);
-            this.btnEditarOrderAll.TabIndex = 1;
-            this.btnEditarOrderAll.Text = "EDITAR";
-            this.btnEditarOrderAll.UseVisualStyleBackColor = true;
-            // 
             // dtgw_orders_all
             // 
             this.dtgw_orders_all.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1065,13 +1157,13 @@
             this.dtgw_orders_all.Name = "dtgw_orders_all";
             this.dtgw_orders_all.Size = new System.Drawing.Size(743, 150);
             this.dtgw_orders_all.TabIndex = 0;
+            this.dtgw_orders_all.Click += new System.EventHandler(this.dtgw_orders_all_Click);
             // 
             // tabPage13
             // 
             this.tabPage13.Controls.Add(this.button10);
             this.tabPage13.Controls.Add(this.btn_search_ordersSch);
             this.tabPage13.Controls.Add(this.txt_search_ordersSch);
-            this.tabPage13.Controls.Add(this.btnEditarOrderSch);
             this.tabPage13.Controls.Add(this.dtgw_orders_sch);
             this.tabPage13.Location = new System.Drawing.Point(4, 22);
             this.tabPage13.Name = "tabPage13";
@@ -1107,15 +1199,6 @@
             this.txt_search_ordersSch.Size = new System.Drawing.Size(154, 20);
             this.txt_search_ordersSch.TabIndex = 4;
             // 
-            // btnEditarOrderSch
-            // 
-            this.btnEditarOrderSch.Location = new System.Drawing.Point(51, 240);
-            this.btnEditarOrderSch.Name = "btnEditarOrderSch";
-            this.btnEditarOrderSch.Size = new System.Drawing.Size(140, 43);
-            this.btnEditarOrderSch.TabIndex = 2;
-            this.btnEditarOrderSch.Text = "EDITAR";
-            this.btnEditarOrderSch.UseVisualStyleBackColor = true;
-            // 
             // dtgw_orders_sch
             // 
             this.dtgw_orders_sch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1123,13 +1206,13 @@
             this.dtgw_orders_sch.Name = "dtgw_orders_sch";
             this.dtgw_orders_sch.Size = new System.Drawing.Size(749, 149);
             this.dtgw_orders_sch.TabIndex = 0;
+            this.dtgw_orders_sch.Click += new System.EventHandler(this.dtgw_orders_sch_Click);
             // 
             // tabPage14
             // 
             this.tabPage14.Controls.Add(this.button11);
             this.tabPage14.Controls.Add(this.btn_search_ordersSupers);
             this.tabPage14.Controls.Add(this.txt_search_ordersSupers);
-            this.tabPage14.Controls.Add(this.btnEditarOrderSuper);
             this.tabPage14.Controls.Add(this.dtgw_orders_supers);
             this.tabPage14.Location = new System.Drawing.Point(4, 22);
             this.tabPage14.Name = "tabPage14";
@@ -1164,15 +1247,6 @@
             this.txt_search_ordersSupers.Size = new System.Drawing.Size(154, 20);
             this.txt_search_ordersSupers.TabIndex = 4;
             // 
-            // btnEditarOrderSuper
-            // 
-            this.btnEditarOrderSuper.Location = new System.Drawing.Point(58, 249);
-            this.btnEditarOrderSuper.Name = "btnEditarOrderSuper";
-            this.btnEditarOrderSuper.Size = new System.Drawing.Size(140, 43);
-            this.btnEditarOrderSuper.TabIndex = 3;
-            this.btnEditarOrderSuper.Text = "EDITAR";
-            this.btnEditarOrderSuper.UseVisualStyleBackColor = true;
-            // 
             // dtgw_orders_supers
             // 
             this.dtgw_orders_supers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1180,13 +1254,13 @@
             this.dtgw_orders_supers.Name = "dtgw_orders_supers";
             this.dtgw_orders_supers.Size = new System.Drawing.Size(745, 150);
             this.dtgw_orders_supers.TabIndex = 2;
+            this.dtgw_orders_supers.Click += new System.EventHandler(this.dtgw_orders_supers_Click);
             // 
             // tabPage15
             // 
             this.tabPage15.Controls.Add(this.button12);
             this.tabPage15.Controls.Add(this.btn_search_ordersSev);
             this.tabPage15.Controls.Add(this.txt_orders_searchSev);
-            this.tabPage15.Controls.Add(this.btnEditarOrderSev);
             this.tabPage15.Controls.Add(this.dtgw_orders_sev);
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
@@ -1221,16 +1295,6 @@
             this.txt_orders_searchSev.Size = new System.Drawing.Size(154, 20);
             this.txt_orders_searchSev.TabIndex = 4;
             // 
-            // btnEditarOrderSev
-            // 
-            this.btnEditarOrderSev.Location = new System.Drawing.Point(38, 249);
-            this.btnEditarOrderSev.Name = "btnEditarOrderSev";
-            this.btnEditarOrderSev.Size = new System.Drawing.Size(140, 43);
-            this.btnEditarOrderSev.TabIndex = 3;
-            this.btnEditarOrderSev.Text = "EDITAR";
-            this.btnEditarOrderSev.UseVisualStyleBackColor = true;
-            this.btnEditarOrderSev.Click += new System.EventHandler(this.btnEditarOrderSev_Click);
-            // 
             // dtgw_orders_sev
             // 
             this.dtgw_orders_sev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1238,6 +1302,7 @@
             this.dtgw_orders_sev.Name = "dtgw_orders_sev";
             this.dtgw_orders_sev.Size = new System.Drawing.Size(755, 150);
             this.dtgw_orders_sev.TabIndex = 2;
+            this.dtgw_orders_sev.Click += new System.EventHandler(this.dtgw_orders_sev_Click);
             // 
             // tabPage11
             // 
@@ -1247,7 +1312,7 @@
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(1182, 452);
+            this.tabPage11.Size = new System.Drawing.Size(1208, 452);
             this.tabPage11.TabIndex = 1;
             this.tabPage11.Text = "CREAR PEDIDOS";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -1566,37 +1631,10 @@
             this.tabPage5.Controls.Add(this.tabControl6);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1215, 536);
+            this.tabPage5.Size = new System.Drawing.Size(1241, 536);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "FILA";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(276, 275);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(288, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "HACER EL EDITAR, MOVER A PESTAÑA DE AGREGAR ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(375, 288);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(288, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "HACER EL EDITAR, MOVER A PESTAÑA DE AGREGAR ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(255, 324);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(321, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "SI MODIFICO DEBO COMTEMPLAR LOS DATOS EN ÓRDENES";
             // 
             // tabControl6
             // 
@@ -1624,16 +1662,6 @@
             this.tabPage19.TabIndex = 0;
             this.tabPage19.Text = "HOY";
             this.tabPage19.UseVisualStyleBackColor = true;
-            // 
-            // tabPage20
-            // 
-            this.tabPage20.Location = new System.Drawing.Point(4, 22);
-            this.tabPage20.Name = "tabPage20";
-            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage20.Size = new System.Drawing.Size(1045, 479);
-            this.tabPage20.TabIndex = 1;
-            this.tabPage20.Text = "tabPage20";
-            this.tabPage20.UseVisualStyleBackColor = true;
             // 
             // dtgw_list
             // 
@@ -1700,14 +1728,208 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click_1);
             // 
+            // tabPage20
+            // 
+            this.tabPage20.Location = new System.Drawing.Point(4, 22);
+            this.tabPage20.Name = "tabPage20";
+            this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage20.Size = new System.Drawing.Size(1045, 479);
+            this.tabPage20.TabIndex = 1;
+            this.tabPage20.Text = "tabPage20";
+            this.tabPage20.UseVisualStyleBackColor = true;
+            // 
+            // tabPage21
+            // 
+            this.tabPage21.Location = new System.Drawing.Point(4, 22);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Size = new System.Drawing.Size(1208, 452);
+            this.tabPage21.TabIndex = 2;
+            this.tabPage21.Text = "ACCIONES";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
+            // tabPage22
+            // 
+            this.tabPage22.Controls.Add(this.pnlRemind);
+            this.tabPage22.Controls.Add(this.pnlDelivery);
+            this.tabPage22.Location = new System.Drawing.Point(4, 22);
+            this.tabPage22.Name = "tabPage22";
+            this.tabPage22.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage22.TabIndex = 5;
+            this.tabPage22.Text = "DESPACHO";
+            this.tabPage22.UseVisualStyleBackColor = true;
+            // 
+            // tabPage23
+            // 
+            this.tabPage23.Location = new System.Drawing.Point(4, 22);
+            this.tabPage23.Name = "tabPage23";
+            this.tabPage23.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage23.TabIndex = 6;
+            this.tabPage23.Text = "PROCESOS";
+            this.tabPage23.UseVisualStyleBackColor = true;
+            // 
+            // pnlDelivery
+            // 
+            this.pnlDelivery.Controls.Add(this.label11);
+            this.pnlDelivery.Controls.Add(this.dtgw_Deliv);
+            this.pnlDelivery.Controls.Add(this.button16);
+            this.pnlDelivery.Controls.Add(this.button17);
+            this.pnlDelivery.Controls.Add(this.lblClient);
+            this.pnlDelivery.Controls.Add(this.lblNumOrder);
+            this.pnlDelivery.Location = new System.Drawing.Point(588, 25);
+            this.pnlDelivery.Name = "pnlDelivery";
+            this.pnlDelivery.Size = new System.Drawing.Size(538, 493);
+            this.pnlDelivery.TabIndex = 3;
+            // 
+            // lblNumOrder
+            // 
+            this.lblNumOrder.AutoSize = true;
+            this.lblNumOrder.Location = new System.Drawing.Point(413, 50);
+            this.lblNumOrder.Name = "lblNumOrder";
+            this.lblNumOrder.Size = new System.Drawing.Size(63, 13);
+            this.lblNumOrder.TabIndex = 0;
+            this.lblNumOrder.Text = "N° PEDIDO";
+            // 
+            // lblClient
+            // 
+            this.lblClient.AutoSize = true;
+            this.lblClient.Location = new System.Drawing.Point(46, 104);
+            this.lblClient.Name = "lblClient";
+            this.lblClient.Size = new System.Drawing.Size(52, 13);
+            this.lblClient.TabIndex = 1;
+            this.lblClient.Text = "CLIENTE";
+            // 
+            // pnlRemind
+            // 
+            this.pnlRemind.Controls.Add(this.label10);
+            this.pnlRemind.Controls.Add(this.lblRemDeliv);
+            this.pnlRemind.Controls.Add(this.dtgw_RemItems);
+            this.pnlRemind.Controls.Add(this.lblRemClient);
+            this.pnlRemind.Controls.Add(this.lblRemNumOrder);
+            this.pnlRemind.Controls.Add(this.button15);
+            this.pnlRemind.Controls.Add(this.button7);
+            this.pnlRemind.Controls.Add(this.label5);
+            this.pnlRemind.Location = new System.Drawing.Point(15, 25);
+            this.pnlRemind.Name = "pnlRemind";
+            this.pnlRemind.Size = new System.Drawing.Size(538, 493);
+            this.pnlRemind.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(415, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "RECORDATORIOS";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(335, 421);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(190, 59);
+            this.button7.TabIndex = 1;
+            this.button7.Text = "VER SIGUIENTE";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(3, 421);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(190, 59);
+            this.button15.TabIndex = 2;
+            this.button15.Text = "VER ANTERIOR";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(16, 421);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(190, 59);
+            this.button16.TabIndex = 4;
+            this.button16.Text = "VER ANTERIOR";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(348, 421);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(190, 59);
+            this.button17.TabIndex = 3;
+            this.button17.Text = "VER SIGUIENTE";
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // lblRemNumOrder
+            // 
+            this.lblRemNumOrder.AutoSize = true;
+            this.lblRemNumOrder.Location = new System.Drawing.Point(415, 85);
+            this.lblRemNumOrder.Name = "lblRemNumOrder";
+            this.lblRemNumOrder.Size = new System.Drawing.Size(63, 13);
+            this.lblRemNumOrder.TabIndex = 3;
+            this.lblRemNumOrder.Text = "N° PEDIDO";
+            // 
+            // lblRemClient
+            // 
+            this.lblRemClient.AutoSize = true;
+            this.lblRemClient.Location = new System.Drawing.Point(31, 130);
+            this.lblRemClient.Name = "lblRemClient";
+            this.lblRemClient.Size = new System.Drawing.Size(52, 13);
+            this.lblRemClient.TabIndex = 4;
+            this.lblRemClient.Text = "CLIENTE";
+            // 
+            // dtgw_RemItems
+            // 
+            this.dtgw_RemItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_RemItems.Location = new System.Drawing.Point(34, 157);
+            this.dtgw_RemItems.Name = "dtgw_RemItems";
+            this.dtgw_RemItems.Size = new System.Drawing.Size(479, 150);
+            this.dtgw_RemItems.TabIndex = 5;
+            this.dtgw_RemItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgw_RemItems_CellContentClick);
+            // 
+            // lblRemDeliv
+            // 
+            this.lblRemDeliv.AutoSize = true;
+            this.lblRemDeliv.Location = new System.Drawing.Point(45, 50);
+            this.lblRemDeliv.Name = "lblRemDeliv";
+            this.lblRemDeliv.Size = new System.Drawing.Size(59, 13);
+            this.lblRemDeliv.TabIndex = 6;
+            this.lblRemDeliv.Text = "ENTREGA";
+            // 
+            // dtgw_Deliv
+            // 
+            this.dtgw_Deliv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_Deliv.Location = new System.Drawing.Point(26, 130);
+            this.dtgw_Deliv.Name = "dtgw_Deliv";
+            this.dtgw_Deliv.Size = new System.Drawing.Size(479, 150);
+            this.dtgw_Deliv.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(31, 347);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "NOTAS";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(46, 347);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "NOTAS";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 634);
+            this.ClientSize = new System.Drawing.Size(1332, 634);
             this.Controls.Add(this.tabControl1);
             this.Name = "Main";
             this.Text = "Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1746,6 +1968,9 @@
             this.tabPage4.ResumeLayout(false);
             this.tabControl4.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
+            this.pnl_items.ResumeLayout(false);
+            this.pnl_items.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_items)).EndInit();
             this.tabControl5.ResumeLayout(false);
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
@@ -1770,6 +1995,13 @@
             this.tabPage19.ResumeLayout(false);
             this.tabPage19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_list)).EndInit();
+            this.tabPage22.ResumeLayout(false);
+            this.pnlDelivery.ResumeLayout(false);
+            this.pnlDelivery.PerformLayout();
+            this.pnlRemind.ResumeLayout(false);
+            this.pnlRemind.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_RemItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_Deliv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1834,25 +2066,20 @@
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TabControl tabControl5;
         private System.Windows.Forms.TabPage tabPage12;
-        private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Button btn_search_ordersAll;
         private System.Windows.Forms.TextBox txt_search_ordersAll;
-        private System.Windows.Forms.Button btnEditarOrderAll;
         private System.Windows.Forms.DataGridView dtgw_orders_all;
         private System.Windows.Forms.TabPage tabPage13;
         private System.Windows.Forms.Button btn_search_ordersSch;
         private System.Windows.Forms.TextBox txt_search_ordersSch;
-        private System.Windows.Forms.Button btnEditarOrderSch;
         private System.Windows.Forms.DataGridView dtgw_orders_sch;
         private System.Windows.Forms.TabPage tabPage14;
         private System.Windows.Forms.Button btn_search_ordersSupers;
         private System.Windows.Forms.TextBox txt_search_ordersSupers;
-        private System.Windows.Forms.Button btnEditarOrderSuper;
         private System.Windows.Forms.DataGridView dtgw_orders_supers;
         private System.Windows.Forms.TabPage tabPage15;
         private System.Windows.Forms.Button btn_search_ordersSev;
         private System.Windows.Forms.TextBox txt_orders_searchSev;
-        private System.Windows.Forms.Button btnEditarOrderSev;
         private System.Windows.Forms.DataGridView dtgw_orders_sev;
         private System.Windows.Forms.TabPage tabPage11;
         private System.Windows.Forms.Panel panel4;
@@ -1916,7 +2143,6 @@
         private System.Windows.Forms.Button btn_removeItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabControl tabControl6;
         private System.Windows.Forms.TabPage tabPage19;
         private System.Windows.Forms.DataGridView dtgw_list;
@@ -1927,5 +2153,30 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.TabPage tabPage20;
+        private System.Windows.Forms.Panel pnl_items;
+        private System.Windows.Forms.DataGridView dtgw_items;
+        private System.Windows.Forms.Button btnAcciones;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tabPage21;
+        private System.Windows.Forms.TabPage tabPage22;
+        private System.Windows.Forms.Panel pnlRemind;
+        private System.Windows.Forms.Label lblRemDeliv;
+        private System.Windows.Forms.DataGridView dtgw_RemItems;
+        private System.Windows.Forms.Label lblRemClient;
+        private System.Windows.Forms.Label lblRemNumOrder;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pnlDelivery;
+        private System.Windows.Forms.DataGridView dtgw_Deliv;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label lblClient;
+        private System.Windows.Forms.Label lblNumOrder;
+        private System.Windows.Forms.TabPage tabPage23;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

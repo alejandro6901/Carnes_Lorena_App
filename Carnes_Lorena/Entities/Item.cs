@@ -15,6 +15,7 @@ namespace Entities
         public int Client_Type { get; set; }
         public string Id_Product { get; set; }
         public string Product { get; set; }
+        public string Product_Code { get; set; }
         public double Quantity { get; set; }
         public string Notes { get; set; }
         public int Oem { get; set; }
