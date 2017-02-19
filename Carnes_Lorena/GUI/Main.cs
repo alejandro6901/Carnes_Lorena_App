@@ -25,18 +25,37 @@ namespace GUI
         SchoolBO scbo;
         SupermarketBO spbo;
         SeveralBO svbo;
-        string gb_client_name;
         DataTable dtadd;
         DataTable dtItem;
+        DataTable dtRemItem;
+        DataTable dtRemItemPro;
+        DataTable dtDelivItem;
+        DataTable dtDelivItemPro;
         LinkedList<Item> ordersList;
         List<string> list_clients;
         List<string> list_product_codes;
         List<string> list_products;
+        List<int> ordersReminder;
+        List<int> ordersReminderPro;
+        LinkedList<Item> itemsReminder;
+        LinkedList<Item> itemsReminderPro;
+        List<int> ordersDeliveries;
+        List<int> ordersDeliveriesPro;
+        LinkedList<Item> itemsDeliveries;
+        LinkedList<Item> itemsDeliveriesPro;
+
+        int reminderDispatch;
+        int deliveryDispatch;
+        int reminderProcesses;
+        int deliveryProcesses;
 
         public Main()
         {
             InitializeComponent();
-            gb_client_name = "";
+            reminderDispatch = 0;
+            deliveryDispatch = 0;
+            reminderProcesses = 0;
+            deliveryProcesses = 0;
         }
 
 
@@ -75,6 +94,12 @@ namespace GUI
 
             RefreshAllOnStart();
             GetAllRoutes();
+            GetTodayRemindersDispatch();
+            GetTodayRemindersProcesses();
+            GetTodayDeliveriesDispatch();
+            GetTodayDeliveriesProcesses();
+            //VerifyOrdersQuant();
+            //VerifyOrdersQuantPro();
 
             AutocompleteClientText();
             AutocompleteProductsCode();
@@ -95,6 +120,11 @@ namespace GUI
             dtp_delivery_ord.Format = DateTimePickerFormat.Short;
             dtp_delivery_ord.Value = DateTime.Today;
             dtp_delivery_ord.MinDate = DateTime.Now; //disable past days
+
+            btnRemBack.Enabled = false;
+            btnDelivBack.Enabled = false;
+            btnRemProBack.Enabled = false;
+            btnDelivProBack.Enabled = false;
         }
 
         private void CreateDtItemCol()
@@ -104,6 +134,38 @@ namespace GUI
             dtItem.Columns.Add("CÓDIGO");
             dtItem.Columns.Add("PRODUCTO");
             dtItem.Columns.Add("KG");
+        }
+
+        private void CreateDtRemItemCol()
+        {
+            dtRemItem = new DataTable();
+            dtRemItem.Columns.Add("CÓDIGO");
+            dtRemItem.Columns.Add("PRODUCTO");
+            dtRemItem.Columns.Add("KG");
+        }
+
+        private void CreateDtRemItemProCol()
+        {
+            dtRemItemPro = new DataTable();
+            dtRemItemPro.Columns.Add("CÓDIGO");
+            dtRemItemPro.Columns.Add("PRODUCTO");
+            dtRemItemPro.Columns.Add("KG");
+        }
+
+        private void CreateDtDelivItemCol()
+        {
+            dtDelivItem = new DataTable();
+            dtDelivItem.Columns.Add("CÓDIGO");
+            dtDelivItem.Columns.Add("PRODUCTO");
+            dtDelivItem.Columns.Add("KG");
+        }
+
+        private void CreateDtDelivItemProCol()
+        {
+            dtDelivItemPro = new DataTable();
+            dtDelivItemPro.Columns.Add("CÓDIGO");
+            dtDelivItemPro.Columns.Add("PRODUCTO");
+            dtDelivItemPro.Columns.Add("KG");
         }
 
         private void CreateDtProdCol()
@@ -568,8 +630,11 @@ namespace GUI
                         {
                             MessageBox.Show("Pedido registrado correctamente");
                             RefreshAllOrders();
+                            GetTodayRemindersDispatch();
+                            GetTodayRemindersProcesses();
+                            GetTodayDeliveriesDispatch();
+                            GetTodayDeliveriesProcesses();
                         }
-
                     }
                 }
                 else
@@ -583,7 +648,7 @@ namespace GUI
         {
             Order o = new Order();
             o.Num_Order = Int32.Parse(lblIdOrder.Text);
-            o.Client = txt_client_ord.Text;
+            o.Client = txt_client_ord.Text.Trim().ToUpper();
             o.Client_Type = Int32.Parse(lblClientType.Text);
 
             if (txt_order_oem.Text.Trim().Equals(""))
@@ -813,9 +878,9 @@ namespace GUI
                     i.Id_Product = lblIdProduct.Text;
                     i.Quantity = Double.Parse(txt_quantity_ord.Text);
                     i.Notes = rch_notes_ord.Text.Trim().ToUpper();
-                    i.Client = txt_client_ord.Text;
+                    i.Client = txt_client_ord.Text.Trim().ToUpper();
                     i.Client_Type = Int32.Parse(lblClientType.Text);
-                    i.Product = txt_prod_ord.Text;
+                    i.Product = txt_prod_ord.Text.Trim().ToUpper();
                     i.Product_Code = txt_code_ord.Text.Trim().ToUpper();
 
                     if (txt_order_oem.Text.Trim().Equals(""))
@@ -995,35 +1060,210 @@ namespace GUI
             }
         }
 
-        private void GetTodayReminders()
+        //trae los recordatorios de hoy de despacho
+        private void GetTodayRemindersDispatch()
         {
-            //Obtener las ordenes con fecha de hoy en reminder 
-            //Obtener los items de dichas ordenes
-            //Los guardo en linkedlist y muestro uno por uno
-            string date = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
-            LinkedList<int> orders = obo.GetTodayReminders(date);
-            MessageBox.Show(orders.Count.ToString());
-            LinkedList<Item> items = obo.GetTodayRemItems(date);
-            MessageBox.Show(items.Count.ToString());
-
-            for (int i = 0; i > orders.Count; i++)
+            try
             {
-                for (int j = 0; j>items.Count)
+                string date = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
+                ordersReminder = obo.GetTodayRemOrders(date, 0);    //las ordenes de hoy
+                if (ordersReminder.Count != 0)
                 {
-                    if()
+                    itemsReminder = obo.GetTodayRemItems(date);        //los items con la fecha de hoy
+                    int order = ordersReminder.ElementAt(reminderDispatch);
+                    string notes = "";
+                    VerifyOrdersQuant();
+
+                    for (int i = 0; i < ordersReminder.Count; i++)
+                    {
+                        foreach (Item it in itemsReminder)
+                        {
+                            if (order == it.Num_Order)
+                            {
+                                lblRemDeliv.Text = it.Delivery;
+                                lblRemNumOrder.Text = it.Num_Order.ToString();
+                                lblRemClient.Text = it.Client;
+                                notes += it.Notes + "\n";
+                            }
+                        }
+                        dtgw_RemItems.Columns.Clear();
+                        CreateDtRemItemCol();
+
+                        DataSet ds = obo.GetItemsByOrder(order);
+                        DataTable dt = ds.Tables["items"];
+
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            DataRow dtr = dtRemItem.NewRow();
+                            dtr["CÓDIGO"] = dr["product_code"].ToString();
+                            dtr["PRODUCTO"] = dr["product"].ToString();
+                            dtr["KG"] = dr["quantity"].ToString();
+                            dtRemItem.Rows.Add(dtr);
+                            dtgw_RemItems.DataSource = dtRemItem;
+                        }
+                        lblRemNotes.Text = notes;
+                        break;
+                    }
                 }
             }
-
-
-
+            catch (Exception ex)
+            {
+            }
         }
 
-        private void GetTodayOrders()
+        //trae las entregas de hoy de despacho
+        private void GetTodayDeliveriesDispatch()
         {
+            try
+            {
+                string date = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
+                ordersDeliveries = obo.GetTodayDeliveries(date, 0);
+                if (ordersDeliveries.Count != 0)
+                {
+                    itemsDeliveries = obo.GetTodayDeliveryItems(date);
+                    int order = ordersDeliveries.ElementAt(deliveryDispatch);
+                    string notes = "";
+                    VerifyOrdersQuant();
 
+                    for (int i = 0; i < ordersDeliveries.Count; i++)
+                    {
+                        foreach (Item it in itemsDeliveries)
+                        {
+                            if (order == it.Num_Order)
+                            {
+                                lblDelivClient.Text = it.Client;
+                                lblDelivNumOrder.Text = it.Num_Order.ToString();
+                                notes += it.Notes + "\n";
+                            }
+                        }
+                        dtgw_Deliv.Columns.Clear();
+                        CreateDtDelivItemCol();
+
+                        DataSet ds = obo.GetItemsByOrder(order);
+                        DataTable dt = ds.Tables["items"];
+
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            DataRow dtd = dtDelivItem.NewRow();
+                            dtd["CÓDIGO"] = dr["product_code"].ToString();
+                            dtd["PRODUCTO"] = dr["product"].ToString();
+                            dtd["KG"] = dr["quantity"].ToString();
+                            dtDelivItem.Rows.Add(dtd);
+                            dtgw_Deliv.DataSource = dtDelivItem;
+                        }
+                        lblDelivNotes.Text = notes;
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
+        //Trae los recordardatorios de procesos
+        private void GetTodayRemindersProcesses()
+        {
+            try
+            {
+                string date = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
+                ordersReminderPro = obo.GetTodayRemOrders(date, 1);
+                if (ordersReminderPro.Count != 0)
+                {
+                    itemsReminderPro = obo.GetTodayRemItems(date);
+                    int order = ordersReminderPro.ElementAt(reminderProcesses);
+                    string notes = "";
+                    VerifyOrdersQuantPro();
 
+                    for (int i = 0; i < ordersReminder.Count; i++)
+                    {
+                        foreach (Item it in itemsReminderPro)
+                        {
+                            if (order == it.Num_Order)
+                            {
+                                lblRemProDeliv.Text = it.Delivery;
+                                lblRemProOrder.Text = it.Num_Order.ToString();
+                                lblRemProClient.Text = it.Client;
+                                notes += it.Notes + "\n";
+                            }
+                        }
+                        dtgw_RemProItems.Columns.Clear();
+                        CreateDtRemItemProCol();
+
+                        DataSet ds = obo.GetItemsByOrder(order);
+                        DataTable dt = ds.Tables["items"];
+
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            DataRow dtr = dtRemItemPro.NewRow();
+                            dtr["CÓDIGO"] = dr["product_code"].ToString();
+                            dtr["PRODUCTO"] = dr["product"].ToString();
+                            dtr["KG"] = dr["quantity"].ToString();
+                            dtRemItemPro.Rows.Add(dtr);
+                            dtgw_RemProItems.DataSource = dtRemItemPro;
+                        }
+                        lblRemProNotes.Text = notes;
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        //Trae las entregas de hoy de procesos
+        private void GetTodayDeliveriesProcesses()
+        {
+            try
+            {
+                string date = (DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year).ToString();
+                ordersDeliveriesPro = obo.GetTodayDeliveries(date, 1);
+                if (ordersDeliveriesPro.Count != 0)
+                {
+                    itemsDeliveriesPro = obo.GetTodayDeliveryItems(date);
+                    int order = ordersDeliveriesPro.ElementAt(deliveryProcesses);
+                    string notes = "";
+                    VerifyOrdersQuantPro();
+
+                    for (int i = 0; i < ordersDeliveriesPro.Count; i++)
+                    {
+                        foreach (Item it in itemsDeliveriesPro)
+                        {
+                            if (order == it.Num_Order)
+                            {
+                                lblDelivProClient.Text = it.Client;
+                                lblDelivProOrder.Text = it.Num_Order.ToString();
+                                notes += it.Notes + "\n";
+                            }
+                        }
+                        dtgw_DelivProItems.Columns.Clear();
+                        CreateDtDelivItemCol();
+
+                        DataSet ds = obo.GetItemsByOrder(order);
+                        DataTable dt = ds.Tables["items"];
+
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            DataRow dtd = dtDelivItem.NewRow();
+                            dtd["CÓDIGO"] = dr["product_code"].ToString();
+                            dtd["PRODUCTO"] = dr["product"].ToString();
+                            dtd["KG"] = dr["quantity"].ToString();
+                            dtDelivItem.Rows.Add(dtd);
+                            dtgw_DelivProItems.DataSource = dtDelivItem;
+                        }
+                        lblDelivProNotes.Text = notes;
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         private void dtgw_RemItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1032,7 +1272,229 @@ namespace GUI
 
         private void button15_Click(object sender, EventArgs e)
         {
-            GetTodayReminders();
+            btnRemNext.Enabled = true;
+            reminderDispatch--;
+            if (reminderDispatch == 0)
+            {
+                btnRemBack.Enabled = false;
+                GetTodayRemindersDispatch();
+            }
+            else
+            {
+                GetTodayRemindersDispatch();
+            }
+        }
+
+        private void pnlDelivery_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+            reminderDispatch++;
+            btnRemBack.Enabled = true;
+            if (reminderDispatch == ordersReminder.Count - 1)
+            {
+                btnRemNext.Enabled = false;
+                GetTodayRemindersDispatch();
+            }
+            else
+            {
+                GetTodayRemindersDispatch();
+            }
+        }
+
+
+        private void btnReminderDeliv_Click(object sender, EventArgs e)
+        {
+            Checks(Convert.ToInt32(lblRemNumOrder));   
+        }
+
+        private void Checks(int num_order)
+        {
+            DialogResult result = MessageBox.Show("¿SEGURO DE REALIZAR ENTREGA?", "Important Question", MessageBoxButtons.YesNo);
+            if (result.ToString().Equals("Yes"))
+            {
+                if (obo.CheckOrder(num_order))
+                {
+                    MessageBox.Show("ENTREGA EXITOSA");
+                    GetTodayRemindersDispatch();
+                    GetTodayRemindersProcesses();
+                    GetTodayDeliveriesDispatch();
+                    GetTodayDeliveriesProcesses();
+                }else
+                {
+                    MessageBox.Show("ERROR EN ENTREGA");
+                }
+            }
+        }
+
+        private void VerifyOrdersQuant()
+        {
+            if (ordersReminder != null)
+            {
+                if (ordersReminder.Count == 1)
+                {
+                    btnRemNext.Enabled = false;
+                    btnReminderDeliv.Enabled = true;
+                }
+                else if (ordersReminder.Count < 1)
+                {
+                    btnRemNext.Enabled = false;
+                    btnReminderDeliv.Enabled = false;
+                }
+            }
+
+            if (ordersDeliveries != null)
+            {
+                if (ordersDeliveries.Count == 1)
+                {
+                    btnDelivNext.Enabled = false;
+                    btnDeliv.Enabled = true;
+                }
+                else if (ordersDeliveries.Count < 1)
+                {
+                    btnDelivNext.Enabled = false;
+                    btnDeliv.Enabled = false;
+                }
+            }
+        }
+
+        private void VerifyOrdersQuantPro()
+        {
+            if (ordersReminderPro != null)
+            {
+                if (ordersReminderPro.Count == 1)
+                {
+                    btnRemProNext.Enabled = false;
+                    btnDelivPro.Enabled = true;
+                }
+                else if (ordersReminderPro.Count < 1)
+                {
+                    btnRemProNext.Enabled = false;
+                    btnDelivPro.Enabled = false;
+                }
+            }
+
+            if (ordersDeliveriesPro != null)
+            {
+                if (ordersDeliveriesPro.Count == 1)
+                {
+                    btnDelivProNext.Enabled = false;
+                    btnDelivPro.Enabled = true;
+                }
+                else if (ordersDeliveriesPro.Count < 1)
+                {
+                    btnDelivProNext.Enabled = false;
+                    btnDelivPro.Enabled = false;
+                }
+            }
+        }
+
+        private void btnDelivBack_Click(object sender, EventArgs e)
+        {
+            btnDelivNext.Enabled = true;
+            deliveryDispatch--;
+            if (deliveryDispatch == 0)
+            {
+                btnDelivBack.Enabled = false;
+                GetTodayDeliveriesDispatch();
+            }
+            else
+            {
+                GetTodayDeliveriesDispatch();
+            }
+        }
+
+        private void btnDelivNext_Click(object sender, EventArgs e)
+        {
+            deliveryDispatch++;
+            btnDelivBack.Enabled = true;
+            if (deliveryDispatch == ordersDeliveries.Count - 1)
+            {
+                btnDelivNext.Enabled = false;
+                GetTodayDeliveriesDispatch();
+            }
+            else
+            {
+                GetTodayDeliveriesDispatch();
+            }
+        }
+
+        private void btnRemProBack_Click(object sender, EventArgs e)
+        {
+            btnRemProNext.Enabled = true;
+            reminderProcesses--;
+            if (reminderProcesses == 0)
+            {
+                btnRemProBack.Enabled = false;
+                GetTodayRemindersProcesses();
+            }
+            else
+            {
+                GetTodayRemindersProcesses();
+            }
+        }
+
+        private void btnRemProNext_Click(object sender, EventArgs e)
+        {
+            reminderProcesses++;
+            btnRemProBack.Enabled = true;
+            if (reminderProcesses == ordersReminder.Count - 1)
+            {
+                //btnRemProNext.Enabled = false;
+                GetTodayRemindersProcesses();
+            }
+            else
+            {
+                GetTodayRemindersProcesses();
+            }
+        }
+
+        private void btnDelivProBack_Click(object sender, EventArgs e)
+        {
+            btnDelivProNext.Enabled = true;
+            deliveryProcesses--;
+            if (deliveryProcesses == 0)
+            {
+                btnDelivProBack.Enabled = false;
+                GetTodayDeliveriesProcesses();
+            }
+            else
+            {
+                GetTodayDeliveriesProcesses();
+            }
+        }
+
+        private void btnDelivProNext_Click(object sender, EventArgs e)
+        {
+            deliveryProcesses++;
+            btnDelivProBack.Enabled = true;
+            if (deliveryProcesses == ordersDeliveriesPro.Count - 1)
+            {
+                btnDelivProNext.Enabled = false;
+                GetTodayDeliveriesProcesses();
+            }
+            else
+            {
+                GetTodayDeliveriesProcesses();
+            }
+        }
+
+        private void btnRemProDeliv_Click(object sender, EventArgs e)
+        {
+            Checks(Convert.ToInt32(lblRemProClient));
+        }
+
+        private void btnDeliv_Click(object sender, EventArgs e)
+        {
+            Checks(Convert.ToInt32(lblDelivClient));
+        }
+
+        private void btnDelivPro_Click(object sender, EventArgs e)
+        {
+            Checks(Convert.ToInt32(lblDelivProClient));
         }
     }
 }

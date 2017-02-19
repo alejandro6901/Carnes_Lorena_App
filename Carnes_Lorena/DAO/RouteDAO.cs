@@ -81,7 +81,6 @@ namespace DAO
             {
                 throw new Exception(e.Message);
             }
-            return false;
         }
     }
 }

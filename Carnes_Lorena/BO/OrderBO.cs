@@ -64,14 +64,30 @@ namespace BO
             return odao.GetItemsByOrder(num_order);
         }
 
-        public LinkedList<int> GetTodayReminders(string date)
+        public List<int> GetTodayRemOrders(string date, int department)
         {
-            return odao.GetTodayReminders(date);
+            return odao.GetTodayRemOrders(date, department);
         }
 
         public LinkedList<Item> GetTodayRemItems(string date)
         {
             return odao.GetTodayRemItems(date);
         }
+
+        public List<int> GetTodayDeliveries(string date, int department)
+        {
+            return odao.GetTodayDeliveries(date, department);
+        }
+
+        public LinkedList<Item> GetTodayDeliveryItems(string date)
+        {
+            return odao.GetTodayDeliveryItems(date);
+        }
+
+        public bool CheckOrder(int num_order)
+        {
+            return odao.CheckOrder(num_order);
+        }
+
     }
 }

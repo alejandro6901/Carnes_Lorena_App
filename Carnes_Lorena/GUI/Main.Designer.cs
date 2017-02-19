@@ -168,6 +168,7 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
+            this.tabPage21 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabControl6 = new System.Windows.Forms.TabControl();
             this.tabPage19 = new System.Windows.Forms.TabPage();
@@ -179,25 +180,46 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.tabPage20 = new System.Windows.Forms.TabPage();
-            this.tabPage21 = new System.Windows.Forms.TabPage();
             this.tabPage22 = new System.Windows.Forms.TabPage();
-            this.tabPage23 = new System.Windows.Forms.TabPage();
-            this.pnlDelivery = new System.Windows.Forms.Panel();
-            this.lblNumOrder = new System.Windows.Forms.Label();
-            this.lblClient = new System.Windows.Forms.Label();
-            this.pnlRemind = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.lblRemNumOrder = new System.Windows.Forms.Label();
-            this.lblRemClient = new System.Windows.Forms.Label();
-            this.dtgw_RemItems = new System.Windows.Forms.DataGridView();
+            this.pnlRemindDispatch = new System.Windows.Forms.Panel();
+            this.btnReminderDeliv = new System.Windows.Forms.Button();
+            this.lblRemNotes = new System.Windows.Forms.Label();
             this.lblRemDeliv = new System.Windows.Forms.Label();
-            this.dtgw_Deliv = new System.Windows.Forms.DataGridView();
+            this.dtgw_RemItems = new System.Windows.Forms.DataGridView();
+            this.lblRemClient = new System.Windows.Forms.Label();
+            this.lblRemNumOrder = new System.Windows.Forms.Label();
+            this.btnRemBack = new System.Windows.Forms.Button();
+            this.btnRemNext = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pnlDeliveryDispatch = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.btnDeliv = new System.Windows.Forms.Button();
+            this.lblDelivNotes = new System.Windows.Forms.Label();
+            this.dtgw_Deliv = new System.Windows.Forms.DataGridView();
+            this.btnDelivBack = new System.Windows.Forms.Button();
+            this.btnDelivNext = new System.Windows.Forms.Button();
+            this.lblDelivClient = new System.Windows.Forms.Label();
+            this.lblDelivNumOrder = new System.Windows.Forms.Label();
+            this.tabPage23 = new System.Windows.Forms.TabPage();
+            this.pnlRemindProcesses = new System.Windows.Forms.Panel();
+            this.btnRemProDeliv = new System.Windows.Forms.Button();
+            this.lblRemProNotes = new System.Windows.Forms.Label();
+            this.lblRemProDeliv = new System.Windows.Forms.Label();
+            this.dtgw_RemProItems = new System.Windows.Forms.DataGridView();
+            this.lblRemProClient = new System.Windows.Forms.Label();
+            this.lblRemProOrder = new System.Windows.Forms.Label();
+            this.btnRemProBack = new System.Windows.Forms.Button();
+            this.btnRemProNext = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pnlDeliveryProcesses = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnDelivPro = new System.Windows.Forms.Button();
+            this.lblDelivProNotes = new System.Windows.Forms.Label();
+            this.dtgw_DelivProItems = new System.Windows.Forms.DataGridView();
+            this.btnDelivProBack = new System.Windows.Forms.Button();
+            this.btnDelivProNext = new System.Windows.Forms.Button();
+            this.lblDelivProClient = new System.Windows.Forms.Label();
+            this.lblDelivProOrder = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -245,10 +267,15 @@
             this.tabPage19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_list)).BeginInit();
             this.tabPage22.SuspendLayout();
-            this.pnlDelivery.SuspendLayout();
-            this.pnlRemind.SuspendLayout();
+            this.pnlRemindDispatch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_RemItems)).BeginInit();
+            this.pnlDeliveryDispatch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_Deliv)).BeginInit();
+            this.tabPage23.SuspendLayout();
+            this.pnlRemindProcesses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_RemProItems)).BeginInit();
+            this.pnlDeliveryProcesses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_DelivProItems)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -266,7 +293,7 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1249, 562);
+            this.tabControl1.Size = new System.Drawing.Size(1249, 634);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -275,7 +302,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage1.Size = new System.Drawing.Size(1241, 608);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CLIENTES";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -752,7 +779,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage2.Size = new System.Drawing.Size(1241, 608);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "PRODUCTOS";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -966,7 +993,7 @@
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage3.Size = new System.Drawing.Size(1241, 608);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "RUTAS";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1010,7 +1037,7 @@
             this.tabPage4.Controls.Add(this.tabControl4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage4.Size = new System.Drawing.Size(1241, 608);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "PEDIDOS";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1626,12 +1653,21 @@
             this.label36.TabIndex = 0;
             this.label36.Text = "Crear Pedido";
             // 
+            // tabPage21
+            // 
+            this.tabPage21.Location = new System.Drawing.Point(4, 22);
+            this.tabPage21.Name = "tabPage21";
+            this.tabPage21.Size = new System.Drawing.Size(1208, 452);
+            this.tabPage21.TabIndex = 2;
+            this.tabPage21.Text = "ACCIONES";
+            this.tabPage21.UseVisualStyleBackColor = true;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.tabControl6);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage5.Size = new System.Drawing.Size(1241, 608);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "FILA";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1738,153 +1774,51 @@
             this.tabPage20.Text = "tabPage20";
             this.tabPage20.UseVisualStyleBackColor = true;
             // 
-            // tabPage21
-            // 
-            this.tabPage21.Location = new System.Drawing.Point(4, 22);
-            this.tabPage21.Name = "tabPage21";
-            this.tabPage21.Size = new System.Drawing.Size(1208, 452);
-            this.tabPage21.TabIndex = 2;
-            this.tabPage21.Text = "ACCIONES";
-            this.tabPage21.UseVisualStyleBackColor = true;
-            // 
             // tabPage22
             // 
-            this.tabPage22.Controls.Add(this.pnlRemind);
-            this.tabPage22.Controls.Add(this.pnlDelivery);
+            this.tabPage22.Controls.Add(this.pnlRemindDispatch);
+            this.tabPage22.Controls.Add(this.pnlDeliveryDispatch);
             this.tabPage22.Location = new System.Drawing.Point(4, 22);
             this.tabPage22.Name = "tabPage22";
-            this.tabPage22.Size = new System.Drawing.Size(1241, 536);
+            this.tabPage22.Size = new System.Drawing.Size(1241, 608);
             this.tabPage22.TabIndex = 5;
             this.tabPage22.Text = "DESPACHO";
             this.tabPage22.UseVisualStyleBackColor = true;
             // 
-            // tabPage23
+            // pnlRemindDispatch
             // 
-            this.tabPage23.Location = new System.Drawing.Point(4, 22);
-            this.tabPage23.Name = "tabPage23";
-            this.tabPage23.Size = new System.Drawing.Size(1241, 536);
-            this.tabPage23.TabIndex = 6;
-            this.tabPage23.Text = "PROCESOS";
-            this.tabPage23.UseVisualStyleBackColor = true;
+            this.pnlRemindDispatch.Controls.Add(this.btnReminderDeliv);
+            this.pnlRemindDispatch.Controls.Add(this.lblRemNotes);
+            this.pnlRemindDispatch.Controls.Add(this.lblRemDeliv);
+            this.pnlRemindDispatch.Controls.Add(this.dtgw_RemItems);
+            this.pnlRemindDispatch.Controls.Add(this.lblRemClient);
+            this.pnlRemindDispatch.Controls.Add(this.lblRemNumOrder);
+            this.pnlRemindDispatch.Controls.Add(this.btnRemBack);
+            this.pnlRemindDispatch.Controls.Add(this.btnRemNext);
+            this.pnlRemindDispatch.Controls.Add(this.label5);
+            this.pnlRemindDispatch.Location = new System.Drawing.Point(15, 25);
+            this.pnlRemindDispatch.Name = "pnlRemindDispatch";
+            this.pnlRemindDispatch.Size = new System.Drawing.Size(538, 574);
+            this.pnlRemindDispatch.TabIndex = 4;
             // 
-            // pnlDelivery
+            // btnReminderDeliv
             // 
-            this.pnlDelivery.Controls.Add(this.label11);
-            this.pnlDelivery.Controls.Add(this.dtgw_Deliv);
-            this.pnlDelivery.Controls.Add(this.button16);
-            this.pnlDelivery.Controls.Add(this.button17);
-            this.pnlDelivery.Controls.Add(this.lblClient);
-            this.pnlDelivery.Controls.Add(this.lblNumOrder);
-            this.pnlDelivery.Location = new System.Drawing.Point(588, 25);
-            this.pnlDelivery.Name = "pnlDelivery";
-            this.pnlDelivery.Size = new System.Drawing.Size(538, 493);
-            this.pnlDelivery.TabIndex = 3;
+            this.btnReminderDeliv.Location = new System.Drawing.Point(185, 506);
+            this.btnReminderDeliv.Name = "btnReminderDeliv";
+            this.btnReminderDeliv.Size = new System.Drawing.Size(161, 65);
+            this.btnReminderDeliv.TabIndex = 8;
+            this.btnReminderDeliv.Text = "ENTREGAR PEDIDO";
+            this.btnReminderDeliv.UseVisualStyleBackColor = true;
+            this.btnReminderDeliv.Click += new System.EventHandler(this.btnReminderDeliv_Click);
             // 
-            // lblNumOrder
+            // lblRemNotes
             // 
-            this.lblNumOrder.AutoSize = true;
-            this.lblNumOrder.Location = new System.Drawing.Point(413, 50);
-            this.lblNumOrder.Name = "lblNumOrder";
-            this.lblNumOrder.Size = new System.Drawing.Size(63, 13);
-            this.lblNumOrder.TabIndex = 0;
-            this.lblNumOrder.Text = "N° PEDIDO";
-            // 
-            // lblClient
-            // 
-            this.lblClient.AutoSize = true;
-            this.lblClient.Location = new System.Drawing.Point(46, 104);
-            this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(52, 13);
-            this.lblClient.TabIndex = 1;
-            this.lblClient.Text = "CLIENTE";
-            // 
-            // pnlRemind
-            // 
-            this.pnlRemind.Controls.Add(this.label10);
-            this.pnlRemind.Controls.Add(this.lblRemDeliv);
-            this.pnlRemind.Controls.Add(this.dtgw_RemItems);
-            this.pnlRemind.Controls.Add(this.lblRemClient);
-            this.pnlRemind.Controls.Add(this.lblRemNumOrder);
-            this.pnlRemind.Controls.Add(this.button15);
-            this.pnlRemind.Controls.Add(this.button7);
-            this.pnlRemind.Controls.Add(this.label5);
-            this.pnlRemind.Location = new System.Drawing.Point(15, 25);
-            this.pnlRemind.Name = "pnlRemind";
-            this.pnlRemind.Size = new System.Drawing.Size(538, 493);
-            this.pnlRemind.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(415, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "RECORDATORIOS";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(335, 421);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(190, 59);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "VER SIGUIENTE";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(3, 421);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(190, 59);
-            this.button15.TabIndex = 2;
-            this.button15.Text = "VER ANTERIOR";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(16, 421);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(190, 59);
-            this.button16.TabIndex = 4;
-            this.button16.Text = "VER ANTERIOR";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(348, 421);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(190, 59);
-            this.button17.TabIndex = 3;
-            this.button17.Text = "VER SIGUIENTE";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // lblRemNumOrder
-            // 
-            this.lblRemNumOrder.AutoSize = true;
-            this.lblRemNumOrder.Location = new System.Drawing.Point(415, 85);
-            this.lblRemNumOrder.Name = "lblRemNumOrder";
-            this.lblRemNumOrder.Size = new System.Drawing.Size(63, 13);
-            this.lblRemNumOrder.TabIndex = 3;
-            this.lblRemNumOrder.Text = "N° PEDIDO";
-            // 
-            // lblRemClient
-            // 
-            this.lblRemClient.AutoSize = true;
-            this.lblRemClient.Location = new System.Drawing.Point(31, 130);
-            this.lblRemClient.Name = "lblRemClient";
-            this.lblRemClient.Size = new System.Drawing.Size(52, 13);
-            this.lblRemClient.TabIndex = 4;
-            this.lblRemClient.Text = "CLIENTE";
-            // 
-            // dtgw_RemItems
-            // 
-            this.dtgw_RemItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgw_RemItems.Location = new System.Drawing.Point(34, 157);
-            this.dtgw_RemItems.Name = "dtgw_RemItems";
-            this.dtgw_RemItems.Size = new System.Drawing.Size(479, 150);
-            this.dtgw_RemItems.TabIndex = 5;
-            this.dtgw_RemItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgw_RemItems_CellContentClick);
+            this.lblRemNotes.AutoSize = true;
+            this.lblRemNotes.Location = new System.Drawing.Point(31, 347);
+            this.lblRemNotes.Name = "lblRemNotes";
+            this.lblRemNotes.Size = new System.Drawing.Size(44, 13);
+            this.lblRemNotes.TabIndex = 7;
+            this.lblRemNotes.Text = "NOTAS";
             // 
             // lblRemDeliv
             // 
@@ -1895,6 +1829,106 @@
             this.lblRemDeliv.TabIndex = 6;
             this.lblRemDeliv.Text = "ENTREGA";
             // 
+            // dtgw_RemItems
+            // 
+            this.dtgw_RemItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_RemItems.Location = new System.Drawing.Point(34, 157);
+            this.dtgw_RemItems.Name = "dtgw_RemItems";
+            this.dtgw_RemItems.Size = new System.Drawing.Size(479, 150);
+            this.dtgw_RemItems.TabIndex = 5;
+            this.dtgw_RemItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgw_RemItems_CellContentClick);
+            // 
+            // lblRemClient
+            // 
+            this.lblRemClient.AutoSize = true;
+            this.lblRemClient.Location = new System.Drawing.Point(31, 130);
+            this.lblRemClient.Name = "lblRemClient";
+            this.lblRemClient.Size = new System.Drawing.Size(52, 13);
+            this.lblRemClient.TabIndex = 4;
+            this.lblRemClient.Text = "CLIENTE";
+            // 
+            // lblRemNumOrder
+            // 
+            this.lblRemNumOrder.AutoSize = true;
+            this.lblRemNumOrder.Location = new System.Drawing.Point(415, 85);
+            this.lblRemNumOrder.Name = "lblRemNumOrder";
+            this.lblRemNumOrder.Size = new System.Drawing.Size(63, 13);
+            this.lblRemNumOrder.TabIndex = 3;
+            this.lblRemNumOrder.Text = "N° PEDIDO";
+            // 
+            // btnRemBack
+            // 
+            this.btnRemBack.Location = new System.Drawing.Point(3, 421);
+            this.btnRemBack.Name = "btnRemBack";
+            this.btnRemBack.Size = new System.Drawing.Size(190, 59);
+            this.btnRemBack.TabIndex = 2;
+            this.btnRemBack.Text = "VER ANTERIOR";
+            this.btnRemBack.UseVisualStyleBackColor = true;
+            this.btnRemBack.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // btnRemNext
+            // 
+            this.btnRemNext.Location = new System.Drawing.Point(335, 421);
+            this.btnRemNext.Name = "btnRemNext";
+            this.btnRemNext.Size = new System.Drawing.Size(190, 59);
+            this.btnRemNext.TabIndex = 1;
+            this.btnRemNext.Text = "VER SIGUIENTE";
+            this.btnRemNext.UseVisualStyleBackColor = true;
+            this.btnRemNext.Click += new System.EventHandler(this.button7_Click_2);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(415, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "RECORDATORIOS";
+            // 
+            // pnlDeliveryDispatch
+            // 
+            this.pnlDeliveryDispatch.Controls.Add(this.label10);
+            this.pnlDeliveryDispatch.Controls.Add(this.btnDeliv);
+            this.pnlDeliveryDispatch.Controls.Add(this.lblDelivNotes);
+            this.pnlDeliveryDispatch.Controls.Add(this.dtgw_Deliv);
+            this.pnlDeliveryDispatch.Controls.Add(this.btnDelivBack);
+            this.pnlDeliveryDispatch.Controls.Add(this.btnDelivNext);
+            this.pnlDeliveryDispatch.Controls.Add(this.lblDelivClient);
+            this.pnlDeliveryDispatch.Controls.Add(this.lblDelivNumOrder);
+            this.pnlDeliveryDispatch.Location = new System.Drawing.Point(588, 25);
+            this.pnlDeliveryDispatch.Name = "pnlDeliveryDispatch";
+            this.pnlDeliveryDispatch.Size = new System.Drawing.Size(538, 571);
+            this.pnlDeliveryDispatch.TabIndex = 3;
+            this.pnlDeliveryDispatch.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDelivery_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "PENDIENTES DE HOY";
+            // 
+            // btnDeliv
+            // 
+            this.btnDeliv.Location = new System.Drawing.Point(203, 506);
+            this.btnDeliv.Name = "btnDeliv";
+            this.btnDeliv.Size = new System.Drawing.Size(161, 65);
+            this.btnDeliv.TabIndex = 9;
+            this.btnDeliv.Text = "ENTREGAR PEDIDO";
+            this.btnDeliv.UseVisualStyleBackColor = true;
+            this.btnDeliv.Click += new System.EventHandler(this.btnDeliv_Click);
+            // 
+            // lblDelivNotes
+            // 
+            this.lblDelivNotes.AutoSize = true;
+            this.lblDelivNotes.Location = new System.Drawing.Point(23, 294);
+            this.lblDelivNotes.Name = "lblDelivNotes";
+            this.lblDelivNotes.Size = new System.Drawing.Size(44, 13);
+            this.lblDelivNotes.TabIndex = 8;
+            this.lblDelivNotes.Text = "NOTAS";
+            // 
             // dtgw_Deliv
             // 
             this.dtgw_Deliv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1903,23 +1937,242 @@
             this.dtgw_Deliv.Size = new System.Drawing.Size(479, 150);
             this.dtgw_Deliv.TabIndex = 6;
             // 
-            // label10
+            // btnDelivBack
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 347);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "NOTAS";
+            this.btnDelivBack.Location = new System.Drawing.Point(16, 421);
+            this.btnDelivBack.Name = "btnDelivBack";
+            this.btnDelivBack.Size = new System.Drawing.Size(190, 59);
+            this.btnDelivBack.TabIndex = 4;
+            this.btnDelivBack.Text = "VER ANTERIOR";
+            this.btnDelivBack.UseVisualStyleBackColor = true;
+            this.btnDelivBack.Click += new System.EventHandler(this.btnDelivBack_Click);
             // 
-            // label11
+            // btnDelivNext
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(46, 347);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 13);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "NOTAS";
+            this.btnDelivNext.Location = new System.Drawing.Point(348, 421);
+            this.btnDelivNext.Name = "btnDelivNext";
+            this.btnDelivNext.Size = new System.Drawing.Size(190, 59);
+            this.btnDelivNext.TabIndex = 3;
+            this.btnDelivNext.Text = "VER SIGUIENTE";
+            this.btnDelivNext.UseVisualStyleBackColor = true;
+            this.btnDelivNext.Click += new System.EventHandler(this.btnDelivNext_Click);
+            // 
+            // lblDelivClient
+            // 
+            this.lblDelivClient.AutoSize = true;
+            this.lblDelivClient.Location = new System.Drawing.Point(46, 104);
+            this.lblDelivClient.Name = "lblDelivClient";
+            this.lblDelivClient.Size = new System.Drawing.Size(52, 13);
+            this.lblDelivClient.TabIndex = 1;
+            this.lblDelivClient.Text = "CLIENTE";
+            // 
+            // lblDelivNumOrder
+            // 
+            this.lblDelivNumOrder.AutoSize = true;
+            this.lblDelivNumOrder.Location = new System.Drawing.Point(413, 50);
+            this.lblDelivNumOrder.Name = "lblDelivNumOrder";
+            this.lblDelivNumOrder.Size = new System.Drawing.Size(63, 13);
+            this.lblDelivNumOrder.TabIndex = 0;
+            this.lblDelivNumOrder.Text = "N° PEDIDO";
+            // 
+            // tabPage23
+            // 
+            this.tabPage23.Controls.Add(this.pnlRemindProcesses);
+            this.tabPage23.Controls.Add(this.pnlDeliveryProcesses);
+            this.tabPage23.Location = new System.Drawing.Point(4, 22);
+            this.tabPage23.Name = "tabPage23";
+            this.tabPage23.Size = new System.Drawing.Size(1241, 608);
+            this.tabPage23.TabIndex = 6;
+            this.tabPage23.Text = "PROCESOS";
+            this.tabPage23.UseVisualStyleBackColor = true;
+            // 
+            // pnlRemindProcesses
+            // 
+            this.pnlRemindProcesses.Controls.Add(this.btnRemProDeliv);
+            this.pnlRemindProcesses.Controls.Add(this.lblRemProNotes);
+            this.pnlRemindProcesses.Controls.Add(this.lblRemProDeliv);
+            this.pnlRemindProcesses.Controls.Add(this.dtgw_RemProItems);
+            this.pnlRemindProcesses.Controls.Add(this.lblRemProClient);
+            this.pnlRemindProcesses.Controls.Add(this.lblRemProOrder);
+            this.pnlRemindProcesses.Controls.Add(this.btnRemProBack);
+            this.pnlRemindProcesses.Controls.Add(this.btnRemProNext);
+            this.pnlRemindProcesses.Controls.Add(this.label15);
+            this.pnlRemindProcesses.Location = new System.Drawing.Point(65, 17);
+            this.pnlRemindProcesses.Name = "pnlRemindProcesses";
+            this.pnlRemindProcesses.Size = new System.Drawing.Size(538, 574);
+            this.pnlRemindProcesses.TabIndex = 6;
+            // 
+            // btnRemProDeliv
+            // 
+            this.btnRemProDeliv.Location = new System.Drawing.Point(185, 506);
+            this.btnRemProDeliv.Name = "btnRemProDeliv";
+            this.btnRemProDeliv.Size = new System.Drawing.Size(161, 65);
+            this.btnRemProDeliv.TabIndex = 8;
+            this.btnRemProDeliv.Text = "ENTREGAR PEDIDO";
+            this.btnRemProDeliv.UseVisualStyleBackColor = true;
+            this.btnRemProDeliv.Click += new System.EventHandler(this.btnRemProDeliv_Click);
+            // 
+            // lblRemProNotes
+            // 
+            this.lblRemProNotes.AutoSize = true;
+            this.lblRemProNotes.Location = new System.Drawing.Point(31, 347);
+            this.lblRemProNotes.Name = "lblRemProNotes";
+            this.lblRemProNotes.Size = new System.Drawing.Size(44, 13);
+            this.lblRemProNotes.TabIndex = 7;
+            this.lblRemProNotes.Text = "NOTAS";
+            // 
+            // lblRemProDeliv
+            // 
+            this.lblRemProDeliv.AutoSize = true;
+            this.lblRemProDeliv.Location = new System.Drawing.Point(45, 50);
+            this.lblRemProDeliv.Name = "lblRemProDeliv";
+            this.lblRemProDeliv.Size = new System.Drawing.Size(59, 13);
+            this.lblRemProDeliv.TabIndex = 6;
+            this.lblRemProDeliv.Text = "ENTREGA";
+            // 
+            // dtgw_RemProItems
+            // 
+            this.dtgw_RemProItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_RemProItems.Location = new System.Drawing.Point(34, 157);
+            this.dtgw_RemProItems.Name = "dtgw_RemProItems";
+            this.dtgw_RemProItems.Size = new System.Drawing.Size(479, 150);
+            this.dtgw_RemProItems.TabIndex = 5;
+            // 
+            // lblRemProClient
+            // 
+            this.lblRemProClient.AutoSize = true;
+            this.lblRemProClient.Location = new System.Drawing.Point(31, 130);
+            this.lblRemProClient.Name = "lblRemProClient";
+            this.lblRemProClient.Size = new System.Drawing.Size(52, 13);
+            this.lblRemProClient.TabIndex = 4;
+            this.lblRemProClient.Text = "CLIENTE";
+            // 
+            // lblRemProOrder
+            // 
+            this.lblRemProOrder.AutoSize = true;
+            this.lblRemProOrder.Location = new System.Drawing.Point(415, 85);
+            this.lblRemProOrder.Name = "lblRemProOrder";
+            this.lblRemProOrder.Size = new System.Drawing.Size(63, 13);
+            this.lblRemProOrder.TabIndex = 3;
+            this.lblRemProOrder.Text = "N° PEDIDO";
+            // 
+            // btnRemProBack
+            // 
+            this.btnRemProBack.Location = new System.Drawing.Point(3, 421);
+            this.btnRemProBack.Name = "btnRemProBack";
+            this.btnRemProBack.Size = new System.Drawing.Size(190, 59);
+            this.btnRemProBack.TabIndex = 2;
+            this.btnRemProBack.Text = "VER ANTERIOR";
+            this.btnRemProBack.UseVisualStyleBackColor = true;
+            this.btnRemProBack.Click += new System.EventHandler(this.btnRemProBack_Click);
+            // 
+            // btnRemProNext
+            // 
+            this.btnRemProNext.Location = new System.Drawing.Point(335, 421);
+            this.btnRemProNext.Name = "btnRemProNext";
+            this.btnRemProNext.Size = new System.Drawing.Size(190, 59);
+            this.btnRemProNext.TabIndex = 1;
+            this.btnRemProNext.Text = "VER SIGUIENTE";
+            this.btnRemProNext.UseVisualStyleBackColor = true;
+            this.btnRemProNext.Click += new System.EventHandler(this.btnRemProNext_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(415, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "RECORDATORIOS";
+            // 
+            // pnlDeliveryProcesses
+            // 
+            this.pnlDeliveryProcesses.Controls.Add(this.label16);
+            this.pnlDeliveryProcesses.Controls.Add(this.btnDelivPro);
+            this.pnlDeliveryProcesses.Controls.Add(this.lblDelivProNotes);
+            this.pnlDeliveryProcesses.Controls.Add(this.dtgw_DelivProItems);
+            this.pnlDeliveryProcesses.Controls.Add(this.btnDelivProBack);
+            this.pnlDeliveryProcesses.Controls.Add(this.btnDelivProNext);
+            this.pnlDeliveryProcesses.Controls.Add(this.lblDelivProClient);
+            this.pnlDeliveryProcesses.Controls.Add(this.lblDelivProOrder);
+            this.pnlDeliveryProcesses.Location = new System.Drawing.Point(638, 17);
+            this.pnlDeliveryProcesses.Name = "pnlDeliveryProcesses";
+            this.pnlDeliveryProcesses.Size = new System.Drawing.Size(538, 571);
+            this.pnlDeliveryProcesses.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(23, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(120, 13);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "PENDIENTES DE HOY";
+            // 
+            // btnDelivPro
+            // 
+            this.btnDelivPro.Location = new System.Drawing.Point(203, 506);
+            this.btnDelivPro.Name = "btnDelivPro";
+            this.btnDelivPro.Size = new System.Drawing.Size(161, 65);
+            this.btnDelivPro.TabIndex = 9;
+            this.btnDelivPro.Text = "ENTREGAR PEDIDO";
+            this.btnDelivPro.UseVisualStyleBackColor = true;
+            this.btnDelivPro.Click += new System.EventHandler(this.btnDelivPro_Click);
+            // 
+            // lblDelivProNotes
+            // 
+            this.lblDelivProNotes.AutoSize = true;
+            this.lblDelivProNotes.Location = new System.Drawing.Point(23, 294);
+            this.lblDelivProNotes.Name = "lblDelivProNotes";
+            this.lblDelivProNotes.Size = new System.Drawing.Size(44, 13);
+            this.lblDelivProNotes.TabIndex = 8;
+            this.lblDelivProNotes.Text = "NOTAS";
+            // 
+            // dtgw_DelivProItems
+            // 
+            this.dtgw_DelivProItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgw_DelivProItems.Location = new System.Drawing.Point(26, 130);
+            this.dtgw_DelivProItems.Name = "dtgw_DelivProItems";
+            this.dtgw_DelivProItems.Size = new System.Drawing.Size(479, 150);
+            this.dtgw_DelivProItems.TabIndex = 6;
+            // 
+            // btnDelivProBack
+            // 
+            this.btnDelivProBack.Location = new System.Drawing.Point(16, 421);
+            this.btnDelivProBack.Name = "btnDelivProBack";
+            this.btnDelivProBack.Size = new System.Drawing.Size(190, 59);
+            this.btnDelivProBack.TabIndex = 4;
+            this.btnDelivProBack.Text = "VER ANTERIOR";
+            this.btnDelivProBack.UseVisualStyleBackColor = true;
+            this.btnDelivProBack.Click += new System.EventHandler(this.btnDelivProBack_Click);
+            // 
+            // btnDelivProNext
+            // 
+            this.btnDelivProNext.Location = new System.Drawing.Point(348, 421);
+            this.btnDelivProNext.Name = "btnDelivProNext";
+            this.btnDelivProNext.Size = new System.Drawing.Size(190, 59);
+            this.btnDelivProNext.TabIndex = 3;
+            this.btnDelivProNext.Text = "VER SIGUIENTE";
+            this.btnDelivProNext.UseVisualStyleBackColor = true;
+            this.btnDelivProNext.Click += new System.EventHandler(this.btnDelivProNext_Click);
+            // 
+            // lblDelivProClient
+            // 
+            this.lblDelivProClient.AutoSize = true;
+            this.lblDelivProClient.Location = new System.Drawing.Point(46, 104);
+            this.lblDelivProClient.Name = "lblDelivProClient";
+            this.lblDelivProClient.Size = new System.Drawing.Size(52, 13);
+            this.lblDelivProClient.TabIndex = 1;
+            this.lblDelivProClient.Text = "CLIENTE";
+            // 
+            // lblDelivProOrder
+            // 
+            this.lblDelivProOrder.AutoSize = true;
+            this.lblDelivProOrder.Location = new System.Drawing.Point(413, 50);
+            this.lblDelivProOrder.Name = "lblDelivProOrder";
+            this.lblDelivProOrder.Size = new System.Drawing.Size(63, 13);
+            this.lblDelivProOrder.TabIndex = 0;
+            this.lblDelivProOrder.Text = "N° PEDIDO";
             // 
             // Main
             // 
@@ -1996,12 +2249,19 @@
             this.tabPage19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_list)).EndInit();
             this.tabPage22.ResumeLayout(false);
-            this.pnlDelivery.ResumeLayout(false);
-            this.pnlDelivery.PerformLayout();
-            this.pnlRemind.ResumeLayout(false);
-            this.pnlRemind.PerformLayout();
+            this.pnlRemindDispatch.ResumeLayout(false);
+            this.pnlRemindDispatch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_RemItems)).EndInit();
+            this.pnlDeliveryDispatch.ResumeLayout(false);
+            this.pnlDeliveryDispatch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgw_Deliv)).EndInit();
+            this.tabPage23.ResumeLayout(false);
+            this.pnlRemindProcesses.ResumeLayout(false);
+            this.pnlRemindProcesses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_RemProItems)).EndInit();
+            this.pnlDeliveryProcesses.ResumeLayout(false);
+            this.pnlDeliveryProcesses.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgw_DelivProItems)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2161,22 +2421,44 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage21;
         private System.Windows.Forms.TabPage tabPage22;
-        private System.Windows.Forms.Panel pnlRemind;
+        private System.Windows.Forms.Panel pnlRemindDispatch;
         private System.Windows.Forms.Label lblRemDeliv;
         private System.Windows.Forms.DataGridView dtgw_RemItems;
         private System.Windows.Forms.Label lblRemClient;
         private System.Windows.Forms.Label lblRemNumOrder;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnRemBack;
+        private System.Windows.Forms.Button btnRemNext;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel pnlDelivery;
+        private System.Windows.Forms.Panel pnlDeliveryDispatch;
         private System.Windows.Forms.DataGridView dtgw_Deliv;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Label lblClient;
-        private System.Windows.Forms.Label lblNumOrder;
+        private System.Windows.Forms.Button btnDelivBack;
+        private System.Windows.Forms.Button btnDelivNext;
+        private System.Windows.Forms.Label lblDelivClient;
+        private System.Windows.Forms.Label lblDelivNumOrder;
         private System.Windows.Forms.TabPage tabPage23;
+        private System.Windows.Forms.Label lblRemNotes;
+        private System.Windows.Forms.Label lblDelivNotes;
+        private System.Windows.Forms.Button btnReminderDeliv;
+        private System.Windows.Forms.Button btnDeliv;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel pnlRemindProcesses;
+        private System.Windows.Forms.Button btnRemProDeliv;
+        private System.Windows.Forms.Label lblRemProNotes;
+        private System.Windows.Forms.Label lblRemProDeliv;
+        private System.Windows.Forms.DataGridView dtgw_RemProItems;
+        private System.Windows.Forms.Label lblRemProClient;
+        private System.Windows.Forms.Label lblRemProOrder;
+        private System.Windows.Forms.Button btnRemProBack;
+        private System.Windows.Forms.Button btnRemProNext;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel pnlDeliveryProcesses;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnDelivPro;
+        private System.Windows.Forms.Label lblDelivProNotes;
+        private System.Windows.Forms.DataGridView dtgw_DelivProItems;
+        private System.Windows.Forms.Button btnDelivProBack;
+        private System.Windows.Forms.Button btnDelivProNext;
+        private System.Windows.Forms.Label lblDelivProClient;
+        private System.Windows.Forms.Label lblDelivProOrder;
     }
 }
